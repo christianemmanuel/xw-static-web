@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.esports-gift-container {
+    background-image: url(../img/promotion/esportsGift/top_banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    padding-top: 790px;
+    padding-bottom: 80px;
+    font-size: 14px;
+    color: #596281;
+    line-height: 26px;
+    background-color: #fdfcfe;
+    letter-spacing: 0;
+}
+.esports-gift-container .title {
+    font-size: 18px;
+    color: #40aae6;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.esports-gift-container .exchange-btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 2px;
+    border: solid 1px #596281;
+    font-size: 18px;
+    color: #596281;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.esports-gift-container .exchange-record-btn {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+}
+.esports-gift-container .exchange-btn.active, .esports-gift-container .exchange-btn:hover {
+    background-image: linear-gradient(218deg, #68b4fc 0%, #2f76f6 99%), linear-gradient(#40aae6, #40aae6);
+    background-blend-mode: normal, normal;
+    color: #ffffff;
+    border: none;
+}
+.esports-gift-container .progress-bar-container {
+    position: relative;
+    color: #40aae6;
+    margin-top: 70px;
+}
+.esports-gift-container .progress-bar-container .member-bet-box {
+    position: absolute;
+    top: -45px;
+    left: -20px;
+    text-align: center;
+}
+.esports-gift-container .progress-bar-container .member-bet-box .dsj {
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-top: 15px solid #40aae6;
+    margin: 0 auto;
+}
+.esports-gift-container .progress-bar-container .progress-bar-box {
+    width: 1017px;
+    height: 44px;
+    background-color: #fbfcfe;
+    border: solid 2px #40aae6;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+}
+.esports-gift-container .progress-bar-container .progress-bar-box .progress-bar-item {
+    width: 16px;
+    height: 32px;
+    background-color: #bccfda;
+    transition: all .5s ease-out;
+}
+.esports-gift-container .progress-bar-container .progress-bar-box .progress-bar-item.active {
+    background-color: #40aae6;
+}
+.esports-gift-container .progress-bar-container .progress-down-box {
+    position: relative;
+    width: 1018px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 5px auto 0;
+}
+.esports-gift-container .progress-bar-container .progress-down-box .progress-down-item-small {
+    width: 3px;
+    height: 15px;
+    background-color: #40aae6;
+}
+.esports-gift-container .progress-bar-container .progress-down-box .progress-down-item-large {
+    width: 5px;
+    height: 30px;
+    background-color: #40aae6;
+}
+.esports-gift-container .gift-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-bottom: 46px;
+    min-height: 370px;
+}
+.esports-gift-container .gift-container .gift-item-box {
+    width: 200px;
+    height: 300px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    border: solid 1px #40aae6;
+    font-size: 14px;
+    line-height: 26px;
+    margin: 12px 7px;
+}
+.esports-gift-container .gift-container .gift-item-box .gift-name {
+    color: #000000;
+    font-weight: 600;
+    padding: 0 12px;
+    height: 52px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.esports-gift-container .gift-container .gift-item-box .gift-desc {
+    color: #596281;
+    margin-bottom: 16px;
+}
+.esports-gift-container .promo-time {
+    margin: 25px 0 32px 42px;
+    color: #596281;
+}
+.esports-gift-container .promo-content-box {
+    width: 1061px;
+    height: 501px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    border: solid 1px #40aae6;
+    padding: 42px 66px;
+    margin-top: 29px;
+}
+.esports-gift-container .promo-content-box .promo-rule-list li {
+    list-style: decimal;
+    margin-bottom: 7px;
+}
+.record-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 16px;
+    border: 1px solid #bac8dc;
+    color: #737985;
+    width: 550px;
+}
+.record-table th, .record-table td {
+    border: 1px solid #bac8dc;
+    text-align: center;
+}
+.record-table th {
+    height: 40px;
+    font-weight: 400;
+}
+.record-table td {
+    font-weight: 600;
+    color: #000000;
+}
+.record-table td.gift-name {
+    padding: 0 12px;
+}
+.custom-modal-content {
+    width: 1000px;
+}
+#giftForm .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#giftForm .form-group label {
+    font-size: 12px;
+    font-weight: normal;
+    color: #3d4b66;
+}

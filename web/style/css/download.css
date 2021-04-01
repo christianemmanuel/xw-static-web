@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url("../img/download/download_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    background-size: cover;
+    min-width: 1376px;
+}
+.download-container {
+    height: 946px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #242424;
+    display: flex;
+    padding-top: 120px;
+}
+.download-container .download-left {
+    width: 950px;
+}
+.download-container .download-left .app-main-box {
+    position: relative;
+    width: 100%;
+    height: 724px;
+    background-repeat: no-repeat;
+    background-position: 405px 54px;
+    display: none;
+}
+.download-container .download-left .app-main-box.active {
+    display: block;
+}
+.download-container .download-left .app-main-box .app-item-box {
+    position: absolute;
+    transition: 1s all cubic-bezier(.83,.97,.05,1.44);
+}
+.download-container .download-left .app-main-box.app-all-main {
+    background-image: url("../img/download/all_phone.png");
+}
+.download-container .download-left .app-main-box.app-sport-main {
+    background-image: url("../img/download/sport_phone.png");
+}
+.download-container .download-left .app-main-box.app-esports-main {
+    background-image: url("../img/download/esport_phone.png");
+}
+.download-container .download-right {
+    padding-top: 100px;
+}
+.download-container .download-right .app-btn-box {
+    display: flex;
+    margin-bottom: 73px;
+}
+.download-container .download-right .app-type-btn {
+    width: 181px;
+    height: 50px;
+    background-blend-mode: normal, normal;
+    background-image: linear-gradient(0deg, #f2f2f2 0%, #fefefe 100%), linear-gradient(#000000, #000000);
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+    border-radius: 6px;
+    display: block;
+    font-size: 16px;
+    color: #222222;
+    cursor: pointer;
+    margin-right: 27px;
+    text-align: center;
+    line-height: 50px;
+}
+.download-container .download-right .app-type-btn.active, .download-container .download-right .app-type-btn:hover {
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient(#000000, #000000);
+    color: #ffffff;
+}
+.download-container .download-right .app-desc-content {
+    width: 460px;
+    position: relative;
+}
+.download-container .download-right .app-desc-content .app-detail-box {
+    position: absolute;
+    left: 40px;
+    display: none;
+}
+.download-container .download-right .app-desc-content .app-detail-box.active {
+    display: block;
+}
+.download-container .download-right .app-desc-content .app-detail-box.app-detail-fadeout {
+    -webkit-animation: app-detail-fadeout-ani .8s forwards;
+    animation: app-detail-fadeout-ani .8s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.download-container .download-right .app-desc-content .app-detail-box.app-detail-fadein {
+    -webkit-animation: app-detail-fadein-ani .8s forwards;
+    animation: app-detail-fadein-ani .8s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.download-container .download-right .app-desc-content .app-detail-box .app-desc {
+    line-height: 25px;
+    margin: 23px 0 39px;
+}
+.download-container .download-right .app-bottom-box {
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+}
+.download-container .download-right .app-bottom-box .app-img-box {
+    width: 230px;
+}
+.download-container .download-right .app-bottom-box .app-img-box .img-box {
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.download-container .download-right .app-bottom-box .app-img-box .img-desc {
+    margin: 30px 0 15px;
+    font-weight: bold;
+    color: #454545;
+}
+.download-container .download-right .app-bottom-box .app-img-box .app-url {
+    letter-spacing: 1px;
+    color: #5b91ff;
+}
+.download-container .download-right .app-bottom-box .app-img-box .qrcode-bg {
+    background: url("../img/download/down_qrcode_bg.png") center no-repeat;
+    width: 112px;
+    height: 112px;
+    padding: 7px;
+}
+@-webkit-keyframes app-detail-fadeout-ani {
+    0% {
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+}
+@keyframes app-detail-fadeout-ani {
+    0% {
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes app-detail-fadein-ani {
+0% {
+    -webkit-transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
+    opacity: 0;
+}
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes app-detail-fadein-ani {
+    0% {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}

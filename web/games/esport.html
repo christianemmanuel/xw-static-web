@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>电子竞技</title>
+    <link rel="stylesheet" href="/style/css/esports.css">
+    <script type="text/javascript">
+        var host = document.domain;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location = "https://m." + host.split('.')[1] + ".com" + window.location.pathname;
+        }
+    </script>
+    <style>
+        body {
+            background-color: #191d29;
+        }
+
+        .esport-container {
+            height: 1038px;
+            padding-top: 120px;
+        }
+
+    </style>
+</head>
+<body>
+@@include('header.html')
+<div class="esport-container">
+    <div id="esportContent"></div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+    $(function () {
+        loadEsportPage();
+    });
+
+    function loadEsportPage() {
+        post('/egames/esportIndex', {gameId: -1}).done(d => {
+            var iframe = '<iframe id="esportForm" allowfullscreen="true" width="1440px" height="930px" scrolling="no" frameborder="0" style="overflow:hidden!important;margin: 0 auto;display:block;" src="' + d.url + '"></iframe>';
+            $('#esportContent').html(iframe);
+        })
+    }
+</script>
+</html>

@@ -1,0 +1,117 @@
+.transfer-container {
+    width: 960px;
+    padding: 22px 34px
+}
+.transfer-container .transfer-tip {
+    color: #206979;
+    margin-top: 20px;
+    background-color: #ddf7fc;
+    border-color: #cff3fb;
+}
+.transfer-panel {
+    width: 100%;
+    padding: 20px 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 224px);
+    grid-template-rows: repeat(auto-fill, 117px);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+    position: relative;
+    z-index: 0;
+    /*box-shadow: 0px 3px 8px 0px rgba(39, 61, 86, 0.46);*/
+    margin-top: 20px;
+}
+
+.main-balance {
+    margin-top: 20px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 3px 8px 0px rgba(39, 61, 86, 0.46);
+}
+
+.main-balance .alert {
+    margin-bottom: 0;
+}
+
+.card-platform {
+    width: 238px;
+    height: 128px;
+    padding: 0.5rem;
+    background-image: url("../img/personal/transfer_item_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 0;
+    border: none;
+}
+
+.card-platform .card-refresh {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3865e8;
+    cursor: pointer;
+    margin-top: -3px !important;
+    padding: 0;
+    text-align: center;
+}
+
+.card-platform .card-refresh:hover {
+    animation: refresh 2s linear infinite;
+}
+
+@keyframes refresh {
+
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+
+}
+
+.card-content {
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-platform .platform-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-platform .platform-amount > label {
+    font-size: 12px;
+    color: #1f356b;
+    margin-bottom: 0;
+}
+
+.card-platform .platform-amount > span {
+    display: block;
+    font-size: 12px;
+    color: #a56322;
+    width: 100px;
+}
+
+.card-platform button {
+    width: 68px;
+    height: 24px;
+    border-radius: 2px;
+    padding: 0;
+}
+#dialogForm .form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

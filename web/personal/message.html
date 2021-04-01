@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/style/plugins/paginationjs/pagination.css">
+    <link rel="stylesheet" href="/style/css/ribbon.css">
+    <link rel="stylesheet" href="/style/css/message.css">
+    <script type="text/javascript" src="/style/plugins/paginationjs/pagination.min.js"></script>
+</head>
+<body>
+<div class="message-container">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item message-item">
+            <a class="nav-link message-menu active" data-toggle="tab" href="#inbox" role="tab" id="inboxMenu"
+               aria-controls="inbox" aria-selected="true">收件箱</a>
+        </li>
+        <li class="nav-item message-item">
+            <a class="nav-link message-menu " data-toggle="tab" href="#outbox" role="tab" id="outboxMenu"
+               aria-controls="outbox" aria-selected="false">已发送</a>
+        </li>
+        <li class="nav-item message-item">
+            <a class="nav-link message-menu" data-toggle="tab" href="#send-email" role="tab" id="sendMenu"
+               aria-controls="send-email" aria-selected="false">写信</a>
+        </li>
+
+    </ul>
+    <div class="tab-content message-content" id="myTabContent">
+        <div class="tab-pane  message-pane fade show  active " id="inbox" role="tabpanel">
+            <div class="mailbox">
+                <div style="margin-bottom: 10px">
+                    <button type="button" class="btn btn-sm btn-primary" onclick="readAllMessage()" ><i class="mdi mdi-archive font-18"></i>全部已读</button>
+                    <button type="button" class="btn btn-sm btn-secondary" onclick="deleteAllMessage()"><i class="mdi mdi-delete-variant font-18"></i>全部删除</button>
+                </div>
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col" width="20%">标题</th>
+                        <th scope="col" width="50%">内容</th>
+                        <th scope="col" width="20%">时间</th>
+                        <th scope="col" width="10%">状态</th>
+                    </tr>
+                    </thead>
+                    <tbody id="inboxContainer">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="tab-pane message-pane fade" id="outbox" role="tabpanel">
+
+            <div class="mailbox">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col" width="20%">标题</th>
+                        <th scope="col" width="60%">内容</th>
+                        <th scope="col" width="20%">时间</th>
+                    </tr>
+                    </thead>
+                    <tbody id="outboxContainer">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="tab-pane send-email fade" id="send-email" role="tabpanel">
+            <form name="sendMail" id="sendMail">
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label">标题：</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="title" name="title"
+                               required
+                               data-parsley-required-message="标题不能为空">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label">内容：</label>
+                    <div class="col-sm-11">
+                        <textarea class="form-control" name="content" style="height: 337px;"
+                                  required
+                                  data-parsley-required-message="内容不能为空"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text-right">
+                        <button id="sendBtn" type="submit" class="btn btn-primary"><span>发送</span> <i
+                                class="mdi mdi-send ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="/style/js/message.js"></script>
+<script>
+
+</script>
+</html>

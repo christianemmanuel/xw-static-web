@@ -1,0 +1,234 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.game-container {
+    width: var(--default-min-width);
+    padding-top: 120px;
+    height: 902px;
+}
+
+.game-tab-content {
+    position: relative;
+    height: 630px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.pane-bg{
+    position: absolute;
+    background-image: url("../img/lottery/bg_water.webp");
+    background-repeat: no-repeat;
+    width: 712px;
+    height: 618px;
+}
+
+.lottery-tabs {
+    position: relative;
+    padding: 0 0 70px 135px;
+    justify-content: flex-start;
+    border: none;
+}
+
+.custom-nav-item {
+    margin-right: 34px;
+}
+
+.custom-nav-link {
+    cursor: pointer;
+    width: 222px;
+    height: 75px;
+    background-image: linear-gradient(0deg,
+    #f2f2f2 0%,
+    #fefefe 100%),
+    linear-gradient(
+            #000000,
+            #000000);
+    background-blend-mode: normal,
+    normal;
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+    border-radius: 6px !important;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    letter-spacing: 2px;
+
+}
+
+.tcg-nav-link::before {
+    content: " ";
+    background-image: url("../img/lottery/tcg.png");
+    width: 43px;
+    height: 43px;
+}
+
+.tcg-nav-link:hover::before {
+    content: " ";
+    background-image: url("../img/lottery/tcg-hover.png");
+}
+
+.tcg-nav-link.active::before {
+    content: " ";
+    background-image: url("../img/lottery/tcg-hover.png");
+}
+
+.bbin-nav-link::before {
+    content: " ";
+    background-image: url("../img/lottery/bbin.png");
+    width: 68px;
+    height: 26px;
+}
+
+.bbin-nav-link:hover::before {
+    content: " ";
+    background-image: url("../img/lottery/bbin-hover.png");
+}
+
+.bbin-nav-link.active::before {
+    content: " ";
+    background-image: url("../img/lottery/bbin-hover.png");
+}
+
+.custom-nav-link:hover {
+    background-image: linear-gradient(90deg,
+    #2d74f6 0%,
+    #7abdfc 100%),
+    linear-gradient(
+            #000000,
+            #000000);
+    background-blend-mode: normal,
+    normal;
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+}
+
+.custom-nav-link:hover, .nav-tabs .nav-item.show .nav-link, .nav-tabs .custom-nav-link.active {
+    background-image: linear-gradient(90deg,
+    #2d74f6 0%,
+    #7abdfc 100%),
+    linear-gradient(
+            #000000,
+            #000000);
+    background-blend-mode: normal,
+    normal;
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+}
+
+.lottery-pane-tcg-bg {
+    position: relative;
+    background-image: url("../img/lottery/bg-tcg.webp");
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 668px;
+    height: 760px;
+    z-index: 0;
+}
+
+.tcg-effect-left {
+    position: absolute;
+    background-image: url("../img/lottery/img_yellowball.webp");
+    width: 81px;
+    height: 81px;
+    top: 126px;
+    left: 85px;
+    animation:bonuceDown 8s ease-in-out infinite ;
+}
+
+.tcg-effect-right {
+    position: absolute;
+    bottom: 300px;
+    right: 0px;
+    background-image: url("../img/lottery/img_buleball.webp");
+    width: 76px;
+    height: 77px;
+    animation:bonuceUp 8s ease-in-out infinite ;
+}
+
+
+.bbin-effect-left {
+    position: absolute;
+    background-image: url("../img/lottery/img_greenball.webp");
+    width: 96px;
+    height: 96px;
+    top: 126px;
+    left: 85px;
+    animation:bonuceDown 8s ease-in-out infinite ;
+}
+
+.bbin-effect-right {
+    position: absolute;
+    bottom: 300px;
+    right: 0px;
+    background-image: url("../img/lottery/img_redball.webp");
+    width: 94px;
+    height: 92px;
+    animation:bonuceUp 8s ease-in-out infinite ;
+}
+
+
+@keyframes bonuceDown {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, 30px);
+    }
+
+}
+
+@keyframes bonuceUp {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, -30px);
+    }
+
+}
+
+.lottery-pane-bbin-bg {
+    position: relative;
+    background-image: url("../img/lottery/bg-bbin.webp");
+    background-repeat: no-repeat;
+    background-position: left top;
+    width: 718px;
+    height: 760px;
+    z-index: 0;
+}
+
+.lottery-pane-right {
+    float: right;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10rem;
+}
+
+.lottery-pane-right .context {
+    margin-top: 55px;
+    margin-bottom: 65px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #515151;
+}
+
+.lottery-pane-right button {
+    margin-top: 48px;
+    width: 198px;
+    height: 52px;
+}

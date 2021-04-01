@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>redBox</title>
+    <link rel="stylesheet" href="/style/css/redBox-rain.css">
+</head>
+<body>
+@@include('header.html')
+<div class="redBox-rain">
+    <div style="text-align: center;margin: 378px 0 0 978px;">
+        <div class="redBox-rain-num">剩余红包数量：<span class="num" id="red_box_num">0</span>个</div>
+        <div class="redBox-rain-btn" id="redBtn">开抢</div>
+    </div>
+    <div class="redBox-rain-info">
+        <div class="redbox-content">
+            <div class="title">活动时间</div>
+            <div style="margin: 25px 32px;">2020年1月22日起</div>
+            <div class="title">活动要求</div>
+            <div class="redBox-rain-info-rule">
+                <table class="redBox-rain-info-rule-table">
+                    <tr>
+                        <td>单笔存款</td>
+                        <td>300</td>
+                        <td>800</td>
+                        <td>2000</td>
+                        <td>5000+</td>
+                    </tr>
+                    <tr>
+                        <td>红包个数</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>10</td>
+                    </tr>
+                </table>
+                <ul>
+                    <li>
+                        东赢全体会员，只要在红包期间，当日单笔存款300元即可参与抢红包，每个帐号当天最多可参与10次抢红包！（存款以提交时间为准，北京时间0：00：00-23：59：59）--例如当日存款300元，领取1个红包，再单笔存款800元，可再领取2个红包；
+                    </li>
+                    <li>新会员（11月5日后注册会员）首次存款大于50也可获得一次红包机会；</li>
+                    <li>上月存款总天数大于等于8天（从活动开始当月开始计算，不限制金额），次月1号开始，可有领取三个红包机会；这三个红包，不计算在当天最多10个红包内；</li>
+                    <li>红包金额只需1倍流水即可，彩票游戏不参与此活动</li>
+                    <li>此优惠不与首存与及任何存款优惠共享。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="couten"></ul>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (wap_is_user_notexist()) {
+            info("请登入后再操作").then(function () {
+                window.location.href = "/";
+            });
+        } else {
+            redBoxInit();
+        }
+        $('#redBtn').click(function () {
+            redBoxInit().done(d => {
+                if (d.code == 0) {
+                    redpacketBegin();
+                }
+            });
+        });
+        var win = (parseInt($(".couten").css("width"))) - 200, num = 0;
+        var add = function () {
+            var hb = parseInt(Math.random() * (3 - 1) + 1);
+            var Wh = parseInt(Math.random() * (70 - 30) + 80);
+            var Left = parseInt(Math.random() * (win - 0) + 40);
+            var rot = (parseInt(Math.random() * (45 - (-45)) - 45));
+            num++;
+            $(".couten").append("<li class='li" + num + "' ><a href='javascript:;'><img src='https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/angpao.png'></a></li>");
+            $(".li" + num).css({
+                "left": Left,
+            });
+            $(".li" + num + " a img").css({
+                "width": Wh,
+            });
+            $(".li" + num).animate({'top': $(window).height() + 20}, 10000, function () {
+                //删掉已经显示的红包
+                this.remove()
+            });
+            //点击红包的时候弹出模态层
+            $(".li" + num).click(function () {
+                post('/ptweb/depositRedbox/open', {}, event_site_host()).then(d => {
+                    if (d.code == 0) {
+                        success("恭喜获得" + d.data.money + "元红包奖励")
+                        var count = $('#red_box_num').html();
+                        $('#red_box_num').html(count - 1 >= 0 ? count - 1 : 0);
+                        $(".pop-up-congrats").css("display", "block");
+                    } else {
+                        error(d.message);
+                    }
+                })
+            });
+            setTimeout(add, 800)
+        }
+
+        function redpacketBegin() {
+            $('.couten').css('z-index', 1);
+            setTimeout(add, 800);
+        }
+    })
+    ;
+
+    function redBoxInit() {
+
+        return post('/ptweb/depositRedbox/init', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+                $('#red_box_num').html(d.data.count);
+            } else {
+                error(d.message);
+            }
+        })
+    }
+</script>
+</html>

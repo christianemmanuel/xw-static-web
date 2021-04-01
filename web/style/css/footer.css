@@ -1,0 +1,244 @@
+.footer{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+.footer .footerTop{
+    width: 100%;
+    background-color: #445168;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #52607c;
+    padding: 10px 0 5px;
+}
+.footer .footerTop>div>i{
+    display: inline-block;
+    background: url(../img/index/bg_partner.png)top center no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 821px;
+}
+.footer .footerTop p{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.footerMin{
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    background-color: #445168;
+    border-bottom: 1px solid #52607c;
+}
+.footerMin .leftBox{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 480px;
+}
+.footerMin .rightBox{
+    display: inline-block;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 50px;
+}
+.footerMin .s1{
+    display: inline-block;
+    line-height: 50px;
+    font-size: 16px;
+    margin-left: 20px;
+    float: left;
+    margin-top: -5px;
+    color: #fff;
+}
+.footerMin .rightBox .s1{
+    margin-right: 20px;
+}
+.footerMin .s1 img{
+    display: inline-block;
+    height: 50px;
+    width: auto;
+}
+.footer .footerBottom{
+    width: 100%;
+    text-align: center;
+    background-color: #445168;
+}
+.footerBottom a{
+    color: white;
+}
+.footer .footerBottom .messageBox{
+    width: 100%;
+    text-align: center;
+    overflow: visible;
+    height: 140px;
+    padding-top: 10px;
+}
+.footer .footerBottom .messageBox ul.leftBox ,.footer .footerBottom .messageBox ul.rightBox{
+    display: inline-block;
+    overflow: hidden;
+    width: 280px;
+    margin-top: 80px;
+}
+.footer .footerBottom .messageBox ul.rightBox{
+    margin-top: 80px;
+    margin-left: 20px;
+}
+.footer .footerBottom .messageBox ul.leftBox li,.footer .footerBottom .messageBox ul.rightBox li{
+    width: 120px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.footer .footerBottom .messageBox ul.rightBox li img{
+    height: 30px;
+    width: 100%;
+}
+.footer .footerBottom .div2{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+.footer .footerBottom .p1{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-stretch: 18px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.messageBox .boxContainer{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 93px;
+    margin-left: 158px;
+}
+
+.messageBox .boxContainer .index_bottom_des {
+    text-align: left;
+}
+
+.messageBox .boxContainer .index_bottom_des li {
+    margin-top: 5px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #899dc7;
+    letter-spacing: -0.46px;
+}
+
+.messageBox .boxContainer .index_bottom_des li:first-child {
+    font-family: PingFangSC-Semibold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: -0.45px;
+}
+
+.footPayIcon {
+    display: block;
+    float: left;
+    width: 55px;
+    height: 40px;
+    background-image: url(../img/index/bottom/footerlogo-list.png);
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+}
+.visa {
+    width: 55px;
+    background-position: -266px -2px;
+}
+.masterCard {
+    width: 55px;
+    background-position: -348px -2px;
+}
+.chineseBank {
+    width: 77px;
+    background-position: -422px -2px;
+}
+.fastBank {
+    width: 67px;
+    background-position: -602px -2px;
+}
+.alipayf {
+    width: 67px;
+    background-position: -770px -2px;
+}
+.gameCore {
+    width: 34px;
+    background-position: -1045px -2px;
+}
+.eighteenadd {
+    width: 34px;
+    background-position: -1119px -2px;
+}
+.recBrowser {
+    width: 40px;
+    height: 42px;
+    display: block;
+    float: left;
+    background-image: url(https://ezeu.ytyq8866.com/resources/web_h5/images/index/bottom/webbrower.white.png);
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.bchrome {
+    background-position: -40px -110px;
+}
+.bfirefox {
+    background-position: -40px -160px;
+}
+.bIE {
+    background-position: -40px -60px;
+}
+.gamePlatform {
+    display: block;
+    float: left;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    margin-left: 25px;
+}
+.footerMin .hzhb-icon {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 34px;
+    background-image: url("../img/index/bottom/footer-hzhb.png");
+    background-repeat: no-repeat;
+    background-position-y: -12px;
+    margin-left: 10px;
+}
+.footerMin .hzhb-icon:hover {
+    background-position-y: -62px;
+}
+.footerMin .hzhb-icon.ag {
+    background-position-x: -18px;
+}
+.footerMin .hzhb-icon.sw {
+    background-position-x: -78px;
+}
+.footerMin .hzhb-icon.pt {
+    background-position-x: -138px;
+}
+.footerMin .hzhb-icon.cq {
+    background-position-x: -200px;
+}
+.footerMin .hzhb-icon.mg {
+    background-position-x: -258px;
+}
+.footerMin .hzhb-icon.bbin {
+    background-position-x: -320px;
+}
+.footerMin .hzhb-icon.xj {
+    background-position-x: -384px;
+}

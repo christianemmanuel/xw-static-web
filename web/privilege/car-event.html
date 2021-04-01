@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	@@include('html-head.html')
+	<title> </title>
+	<link rel="stylesheet" href="/style/css/swiper.min.css">
+    <link rel="stylesheet" href="/style/plugins/bootstrap/css/bootstrap-v4.2.1.css">
+	<link rel="stylesheet" href="/style/layui/css/layui.css">
+    <link rel="stylesheet" href="/style/css/car-event.css">
+	<link rel="stylesheet" href="/style/css/index.css">
+
+
+    <link type="text/javascript" href="/style/plugins/bootstrap/js/bootstrap.js">
+	<script src="/style/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/style/js/swiper.min.js"></script>
+	<script src="/style/layui/layui.all.js"></script>
+	<script src="/style/js/md5.js" type="text/javascript" ></script>
+	<script src="/style/js/common.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="/style/js/jquery.marquee.min.js"></script>
+</head>
+<body style="background-color:#000; ">
+@@include('header.html')
+<div class="car-event">
+    <div class="title">
+        <div class="row">
+            <div class="marqueeBox"><div class="marquee">恭喜来自山东省烟台市的徐先生XWXU5***12，浙江省嘉兴市的李先XWSHI***23,在5月豪车抽奖活动中共同获得一等奖，平分奔驰E300L 豪华型奖金！加入兴旺，惊喜随行!</div></div>
+        </div>
+    </div>
+    <div class="game-container">
+            <div class="row">
+                <div class="col-7">
+                    <ul class="selected_number">
+                        <li><p id="d01"></p></li>
+                        <li><p id="d02"></p></li>
+                        <li><p id="d03"></p></li>
+                        <li><p id="d04"></p></li>
+                        <li><p id="d05"></p></li>
+                        <button type="button" class="btn" id="clearBtn">清除</button>
+                    </ul>
+                    <ul class="number">
+                        <li><p id="01">01</p></li>
+                        <li><p id="02">02</p></li>
+                        <li><p id="03">03</p></li>
+                        <li><p id="04">04</p></li>
+                        <li><p id="05">05</p></li>
+                        <li><p id="06">06</p></li>
+                        <li><p id="07">07</p></li>
+                        <li><p id="08">08</p></li>
+                        <li><p id="09">09</p></li>
+                        <li><p id="10">10</p></li>
+                        <li><p id="11">11</p></li>
+                        <li><p id="12">12</p></li>
+                        <li><p id="13">13</p></li>
+                        <li><p id="14">14</p></li>
+                        <li><p id="15">15</p></li>
+                        <li><p id="16">16</p></li>
+                        <li><p id="17">17</p></li>
+                        <li><p id="18">18</p></li>
+                        <li><p id="19">19</p></li>
+                        <li><p id="20">20</p></li>
+                        <li><p id="21">21</p></li>
+                        <li><p id="22">22</p></li>
+                        <li><p id="23">23</p></li>
+                        <li><p id="24">24</p></li>
+                        <li><p id="25">25</p></li>
+                        <li><p id="26">26</p></li>
+                        <li><p id="27">27</p></li>
+                        <li><p id="28">28</p></li>
+                        <li><p id="29">29</p></li>
+                        <li><p id="30">30</p></li>
+                        <li><p id="31">31</p></li>
+                        <li><p id="32">32</p></li>
+                        <li><p id="33">33</p></li>
+                        <li><p id="34">34</p></li>
+                        <li><p id="35">35</p></li>
+                    </ul>
+                    <p>前一期号码：<span id="lastResult">暂无</span></p>
+                    <a onClick="submitNumbers();"><img class="button" src="https://ezeu.ytyq8866.com/resources/web_h5/images/car-event/btn.png"></a>
+                </div>
+                <div class="col-5">
+                    <table id="winNumContain" style="overflow-y: hidden;">
+                        <tbody id="winNum"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row player">
+                <div class="col-6">
+                    <table id="playerWinNumContain" style="overflow-y: hidden;">
+                        <tbody id="playerWinNum"></tbody>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <table id="WinRecordContain" style="overflow-y: hidden;">
+                        <tbody id="WinRecord"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <div class="rule-container">
+        <div class="row">
+            <ul>
+                <li>每日只需累计存款200元即可提交一组号码，每日只能提交一次。</li>
+                <li>当月提交的号码与次月体彩大乐透第一期前五位号码一致则中一等奖。</li>
+                <li>当月提交的号码与次月体彩大乐透第一期前四位或后四位一致则中二等奖。</li>
+                <li>当月提交的号码与次月体彩大乐透第一期前三位或后三位一致则中三等奖。</li>
+                <li>当月提交的号码与次月体彩大乐透第一期前二位或后两位一致则中四等奖。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="prize-list">
+        <div class="row">
+            <p>
+                一等奖：奔驰E300L 豪华型（颜色可选）
+                <br>
+                二等奖：8888元现金奖励（1000份）
+                <br>
+                三等奖：888元现金奖励（10000份）
+                <br>
+                四等奖：88元现金奖励（若干份）
+                <span>
+                <br>
+                以上实物可折现或领取实物，中奖者联系在线客服提供 联系方式以及地址，7日内我们会有专员联系您到本市官方4S店领取实物，如一等奖中奖多名，则平分奖励。
+            </span>
+            </p>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+<div class="hideAll"></div>
+</body>
+@@include('html-foot.html')
+
+<script>
+    $(document).ready(function() {
+        if(wap_is_user_notexist()){
+            fun_alertMsg("请登入后再操作", function() {
+                window.location.href="/";
+            });
+        }else{
+            luxuryCarInit();
+        }
+        $("#clearBtn").click(function(){
+            $(".selected_number li p").text("");
+            $(".number").find("p").removeClass("is_selected");
+        });
+        $(".number li p").click(function(event){
+            if($(event.target).attr('class')=='is_selected'){//号码已选
+                $(".selected_number li").each(function(){
+                    if($(this).find('p:last').text()==event.target.id){
+                        $(this).find('p:last').text('');
+                        $(event.target).removeClass('is_selected');
+                        return false;//break;
+                    }
+                });
+            }else{//号码未选
+                $(".selected_number li").each(function(){
+                    if($(this).find('p:last').text().trim().length==0){
+                        $(this).find('p:last').text(event.target.id)
+                        $(event.target).addClass('is_selected');
+                        return false;//break;
+                    }
+                });
+            }
+        });
+        $('.marquee').marquee({});
+    });
+
+    function pageScroll() {
+        var objDiv = document.getElementById("winNumContain");
+        objDiv.scrollTop = objDiv.scrollTop + 1;
+        if (objDiv.scrollTop == (objDiv.scrollHeight - 350)) {
+            objDiv.scrollTop = 0;
+        }
+        setTimeout('pageScroll()', 25);
+    }
+    function lotteryResult(obj) {
+        //var testing = '{"code": 0,"data": {"count": 5, "numberResult": [{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"}]}, "msg": null}';
+        //var obj = JSON.parse(testing);
+        //console.log(obj.data.winnerList[0]);
+        $('#winNum').empty();
+        if(obj.code==0 && obj.data.numberResult.length>0) {
+            var numberResult=obj.data.numberResult;
+            console.log(numberResult[0]);
+            $("#lastResult").html(numberResult[0].resultNumber);
+            $.each(numberResult, function(i,v){
+                var dateStr = v.resultTime;
+                $('#winNum').append('<tr><td>' +dateStr +'</td><td class="td2">' + v.resultNumber +'</td></tr>');
+            });
+            if(numberResult.length>5){
+                pageScroll();
+            }
+        }else{
+            $('#winNum').append('<tr><td colspan="3">暂无记录</td></tr>');
+        }
+    }
+    function lotteryRecordScroll() {
+        // console.log("Testing done");
+        var objDiv = document.getElementById("playerWinNumContain");
+        objDiv.scrollTop = objDiv.scrollTop + 1;
+        if (objDiv.scrollTop == (objDiv.scrollHeight - 180)) {
+            objDiv.scrollTop = 0;
+        }
+        setTimeout('lotteryRecordScroll()', 25);
+    }
+
+    function lotteryRecord(obj) {
+        //var testing = '{"code": 0,"data": {"count": 5, "numberRecord": [{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"},{"winnerTimeStr": "2019-03-12","winnerNumbers": "10,12,13,14,15"}]}, "msg": null}';
+        //var obj = JSON.parse(testing);
+        $('#playerWinNum').empty();
+        if(obj.code==0 && obj.data.numberRecord.length>0) {
+            var numberRecord=obj.data.numberRecord;
+            console.log(numberRecord[0]);
+            $.each(numberRecord, function(i,v){
+                var dateStr = v.commitTimeStr;
+                $('#playerWinNum').append('<tr><td>' +dateStr +'</td><td class="td2">' + v.lotteryNumber +'</td></tr>');
+            });
+            if(numberRecord.length>5){
+                lotteryRecordScroll();
+            }
+        }else{
+            $('#playerWinNum').append('<tr><td colspan="3">暂无记录</td></tr>');
+        }
+    }
+
+    function winRecordPageScroll() {
+        // console.log("Testing done");
+        var objDiv = document.getElementById("WinRecordContain");
+        objDiv.scrollTop = objDiv.scrollTop + 1;
+        if (objDiv.scrollTop == (objDiv.scrollHeight - 180)) {
+            objDiv.scrollTop = 0;
+        }
+        setTimeout('winRecordPageScroll()', 25);
+    }
+    function WinRecordInit(obj) {
+        //var testing = '{"code": 0,"data": {"count": 5, "winnerList": [{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"},{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"},{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"},{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"},{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"},{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"},{"winnerTimeStr": "2019-03-12","winnerName": "bigApple123","prize": "二等奖8888元"}]}, "msg": null}';
+        //var testing = '{"code": 0,"data": {"count": 5, "winnerList": []}, "msg": null}';
+        //var obj = JSON.parse(testing);
+        $('#WinRecord').empty();
+        if(obj.code==0 && obj.data.winnerList.length>0) {
+            var winnerList=obj.data.winnerList;
+            console.log(winnerList[0]);
+            $.each(winnerList, function(i,v){
+                var dateStr = v.prizeTimeStr;
+                var prizeText=v.prizeText;
+                if(!prizeText.indexOf('奔驰')){
+                    prizeText=prizeText+'现金奖励'
+                }
+                $('#WinRecord').append('<tr><td>' +dateStr +'</td><td class="td3">用户<span>' + v.encryptName + '</span>获得<span class="prize">' + prizeText + '</span></td></tr>');
+            });
+            if(winnerList.length>5){
+                winRecordPageScroll();
+            }
+        }else{
+            $('#WinRecord').append('<tr><td colspan="3">暂无记录</td></tr>');
+        }
+    }
+
+    function luxuryCarInit(){
+        $.ajax({
+            dataType: "jsonp",
+            url:wap_site_host() + "/session/luxuryCarPrivilege/pageInit",
+            type:"POST",
+            data:{'token': wap_get_user().token},
+            dataType: 'json',
+            success:function(d){
+                if (d.code == 0) {
+                    lotteryRecord(d);
+                    lotteryResult(d);
+                    WinRecordInit(d);
+                } else {
+                    fun_alertMsg(d.msg, function() {});
+                    wap_if_session_out(d.code);
+                }
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                wap_check_ajaxerror(jqXHR);
+                fun_alertMsg('页面初始化异常，请刷新重试！', function() {});
+            }
+        });
+    }
+
+    function submitNumbers(){
+        var lotteryNumber='';
+        $(".selected_number li").each(function(index){
+            if($(this).find('p:last').text().trim().length==0){
+                return false;//break;
+            }else{
+                if(index<4){
+                    lotteryNumber+=$(this).find('p:last').text()+',';
+                }else{
+                    lotteryNumber+=$(this).find('p:last').text()
+                }
+            }
+        });
+        if(lotteryNumber.length!=14){
+            fun_alertMsg('请完成所有号码选择', function() {});
+            return;
+        }
+        $.ajax({
+            dataType: "jsonp",
+            url:wap_site_host() + "/session/luxuryCarPrivilege/apply",
+            type:"POST",
+            data:{'lotteryNumber':lotteryNumber,'token': wap_get_user().token},
+            dataType: 'json',
+            success:function(d){
+                if (d.code == 0) {
+                    fun_alertMsg(d.msg, function() {
+                        window.location.reload();
+                    });
+                } else {
+                    fun_alertMsg(d.msg, function() {});
+                    wap_if_session_out(d.code);
+                }
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                wap_check_ajaxerror(jqXHR);
+                fun_alertMsg('提交号码异常，请刷新重试！', function() {});
+            }
+        });
+    }
+</script>
+</html>

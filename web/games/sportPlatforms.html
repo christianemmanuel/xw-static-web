@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢-体育</title>
+    <link rel="stylesheet" href="/style/css/sport.css">
+</head>
+<body>
+@@include('header.html')
+<div class="sport-container" style="padding-top: 120px;">
+    <iframe id="sportForm" width="1024px" height="880px;" src="" scrolling="no" frameborder="0" style="overflow:hidden!important;margin: 0 auto 0px;display:block;"></iframe>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+<div class="hideAll"></div>
+</body>
+@@include('html-foot.html')
+<script>
+    $(window).ready(function(){
+        if (wap_is_user_notexist()) {
+            document.getElementById("sportForm").src=wap_site_host() + "xjTestSport?channel=10";
+        } else {
+            document.getElementById("sportForm").src=wap_site_host() + "session/member/xjSport?channel=10&token=" + wap_get_user().token;
+        }
+    });
+</script>
+</html>

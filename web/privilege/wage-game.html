@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	@@include('html-head.html')
+	<title>俸禄领取</title>
+	<link rel="stylesheet" href="/style/css/swiper.min.css">
+	<link rel="stylesheet" href="/style/layui/css/layui.css">
+	<link rel="stylesheet" href="/style/css/wage.css">
+	<script src="/style/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/style/js/swiper.min.js"></script>
+	<script src="/style/layui/layui.all.js"></script>
+	<script src="/style/js/md5.js" type="text/javascript" ></script>
+	<script src="/style/js/common.js" type="text/javascript" ></script>
+	<style>
+
+	</style>
+</head>
+<body>
+@@include('wage-header.html')
+	<div class="container-game">
+		<div class="layui-container">
+			<div class="wage-nav-wrap clearfix">
+				<div class="wage-casino-wrap"><a href="/privilege/wage-casino.html"><div class="wage-casino"></div></a></div>
+				<div class="wage-game-wrap active"><a href="/privilege/wage-game.html"><div class="wage-game active"></div></a></div>
+			</div>
+			<div class="wage-search">
+				<input type="text" id="seachUser" placeholder="请输入会员账号" maxlength="50" class="layui-input">
+				<div class="btn-search"><a href="javascript:fun_queryMemberLevelInfo()"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wage/btn-search.png"/></a></div>
+			</div>
+			<div class="level-search clearfix">
+				<div class="level-search-left">
+					<div class="username" id="level_user_name">用 户 名 ：xxxx</div>
+					<div class="user-level" id="level_num">等级：0</div>
+				</div>
+				<div class="level-search-right">
+					<div class="lijin-row clearfix">
+						<div class="user-lijin">
+							<span class="lijin-type">周 礼 金</span>
+							<span> ：</span>
+							<span class="lijin-amount" id="level_week">-</span>
+						</div>
+						<div class="user-redeem"><a id="leve_week_btn" href="javascript:void(0)"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wage/get_grey.png"/></a></div>
+					</div>
+					<div class="lijin-row clearfix">
+						<div class="user-lijin">
+							<span class="lijin-type" >月 礼 金</span>
+							<span> ：</span>
+							<span class="lijin-amount" id="leve_month">-</span>
+						</div>
+						<div class="user-redeem"><a id="leve_month_btn" href="javascript:void(0)"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wage/get_grey.png"/></a></div>
+					</div>
+					<div class="lijin-row clearfix">
+						<div class="user-lijin">
+							<span class="lijin-type">等级礼金</span>
+							<span> ：</span>
+							<span class="lijin-amount" id="leve_bouns">-</span>
+						</div>
+						<div class="user-redeem"><a id="leve_bouns_btn" href="javascript:void(0)"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wage/get_grey.png"/></a></div>
+					</div>
+				</div>
+			</div>
+			<div class="blue-line"></div>
+			<div class="wage-title">活动详情</div>
+			<div class="wage-content">
+				<h5>活动内容：</h5>
+				<p class="wage-description">凡是在北京时间2018年11月19日开始，在兴旺的每一笔老虎机/捕鱼游戏（PT、SW、CQ、BBIN、SG、FG、PP、AG电子）永久 累计投注，累积到一定标准，即可升级 ，每升一级即可获得相对应的等级礼金，等级礼金最高可获得688000元，还可获得无门槛要求的周俸禄最高25000元、月俸禄最高100000元。让您的会员账号变成永久收益的有价值的会员账号！</p>
+				<table width="100%" class="table-wage">
+					<tbody>
+					<tr>
+						<th>晋升标准等级</th>
+						<th>累计投注</th>
+						<th>等级礼金</th>
+						<th>周俸禄</th>
+						<th>月俸禄</th>
+						<th>等级累计礼金</th>
+						<th>24 小时服务</th>
+						<th>存提款加速通道</th>
+						<th>一对一客服经理</th>
+					</tr>
+					<tr>
+						<td>1级</td>
+						<td>3万+</td>
+						<td>15元</td>
+						<td>-</td>
+						<td>5元</td>
+						<td>15元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>2级</td>
+						<td>10万+</td>
+						<td>30元</td>
+						<td>-</td>
+						<td>10元</td>
+						<td>45元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>3级</td>
+						<td>25万+</td>
+						<td>55元</td>
+						<td>3元</td>
+						<td>20元</td>
+						<td>100元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>4级</td>
+						<td>50万+</td>
+						<td>100元</td>
+						<td>5元</td>
+						<td>50元</td>
+						<td>200元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>5级</td>
+						<td>100万+</td>
+						<td>200元</td>
+						<td>10元</td>
+						<td>100元</td>
+						<td>400元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>6级</td>
+						<td>200万+</td>
+						<td>400元</td>
+						<td>20元</td>
+						<td>200元</td>
+						<td>800元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>7级</td>
+						<td>300万+</td>
+						<td>500元</td>
+						<td>35元</td>
+						<td>300元</td>
+						<td>1300元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>8级</td>
+						<td>400万+</td>
+						<td>600元</td>
+						<td>50元</td>
+						<td>400元</td>
+						<td>1900元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>9级</td>
+						<td>500万+</td>
+						<td>700元</td>
+						<td>80元</td>
+						<td>500元</td>
+						<td>2600元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>10级</td>
+						<td>600万+</td>
+						<td>800元</td>
+						<td>100元</td>
+						<td>600元</td>
+						<td>3400元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>11级</td>
+						<td>800万+</td>
+						<td>900元</td>
+						<td>120元</td>
+						<td>800元</td>
+						<td>4300元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+					<tr>
+						<td>12级</td>
+						<td>1000万+</td>
+						<td>1000元</td>
+						<td>150元</td>
+						<td>1000元</td>
+						<td>5300元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>13级</td>
+						<td>1200万+</td>
+						<td>1100元</td>
+						<td>180元</td>
+						<td>1200元</td>
+						<td>6400元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>14级</td>
+						<td>1400万+</td>
+						<td>1200元</td>
+						<td>220元</td>
+						<td>1400元</td>
+						<td>7600元</td>
+						<td>√</td>
+						<td>-</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>15级</td>
+						<td>1600万+</td>
+						<td>1300元</td>
+						<td>260元</td>
+						<td>1600元</td>
+						<td>8900元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>16级</td>
+						<td>1800万+</td>
+						<td>1400元</td>
+						<td>300元</td>
+						<td>1800元</td>
+						<td>10300元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>17级</td>
+						<td>2100万+</td>
+						<td>1500元</td>
+						<td>400元</td>
+						<td>2100元</td>
+						<td>11800元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>18级</td>
+						<td>2400万+</td>
+						<td>1600元</td>
+						<td>500元</td>
+						<td>2400元</td>
+						<td>13400元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>19级</td>
+						<td>2700万+</td>
+						<td>1700元</td>
+						<td>600元</td>
+						<td>2700元</td>
+						<td>15100元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>20级</td>
+						<td>3000万+</td>
+						<td>1900元</td>
+						<td>700元</td>
+						<td>3000元</td>
+						<td>17000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>21级</td>
+						<td>3500万+</td>
+						<td>2700元</td>
+						<td>800元</td>
+						<td>3500元</td>
+						<td>19700元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>22级</td>
+						<td>4000万+</td>
+						<td>2800元</td>
+						<td>900元</td>
+						<td>4000元</td>
+						<td>22500元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>23级</td>
+						<td>4500万+</td>
+						<td>2900元</td>
+						<td>1000元</td>
+						<td>4500元</td>
+						<td>25400元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>24级</td>
+						<td>5000万+</td>
+						<td>3000元</td>
+						<td>1100元</td>
+						<td>5000元</td>
+						<td>28400元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>25级</td>
+						<td>5500万+</td>
+						<td>3100元</td>
+						<td>1200元</td>
+						<td>5500元</td>
+						<td>31500元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>26级</td>
+						<td>6000万+</td>
+						<td>3200元</td>
+						<td>1300元</td>
+						<td>6000元</td>
+						<td>34700元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>27级</td>
+						<td>7000万+</td>
+						<td>5500元</td>
+						<td>1500元</td>
+						<td>7000元</td>
+						<td>40200元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>28级</td>
+						<td>8000万+</td>
+						<td>5800元</td>
+						<td>1700元</td>
+						<td>8000元</td>
+						<td>46000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>29级</td>
+						<td>9000万+</td>
+						<td>6100元</td>
+						<td>1900元</td>
+						<td>9000元</td>
+						<td>52100元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>30级</td>
+						<td>1.0亿+</td>
+						<td>6400元</td>
+						<td>2100元</td>
+						<td>10000元</td>
+						<td>58500元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>31级</td>
+						<td>1.1亿+</td>
+						<td>6700元</td>
+						<td>2300元</td>
+						<td>11000元</td>
+						<td>65200元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>32级</td>
+						<td>1.2亿+</td>
+						<td>7000元</td>
+						<td>2500元</td>
+						<td>12000元</td>
+						<td>72200元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>33级</td>
+						<td>1.4亿+</td>
+						<td>12000元</td>
+						<td>3000元</td>
+						<td>14000元</td>
+						<td>84200元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>34级</td>
+						<td>1.6亿+</td>
+						<td>12500元</td>
+						<td>3500元</td>
+						<td>16000元</td>
+						<td>96700元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>35级</td>
+						<td>1.8亿+</td>
+						<td>13000元</td>
+						<td>4000元</td>
+						<td>18000元</td>
+						<td>109700元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>36级</td>
+						<td>2.0亿+</td>
+						<td>13500元</td>
+						<td>4500元</td>
+						<td>20000元</td>
+						<td>123200元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>37级</td>
+						<td>2.3亿+</td>
+						<td>17800元</td>
+						<td>5200元</td>
+						<td>23000元</td>
+						<td>141000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>38级</td>
+						<td>2.6亿+</td>
+						<td>19000元</td>
+						<td>6000元</td>
+						<td>26000元</td>
+						<td>160000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>39级</td>
+						<td>2.9亿+</td>
+						<td>20000元</td>
+						<td>6800元</td>
+						<td>29000元</td>
+						<td>180000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>40级</td>
+						<td>3.2亿+</td>
+						<td>21000元</td>
+						<td>7600元</td>
+						<td>32000元</td>
+						<td>201000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>41级</td>
+						<td>3.5亿+</td>
+						<td>22000元</td>
+						<td>8400元</td>
+						<td>35000元</td>
+						<td>223000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>42级</td>
+						<td>4.0亿+</td>
+						<td>30000元</td>
+						<td>9500元</td>
+						<td>40000元</td>
+						<td>253000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>43级</td>
+						<td>4.5亿+</td>
+						<td>31000元</td>
+						<td>10800元</td>
+						<td>45000元</td>
+						<td>284000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>44级</td>
+						<td>5.0亿+</td>
+						<td>32000元</td>
+						<td>12000元</td>
+						<td>50000元</td>
+						<td>316000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>45级</td>
+						<td>5.5亿+</td>
+						<td>33000元</td>
+						<td>13500元</td>
+						<td>55000元</td>
+						<td>349000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>46级</td>
+						<td>6.0亿+</td>
+						<td>34000元</td>
+						<td>15000元</td>
+						<td>60000元</td>
+						<td>383000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>47级</td>
+						<td>7.0亿+</td>
+						<td>65000元</td>
+						<td>17500元</td>
+						<td>70000元</td>
+						<td>448000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>48级</td>
+						<td>8.0亿+</td>
+						<td>70000元</td>
+						<td>20000元</td>
+						<td>80000元</td>
+						<td>518000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>49级</td>
+						<td>9.0亿+</td>
+						<td>80000元</td>
+						<td>22500元</td>
+						<td>90000元</td>
+						<td>598000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					<tr>
+						<td>50级</td>
+						<td>10.0亿+</td>
+						<td>90000元</td>
+						<td>25000元</td>
+						<td>100000元</td>
+						<td>688000元</td>
+						<td>√</td>
+						<td>√</td>
+						<td>√</td>
+					</tr>
+					</tbody>
+				</table>
+				<p class="wage-description02">例: 会员每一笔老虎机/捕鱼游戏、投注累计达到100万投注量即可获得等级一礼金200元，周俸禄10元，每月可获得100元月俸禄；当累计到 200万有效投注，即可再次获得升级礼金400元，每周可获得20元周俸禄，每月可获得200元月俸禄！</p>
+			</div>
+			<!--<div class="blue-line"></div>
+			<div class="wage-title">派送时间</div>
+			<div class="wage-content">
+				<p class="wage-description">公司专员会在北京时间<span class="wage-description02">每个月的第一个星期的星期二晚上24</span>点前更新您的会员账号等级，会员所获得的晋级礼金，月俸禄，无需申请，系统全部自动统计并派送，彩金无需投注，可直接提款。</p>
+			</div>-->
+			<div class="wage-tnc">
+				<h3>奖金领取：</h3>
+				<ol style="color: red">
+					<li>升级时间，每周日 22:00-00:00自动完成升级，</li>
+					<li>每周一后可以领取周俸禄，每月1号后可以领取月俸禄，周俸禄/月俸禄/升级奖金只需5倍投注流水不限制场馆，即可提款。</li>
+					<li>累积流水从活动开始计算，真人/体育/捕鱼投注额次日24:00更新，老虎机投注额当天24:00更新。</li>
+				</ol>
+				<h3>规则与条款：</h3>
+				<ol>
+					<li>此优惠促销只适用于拥有一个独立账户的玩家。住址、电子邮箱地址﹑电话号码﹑支付方式（相同借记卡/信用卡/银行账户号码）IP地址，同一网络环境等将可以作为判定是否独立玩家的条件。</li>
+					<li>对于发现任何有违背、欺骗、或利用规则和条款进行非法获利的会员，兴旺娱乐保留在任何时候都可以停止、取消优惠或索回已支付的全部优惠的权利。</li>
+					<li>在某些未知因素超出可控范围的情况下，兴旺娱乐保留可单方面执行的决定权，并承诺会在这类紧急问题发生时解释给客户原因并听取客户反馈与客户沟通协商解决。</li>
+					<li>兴旺娱乐保留对本次活动的修订、终止和最终解释权，超出本网站控制外的技术错误，兴旺娱乐将不承担任何责任。</li>
+					<li>兴旺禁止一切对赌行为！如：在百家乐中同时投注“庄-闲”；轮盘中同时投注“黑-红”“大-小”“单-双”；龙虎中同时投注“龙-虎”；骰宝中同时投注“大-小”“单-双”等行为！若发现会员存在以上行为，兴旺有权扣除账户全部盈利，在情节严重时，不返还本金并冻结账户及相关联账户。</li>
+					<li>兴旺娱乐有权延长，缩短，终止，或者修改此活动！此活动最终解释权归兴旺娱乐所有。</li>
+				</ol>
+			</div>
+			@@include('wage-footer.html')
+		</div>
+	</div>
+</body>
+@@include('html-foot.html')
+<script>
+	$(function () {
+        if(wap_is_user_notexist()){
+            fun_alertMsg("请登入后再操作", function() {
+                window.location.href="/";
+			});
+        }else{
+            $.ajax({
+                dataType: "jsonp",
+                url:wap_site_host() + "/session/member/GameTypeLevelInfo",
+                type:"GET",
+                data:{'token': wap_get_user().token,'type':1},
+                dataType: 'json',
+                success:function(d){
+                    if (d.code == 0) {
+                        $('#level_user_name').html("用 户 名 ："+fun_filterTxt(d.data.userName));
+                        $('#level_num').html("等级 ："+d.data.level+"级");
+                        checkWeekBtn(d.data.weekBouns,d.data.weekBounsCount);
+                        var weekBouns=d.data.weekBouns==0?"-":fun_filterTxt(d.data.weekBouns)+"元";
+                        $('#level_week').html(weekBouns);
+                        var monthBouns=d.data.monthBouns==0?"-":fun_filterTxt(d.data.monthBouns)+"元";
+                        checkMonthBtn(d.data.monthBouns,d.data.monthBounsCount);
+                        $('#leve_month').html(monthBouns);
+                        var levelBouns=d.data.levelBouns==0?"-":fun_filterTxt(d.data.levelBouns)+"元";
+                        checkLevelBtn(d.data.levelBouns);
+                        $('#leve_bouns').html(levelBouns);
+                    } else {
+                        fun_alertMsg(d.message, function() {});
+                        wap_if_session_out(d.code);
+                    }
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    wap_check_ajaxerror(jqXHR);
+                    fun_alertMsg('查询电子等级异常！', function() {});
+                }
+            });
+        }
+    });
+	function checkWeekBtn(bouns,count){
+		if(bouns>0 && count==0){
+            $('#leve_week_btn').attr('href','javascript:fun_getLevelBouns(1,1)');
+            $('#leve_week_btn img').attr('src','https://ezeu.ytyq8866.com/resources/web_h5/images/wage/get.png');
+		}
+	}
+    function checkMonthBtn(bouns,count){
+        if(bouns>0 && count==0){
+            $('#leve_month_btn').attr('href','javascript:fun_getLevelBouns(1,2)');
+            $('#leve_month_btn img').attr('src','https://ezeu.ytyq8866.com/resources/web_h5/images/wage/get.png');
+        }
+    }
+    function checkLevelBtn(bouns){
+        if(bouns>0){
+            $('#leve_bouns_btn').attr('href','javascript:fun_getLevelUpgradeBouns(1)');
+            $('#leve_bouns_btn img').attr('src','https://ezeu.ytyq8866.com/resources/web_h5/images/wage/get.png');
+        }
+    }
+	function fun_queryMemberLevelInfo() {
+        var userName = $("#seachUser").val().trim();
+        if(userName.length==0){
+            fun_alertMsg("请输入查询用户", function() {});
+            return;
+		}else{
+            $.ajax({
+                dataType: "jsonp",
+                url:wap_site_host() + "/session/member/queryGameTypeLevelInfo",
+                type:"GET",
+                data:{'token': wap_get_user().token,'type':1,'userName':userName},
+                dataType: 'json',
+                success:function(d){
+                    if (d.code == 0) {
+                        layer.open({
+                            type: 1,
+                            title: '查询中心',
+                            area: ['700px', '400px'],
+                            content: '<table class="layui-table" id="insuranceTable">' +
+                            '  <thead>' +
+                            '    <tr>' +
+                            '      <th>会员帐号</th>' +
+                            '      <th>当前等级</th>' +
+                            '      <th>累计总投注金额</th>' +
+                            '      <th>累计晋级彩金</th>' +
+                            '      <th>周俸禄</th>' +
+                            '      <th>月俸禄</th>' +
+                            '      <th>距离晋级需总投注金额</th>' +
+                            '    </tr>  ' +
+                            '  </thead>' +
+                            '  <tbody>' +
+                            '    <tr style="text-align: center;">' +
+                            '      <td>'+d.data.userName+'</td>' +
+                            '      <td>'+d.data.level+'</td>' +
+                            '      <td>'+d.data.totalCredit+'</td>' +
+                            '      <td>'+d.data.levelBouns+'</td>' +
+                            '      <td>'+d.data.weekBouns+'</td>' +
+                            '      <td>'+d.data.monthBouns+'</td>' +
+                            '      <td>'+d.data.needCredit+'</td>' +
+                            '    </tr>' +
+                            '  </tbody>' +
+                            '</table>' +
+                            '<div style="text-align: right;"><ul class="pagination" id="pagination-container"></ul></div>',
+                        });
+                    } else {
+                        fun_alertMsg(d.message, function() {});
+                        wap_if_session_out(d.code);
+                    }
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    wap_check_ajaxerror(jqXHR);
+                    fun_alertMsg('查询电子流水异常！', function() {});
+                }
+            });
+		}
+    }
+
+</script>
+</html>

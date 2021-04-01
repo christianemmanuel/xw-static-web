@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/style/css/personal_info.css">
+    <link rel="stylesheet" href="/style/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/style/css/customer-datepicker.css">
+    <link rel="stylesheet" href="/style/plugins/datatables/dataTables.bootstrap4.css">
+    <script src="/style/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="/style/plugins/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="/style/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/style/plugins/datatables/dataTables.bootstrap4.js"></script>
+</head>
+<body>
+<div class="personal-info-container">
+    <span>个人资料</span>
+    <hr style="width: 100%"/>
+    <div class="personal-info">
+        <div class="basic-info">
+            <span>基本资料</span>
+            <div class="basic-info-text">
+
+                <span>姓名：</span>
+                <span id="userName"></span>
+                <span>QQ：</span>
+                <span id="QQ"></span>
+                <span>&nbsp</span>
+                <span>生日：</span>
+                <span id="brd"></span>
+                <span>电话：</span>
+                <span id="telephone"></span>
+                <span>&nbsp</span>
+                <span>邮箱：</span>
+                <span id="email"></span>
+                <span>&nbsp</span>
+                <button id="emailCheck" class="btn custom-btn-gray" data-toggle="modal"
+                        onclick="openEmailDialog()"
+                        style="display: none">已验证
+                </button>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    <li>* 如果您需要修改个人资料，请您联系我们的在线客服</li>
+                    <li>* 如果忘记注册信息，请您登陆注册游戏查询</li>
+                </ul>
+            </div>
+
+            <button id="infoBtn" class="btn custom-btn-primary" onclick="openPersonInfo()">完善个人信息</button>
+        </div>
+        <div style="border-left:1px solid #b2bcca;height:100%"></div>
+        <div class="change-password">
+            <span>修改密码</span>
+            <form class="change-password-form" id="changePassword" action="/session/member/password">
+                <div class="change-password-input" style="position: relative">
+                    <label>旧密码</label><span>：</span>
+                    <input type="password" name="oldPassword" class="form-control"
+                           minlength="6"
+                           autocomplete="off"
+                           maxlength="12" required
+                           pattern="^[A-Za-z0-9]+$"
+                           data-parsley-required-message="不能为空"
+                           data-parsley-length-message="密码长度6-12位"
+                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                    >
+                </div>
+                <div class="change-password-input">
+                    <label>新密码</label><span>：</span>
+                    <input type="password" id="newPassword" name="password" class="form-control"
+                           minlength="6"
+                           autocomplete="off"
+                           maxlength="12" required
+                           pattern="^[A-Za-z0-9]+$"
+                           data-parsley-required-message="不能为空"
+                           data-parsley-length-message="密码长度6-12位"
+                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                    >
+                </div>
+                <div class="change-password-input">
+                    <label>确认密码</label><span>：</span>
+                    <input type="password" name="newConfirmPassword" class="form-control"
+                           minlength="6"
+                           maxlength="12" required data-parsley-equalto="#newPassword"
+                           pattern="^[A-Za-z0-9]+$"
+                           data-parsley-required-message="不能为空"
+                           data-parsley-length-message="密码长度6-12位"
+                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                           data-parsley-equalto-message="和新密码输入不一致"
+                    >
+                </div>
+                <div class="change-password-input">
+                    <button id="changePwdBtn" class="btn custom-btn-primary">确认修改</button>
+                    <button class="btn custom-btn-gray" type="reset">重新填写</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <span>提款银行卡</span>
+    <hr style="width: 100%"/>
+    <div class=" bank-card-info">
+
+
+    </div>
+    <span>解绑银行卡记录</span>
+    <hr style="width: 100%"/>
+    <div class=" bank-card-record">
+        <!--        <div class="record-search">-->
+        <!--            <span>开始:</span>-->
+        <!--            <input id="beginDate" readonly="readonly" type="text" class="form-control" data-provide="datepicker">-->
+        <!--            <span>结束:</span>-->
+        <!--            <input id="endDate" readonly="readonly" type="text" class="form-control" data-provide="datepicker">-->
+        <!--            <button class="btn btn-primary">搜索</button>-->
+        <!--        </div>-->
+        <div style="margin-top: 20px"></div>
+        <table id="unbind-card-record" class="table record-table unbind-card-record">
+            <thead>
+            <tr>
+                <th>银行名称</th>
+                <th>开户姓名</th>
+                <th>卡号</th>
+                <th>开户行地址</th>
+                <th>绑定时间</th>
+                <th>解绑时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="modal fade" id="dialog" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title" id="dialog-title">忘记密码</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="dialog-body">
+
+            </div>
+            <div id="dialog-success" class="text-center success " style="height: 473px;padding: 105px; display: none">
+                <div class="success-checkmark">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                         enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                        <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                        <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                  stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                        <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                r="73.9"></circle>
+
+                                            </svg>
+
+                </div>
+
+                <h3>提交成功</h3>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/style/js/personal_info.js"></script>
+</html>

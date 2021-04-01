@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢官网 - MAD LIONS官方赞助商</title>
+    <link rel="stylesheet" href="/style/css/swiper.min.css">
+    <link rel="stylesheet" href="/style/css/index.css">
+    <script type="text/javascript" src="/style/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/js/jquery.number-run.js"></script>
+    <script type="text/javascript">
+        var host = document.domain;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            var index = 0;
+            if (host.startsWith('www')) {
+                index = 1;
+            }
+            var noa = host.split('.')[index];
+            var domain_type=host.split('.')[(index+1)];
+            var _index_pathname = window.location.pathname;
+            if (noa.length == 5) {
+                window.location = "https://m." + noa + "."+domain_type + _index_pathname;
+            } else {
+                window.location = "http://m." + noa + "."+domain_type + _index_pathname;
+            }
+        }
+    </script>
+    <style>
+        #showOut .bannerBox .swiper-pagination {
+            z-index: 99;
+        }
+
+        #showOut .bannerBox .swiper-pagination-bullet {
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 0.8;
+            background: #EEF0ED;
+            margin: 0 5px;
+        }
+
+        #showOut .bannerBox .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+            width: 45px;
+            border-radius: 10px;
+        }
+
+        .scollBoxbottom .imgBox .swiper-slide {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+@@include('header.html')
+<div id="showOut" class="index-swiper-container"></div>
+@@include('right-side.html')
+<div class="index-container">
+    <div class="index-top-btn-container">
+        <div class="index-operator-btn-box">
+            <div class="index-operator-btn deposit" onclick="urlOpen('/personal/main.html?page=deposit')">我要充值</div>
+            <a class="index-operator-btn download" href="download.html" target="_blank">下载APP</a>
+            <div class="index-operator-btn promo" onclick="urlOpen('/personal/main.html?page=privilege')">热门活动</div>
+        </div>
+        <div class="index-platform-btn-box">
+            <a class="index-platform-btn" href="/games/esports.html">
+                <img src="/style/img/index/index_icon_esports.png">
+                <div>电竞游戏</div>
+            </a>
+            <a class="index-platform-btn" href="/games/sportPlatforms.html">
+                <img src="/style/img/index/index_icon_sport.png">
+                <div>体育竞猜</div>
+            </a>
+            <a class="index-platform-btn" href="/games/live.html">
+                <img src="/style/img/index/index_icon_live.png">
+                <div>真人娱乐</div>
+            </a>
+        </div>
+    </div>
+    <div class="index-title-container" style="margin-top: 50px;">
+        <div class="index-title-main">热门赛事</div>
+        <div class="index-title-sub">HOT EVENTS</div>
+    </div>
+    <div class="index-match-container">
+        <div class="index-match-box-sub index-match-CSGO index-match-box" style="background-image: url('/style/img/index/hot_event_bg_csgo.png');">
+            <div class="index-match-title">暂无赛事</div>
+            <div class="index-match-time"> - </div>
+            <div class="index-match-team-container">
+                <div class="index-match-team-box">
+                    <div class="index-team-logo">
+                        <img class="match-home-logo" src="">
+                    </div>
+                    <div class="match-home-name">暂无</div>
+                </div>
+                <div class="txt-vs">
+                    VS
+                </div>
+                <div class="index-match-team-box">
+                    <div class="index-team-logo">
+                        <img class="match-away-logo" src="">
+                    </div>
+                    <div class="match-away-name">暂无</div>
+                </div>
+            </div>
+            <a href="/games/esport.html" class="index-match-enter-btn">
+                进入投注
+            </a>
+        </div>
+        <div class="index-match-box-main index-match-DOTA2 index-match-box" style="background-image: url('/style/img/index/hot_event_bg_dota2.png');">
+            <div class="index-match-title">暂无赛事</div>
+            <div class="index-match-time"> - </div>
+            <div class="index-match-team-container">
+                <div class="index-match-team-box">
+                    <div class="index-team-logo">
+                        <img class="match-home-logo" src="">
+                    </div>
+                    <div class="match-home-name">暂无</div>
+                </div>
+                <div class="txt-vs" style="margin-top: 0;">
+                    VS
+                </div>
+                <div class="index-match-team-box">
+                    <div class="index-team-logo">
+                        <img class="match-away-logo" src="">
+                    </div>
+                    <div class="match-away-name">暂无</div>
+                </div>
+            </div>
+            <a href="/games/esport.html" class="index-match-enter-btn">
+                进入投注
+            </a>
+        </div>
+        <div class="index-match-box-sub index-match-LOL index-match-box" style="background-image: url('/style/img/index/hot_event_bg_lol.png');">
+            <div class="index-match-title">暂无赛事</div>
+            <div class="index-match-time"> - </div>
+            <div class="index-match-team-container">
+                <div class="index-match-team-box">
+                    <div class="index-team-logo">
+                        <img class="match-home-logo" src="">
+                    </div>
+                    <div class="match-home-name">暂无</div>
+                </div>
+                <div class="txt-vs">
+                    VS
+                </div>
+                <div class="index-match-team-box">
+                    <div class="index-team-logo">
+                        <img class="match-away-logo" src="">
+                    </div>
+                    <div class="match-away-name">暂无</div>
+                </div>
+            </div>
+            <a href="/games/esport.html" class="index-match-enter-btn">
+                进入投注
+            </a>
+        </div>
+    </div>
+    <div class="index-title-container">
+        <div class="index-title-main">场馆投注</div>
+        <div class="index-title-sub">VENUES BETTING</div>
+    </div>
+    <div class="index-platform-container">
+        <div class="flip-container">
+            <div class="flipper platform-live">
+                <div class="front">
+                    <div>真人娱乐</div>
+                    <div class="platform-title-sub">LIVE CASINO</div>
+                </div>
+                <div class="back">
+                    <div class="game-platform" onclick="fun_openGame('0',5)" style="margin-top: 59px;margin-left: 46px;">
+                        <img src="/./style/img/index/ag.png">
+                        <div>AG真人</div>
+                    </div>
+                    <div class="game-platform" onclick="fun_openGame('100',26)" style="margin-left: 30px;">
+                        <img src="/./style/img/index/allbet.png">
+                        <div>欧博真人</div>
+                    </div>
+                    <div class="game-platform" onclick="fun_openGame('zhenren',36,'BBIN')" style="margin-left: 14px;">
+                        <img src="/./style/img/index/bbin.png">
+                        <div>BBIN真人</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container">
+            <div class="flipper platform-esports">
+                <div class="front">
+                    <div>电子竞技</div>
+                    <div class="platform-title-sub">ESPORTS</div>
+                </div>
+                <div class="back">
+                    <a class="game-platform" href="/games/esport.html" style="margin-top: 59px;margin-left: 46px;">
+                        <img src="./style/img/index/dy.png">
+                        <div>东赢电竞</div>
+                    </a>
+                    <a class="game-platform" href="/games/rg-esport.html" style="margin-left: 30px;">
+                        <img src="./style/img/index/dy.png">
+                        <div>RG电竞</div>
+                    </a>
+                    <div class="game-platform" onclick="urlOpen('/games/im-esport.html')" style="margin-left: 14px;">
+                        <img src="./style/img/index/dy.png">
+                        <div>IM电竞</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container">
+            <div class="flipper platform-sport">
+                <div class="front">
+                    <div>体育竞技</div>
+                    <div class="platform-title-sub">SPORTS</div>
+                </div>
+                <div class="back">
+                    <a class="game-platform" href="/games/sport.html" style="margin-top: 118px;margin-left: 38px;">
+                        <img src="./style/img/index/dy.png">
+                        <div>东赢体育</div>
+                    </a>
+                    <div class="game-platform" onclick="urlOpen('/games/im-sport.html')" style="margin-left: 22px;">
+                        <img src="./style/img/index/dy.png">
+                        <div>IM体育</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container">
+            <div class="flipper platform-slots">
+                <div class="front">
+                    <div>彩票投注</div>
+                    <div class="platform-title-sub">LOTTERY</div>
+                </div>
+                <div class="back">
+                    <div class="game-platform" onclick="openELottery('/ptweb/playELottery?gameCode=Lobby')" style="margin-top: 118px;margin-left: 38px;">
+                        <img src="./style/img/index/tcg.png">
+                        <div>TCG彩票</div>
+                    </div>
+                    <div class="game-platform" style="margin-left: 22px;"
+                         onclick="openELottery('/ptweb/playGame?gameCode=lottery&amp;pid=36&amp;pfCode=BBIN')">
+                        <img src="./style/img/index/bbin.png">
+                        <div>BBIN彩票</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container">
+            <div class="flipper platform-poker">
+                <div class="front">
+                    <div>棋牌游戏</div>
+                    <div class="platform-title-sub">POKER</div>
+                </div>
+                <div class="back">
+                    <div class="game-platform" onclick="openELottery('/ptweb/kyGame?gameCode=Lobby')" style="margin-top: 118px;margin-left: 38px;">
+                        <img src="./style/img/index/ky.png">
+                        <div>开元棋牌</div>
+                    </div>
+                    <div class="game-platform" onclick="openELottery('/ptweb/txGame?gameCode=Lobby')" style="margin-left: 22px;">
+                        <img src="./style/img/index/tx.png">
+                        <div>大唐棋牌</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-container">
+            <div class="flipper platform-fish">
+                <div class="front">
+                    <div>电子游艺</div>
+                    <div class="platform-title-sub">FISHING</div>
+                </div>
+                <div class="back">
+                    <a class="game-platform" href="/games/fish.html" style="margin-top: 118px;margin-left: 38px;">
+                        <img src="./style/img/index/index_fish.png">
+                        <div>捕鱼</div>
+                    </a>
+                    <a class="game-platform" href="/games/slots.html" style="margin-left: 22px;">
+                        <img src="./style/img/index/index_slot.png">
+                        <div>老虎机</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <div class="title-czsj-zh">重置世界，颠覆未来</div>
+        <div class="title-czsj-en">CHANGE THE WORLD</div>
+    </div>
+    <div class="avg-container">
+        <div>
+            <div class="avg-time-nv-box">
+                <div class="avg-time-content-box">
+                    <span class="avg-advantage avg-dep-box"></span>秒
+                </div>
+                <img src="/style/img/index/avg-time-active-bg.png" class="avg-active-bg">
+                <div class="avg-schedule avg-schedule-container avg-schedule-left">
+                    <div id="avgDepAni" class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-left"></div>
+                    </div>
+                </div>
+                <div class="avg-schedule avg-schedule-container avg-schedule-right">
+                    <div class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="avg-container-en">
+                DY<br>
+                ADVANTAGE
+            </div>
+            <div>平均存款时间</div>
+        </div>
+        <div>
+            <div class="avg-time-nv-box">
+                <div class="avg-time-content-box">
+                    <span class="avg-advantage avg-with-box"></span>秒
+                </div>
+                <img src="/style/img/index/avg-time-active-bg.png" class="avg-active-bg">
+                <div class="avg-schedule avg-schedule-container avg-schedule-left">
+                    <div id="avgWithdrawAni" class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-left"></div>
+                    </div>
+                </div>
+                <div class="avg-schedule avg-schedule-container avg-schedule-right">
+                    <div class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="avg-container-en">
+                DY<br>
+                ADVANTAGE
+            </div>
+            <div>平均提款时间</div>
+        </div>
+        <div>
+            <div class="avg-time-nv-box">
+                <div class="avg-time-content-box">
+                    <span class="avg-advantage avg-pay-box"></span>家
+                </div>
+                <img src="/style/img/index/avg-time-active-bg.png" class="avg-active-bg">
+                <div class="avg-schedule avg-schedule-container avg-schedule-left">
+                    <div id="avgPayFullAni" class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-left"></div>
+                    </div>
+                </div>
+                <div class="avg-schedule avg-schedule-container avg-schedule-right">
+                    <div id="avgPayAni" class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="avg-container-en">
+                DY<br>
+                ADVANTAGE
+            </div>
+            <div>合作支付平台</div>
+        </div>
+        <div>
+            <div class="avg-time-nv-box">
+                <div class="avg-time-content-box">
+                    <span class="avg-advantage avg-down-box"></span>万
+                </div>
+                <img src="/style/img/index/avg-time-active-bg.png" class="avg-active-bg">
+                <div class="avg-schedule avg-schedule-container avg-schedule-left">
+                    <div id="avgDownFullAni" class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-left"></div>
+                    </div>
+                </div>
+                <div class="avg-schedule avg-schedule-container avg-schedule-right">
+                    <div id="avgDownAni" class="avg-schedule avg-schedule-box avg-schedule-left">
+                        <div class="avg-circle avg-circle-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="avg-container-en">
+                DY<br>
+                ADVANTAGE
+            </div>
+            <div>客户端下载数量</div>
+        </div>
+    </div>
+    <div class="index-bottom-container">
+        <div class="index-bottom-box">
+            <div class="index-our-tc">
+                <div style="width: 75px;">
+                    <img src="/style/img/index/index_bottom_profession.png">
+                </div>
+                <div style="width: 420px;">
+                    <div>更专业</div>
+                    <div class="index-tc-desc">每天为您提供近千场精彩体育赛事，更有真人、彩票、电子游戏等多种娱乐，让您拥有完美游戏体验。</div>
+                </div>
+            </div>
+            <div class="index-our-tc">
+                <div style="width: 75px;">
+                    <img src="/style/img/index/index_bottom_safe.png">
+                </div>
+                <div style="width: 420px;">
+                    <div>更安全</div>
+                    <div class="index-tc-desc">独家开发，采用128位加密技术和严格的安全管理体系，客户资金得到最完善的保障，让您全情尽享娱乐、赛事投注，无后顾之忧！</div>
+                </div>
+            </div>
+        </div>
+        <div class="index-bottom-box">
+            <div class="index-our-tc">
+                <div style="width: 75px;">
+                    <img src="/style/img/index/index_bottom_easy.png">
+                </div>
+                <div style="width: 420px;">
+                    <div>更便捷</div>
+                    <div class="index-tc-desc">引领市场的卓越技术，自主研发了全套终端应用，让您畅享 Web、H5，更有iOS、Android原生App，让您随时随地，娱乐投注随心所欲！7×24小时在线客服提供最贴心、最优质的服务。</div>
+                </div>
+            </div>
+            <div class="index-our-tc">
+                <div style="width: 75px;">
+                    <img src="/style/img/index/index_bottom_fast.png">
+                </div>
+                <div style="width: 420px;">
+                    <div>更快速</div>
+                    <div class="index-tc-desc">最新技术自主研发的财务处理系统，真正做到极速存、取、转。独家网络优化技术，为您提供一流的游戏体验，最大优化网络延迟。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="sport" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content" style="width: 637px;">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title">体育免费竞猜</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="sport-body" style="padding: 1rem">
+                <iframe id="sportContext" style="width: 602px;height: 600px;border: none;overflow: hidden"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered inotice-modal-dialog" role="document">
+        <div class="modal-content inotice-modal-content">
+            <div class="modal-header inotice-modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title inotice-modal-title">重要公告</h4>
+            </div>
+            <div class="modal-body inotice-modal-body">
+                <ul class="inoticeContentList">
+                    <li class="inotice-title-li">
+                        <span class="inotice-modal-content-title"></span>
+                        <div class="form-group inotice-mod">
+
+                        </div>
+                        <div class="form-group">
+                            <br>
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="form-group" style="display: flex;justify-content: space-between;align-items: center;margin-top: 36px;padding: 0;">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input inotice-nomorecheck" id="inoticeNoMore">
+                        <label class="form-check-label inotice-check-label" for="inoticeNoMore">不再提醒</label>
+                    </div>
+                    <div class="inotice-btn knew">知道了</div>
+                    <a href="/promotion.html" target="_self" class="inotice-btn detail">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+    $(function () {
+        loadIndexAlert();
+        loadIndexPromotion();
+        initPlatforms();
+
+        $(window).on('scroll', _.throttle(indexScroll, 300));
+
+        function indexScroll() {
+            if ($(window).scrollTop() > 1700) {
+                $('#avgDepAni').addClass('avg-animate-dep');
+                $('#avgWithdrawAni').addClass('avg-animate-withdraw');
+                $('#avgPayFullAni').addClass('avg-animate-full');
+                $('#avgPayAni').addClass('avg-animate-pay');
+                $('#avgDownFullAni').addClass('avg-animate-full');
+                $('#avgDownAni').addClass('avg-animate-down');
+
+                var depAvgTxt = $('.avg-dep-box'), withAvgTxt = $('.avg-with-box'),
+                payTxt = $('.avg-pay-box'), downTxt = $('.avg-down-box');
+                if(!depAvgTxt.text()) {
+                    depAvgTxt.numberRun({
+                        number: (randomNum(50, 80)),
+                        speed: 10
+                    });
+                    withAvgTxt.numberRun({
+                        number: (randomNum(70, 100)),
+                        speed: 10
+                    });
+                    payTxt.numberRun({
+                        number: 14,
+                        speed: 100
+                    });
+                    downTxt.numberRun({
+                        number: 90,
+                        speed: 10
+                    });
+                }
+            }
+        }
+
+        function randomNum(minNum,maxNum){
+            switch(arguments.length){
+                case 1:
+                    return parseInt(Math.random()*minNum+1,10);
+                    break;
+                case 2:
+                    return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+    });
+
+    function loadIndexPromotion() {
+        var url = wap_site_host() + "/rest/api/webIndexPromotionList";
+        loadHTMLPage(url, "showIndexPromotion");
+    }
+
+    function loadIndexAlert() {
+        $.ajax({
+            url: wap_site_host() + "/rest/api/indexNoticeJSON",
+            type: "GET",
+            dataType: 'json',
+            success: function (data) {
+                if(data.data) {
+                    $('.inoticeContentList').empty();
+                    var ijson = JSON.parse(data.data), nc = "";
+                    for(var nt in ijson) {
+                        nc += '<li class="inotice-title-li"><span class="inotice-modal-content-title">' + ijson[nt].title +'</span><div class="form-group inotice-mod">' + ijson[nt].content + '</div></li>';
+                    }
+                    $('.inoticeContentList').html(nc);
+                }
+                if(!Cookies.get('indexNoticeNoMore')) {
+                    $('#noticeModal').modal('show');
+                }
+                $('.inotice-btn.knew').click(function() {
+                    if($('#inoticeNoMore').prop('checked')) {
+                        Cookies.set('indexNoticeNoMore', true, { expires: 1 });
+                    }
+                    $('#noticeModal').modal('hide');
+                });
+            }
+        });
+    }
+
+    function showIndexPromotion(data) {
+        if (data != '') {
+            $("#showOut").html(data);
+            $('#showOut .swiper-slide img').click(function () {
+                var url = $(this).attr("jump-url");
+                var blank_link = $(this).attr("blank-link");
+                if (blank_link != "" && blank_link != null && blank_link != undefined) {
+                    if (wap_is_user_notexist()) {
+                        fun_alertMsg('请登入后再做操作！', '系统提示', function () {
+                        });
+                    } else {
+                        window.open(blank_link + '?token=' + wap_get_user().token, '_blank');
+                    }
+                } else if (url != "" && url != null && url != undefined) {
+                    window.location.href = url;
+                } else {
+                    window.location.href = "/promotion.html";
+                }
+            });
+        }
+        new Swiper('.bannerBox', {
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+            parallax: true,
+            observer: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    }
+
+    function initPlatforms() {
+        getPlatforms().done(d => {
+            if (d.code == 0) {
+                showPlatforms(d.data);
+            }
+        })
+    }
+
+    function showPlatforms(data) {
+        let platforms = new Map();
+        data.forEach(p => {
+            if (platforms.has(p.ptype)) {
+                let array = platforms.get(p.ptype);
+                array.push(p);
+                platforms.set(p.ptype, array);
+            } else {
+                platforms.set(p.ptype, [p]);
+            }
+        })
+
+        for (let key of platforms.keys()) {
+            let platform = platforms.get(key);
+            let html = platform.slice(0, 4).map(p => {
+                return `<div class="game-platform">
+                            <img src="./style/img/index/${p.platformCode.toLowerCase()}.png">
+                            <div>${p.platformNameCn}</div>
+                        </div>`;
+        }).join("");
+            $('#type-' + key).html(html)
+        }
+    }
+
+    loadMatchInfo();
+    var matchTypes = {'CSGO': 0, 'DOTA2': 0, 'LOL': 0};
+    var lastMatchData;
+    var matchInterval;
+    function loadMatchInfo() {
+        loadIndexMatchs().done(d => {
+            if (d.code == 0) {
+                clearInterval(matchInterval);
+                lastMatchData = d.data;
+                initMatch();
+                matchInterval = setInterval(function() {
+                    initMatch();
+                }, 20000);
+            }
+        });
+    }
+    function initMatch() {
+        for(var type in matchTypes) {
+            if(lastMatchData[type] && lastMatchData[type].length) {
+                var typeIndex = matchTypes[type];
+                if(typeIndex >= lastMatchData[type].length) {
+                    typeIndex = 0;
+                }
+                var matchInfo = lastMatchData[type][typeIndex];
+                var box = $('.index-match-' + type);
+                box.find('.index-match-title').text(matchInfo.competitionName);
+                box.find('.index-match-time').text(fun_timeFormat(matchInfo.time));
+                box.find('.match-home-logo').attr('src', matchInfo.homeLogo);
+                box.find('.match-away-logo').attr('src', matchInfo.awayLogo);
+                box.find('.match-home-name').text(matchInfo.home);
+                box.find('.match-away-name').text(matchInfo.away);
+                matchTypes[type] = (typeIndex + 1);
+            }
+        }
+    }
+</script>
+</html>

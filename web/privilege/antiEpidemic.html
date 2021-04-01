@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢 - 电竞、体育每月投注皆有礼，多种礼品等你领！</title>
+    <link rel="stylesheet" href="/style/css/antiEpidemic.css">
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/plugins/tweenMax/TweenMax.min.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div class="anti-epidemic-container">
+    <div style="width: 1075px;margin: 0 auto;">
+        <div style="height: 300px;">
+            <div class="new-card-box">
+                <div class="new-card new-card-front">
+                    <div class="back-close"></div>
+                    <div class="open-btn">
+                        <img src="/style/img/promotion/antiEpidemic/open.png">
+                    </div>
+                </div>
+                <div class="new-card new-card-back">
+                    <div class="back-close"></div>
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_2.png" id="free_card">
+                    <img src="/style/img/promotion/antiEpidemic/got.png" style="margin-top: -25px;">
+                </div>
+            </div>
+        </div>
+        <img src="/style/img/promotion/antiEpidemic/title_exchange.png" style="margin-top: 20px;margin-bottom: 37px;">
+        <div class="ae-card-row">
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_1.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_1">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="1">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_2.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_2">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="2">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_3.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_3">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="3">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_4.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_4">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="4">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_5.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_5">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="5">兑换</div>
+            </div>
+        </div>
+        <div class="ae-card-row">
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_6.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_6">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="6">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_7.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_7">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="7">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_8.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_8">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="8">兑换</div>
+            </div>
+            <div class="ae-card-item">
+                <div class="ae-card-bg">
+                    <img src="/style/img/promotion/antiEpidemic/dyCard_9.png">
+                    <div class="ae-card-desc">所需充值金额2000元</div>
+                    <div class="ae-card-left-box">可用<span class="left-count" id="dyCard_9">0</span>张</div>
+                </div>
+                <div class="ae-btn exchange-btn" data-id="9">兑换</div>
+            </div>
+        </div>
+        <div class="ae-btn bonu-btn">领取100元彩金</div>
+        <img src="/style/img/promotion/antiEpidemic/title_content.png" style="margin-top: 20px;margin-bottom: 37px;">
+        <div class="anti-content">
+            <div>活动时间：2020年4月10日-5月10日</div>
+            <table class="ae-table">
+                <tr>
+                    <td>集卡途径</td>
+                    <td>可获得物品</td>
+                    <td>整套可获得彩金</td>
+                    <td>流水要求</td>
+                </tr>
+                <tr>
+                    <td>每日登陆免费抽取一次</td>
+                    <td>除“东赢”字卡以外任意字卡</td>
+                    <td rowspan="2">100元</td>
+                    <td rowspan="2">1倍</td>
+                </tr>
+                <tr>
+                    <td>使用存款金额兑换</td>
+                    <td>任意兑换抗疫字卡</td>
+                </tr>
+            </table>
+            <ul class="role-list">
+                <li>用户每日登录东赢账号即可免费抽取一次抗疫字卡（注：“东赢”抗疫字卡除外），同时每累计存款2000元可以兑换任意一张抗疫字卡，每集齐一套抗疫字卡，可以点击集册下方的“申请100元彩金”按钮兑换彩金。</li>
+                <li>活动期间兑换次数无上限，活动彩金一倍流水即可出款。</li>
+                <li>充值金额累计不予任何存送活动共享。</li>
+                <li>每位有效玩家、每一手机号码、电子邮箱、相同银行卡、每一个IP地址、每一台电脑者只能享受一次优惠，如发现有违规者我们将保留无限期审核扣回礼品及所产生的利润权利。</li>
+                <li>抗疫字卡有效兑换时间截止为5月20日23:59:59，届时所有未使用的抽卡次数、兑换次数、抗疫字卡将无效作废。</li>
+                <li>东赢拥有本活动最终解释权。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+
+$(function() {
+    var userExist = wap_is_user_notexist();
+    if(!userExist){
+        dyCardInit();
+    }
+    $('.open-btn').click(function () {
+        if(!userExist){
+            getFreeCard();
+        }else{
+            error("请登入后重试");
+        }
+    });
+    $('.new-card-back').click(function () {
+        $(".new-card-box").hide();
+    });
+    $('.exchange-btn').click(function () {
+        var cardId=parseInt(this.dataset.id);
+        exchangeCard(cardId);
+    });
+    $('.bonu-btn').click(function () {
+        getBouns();
+    });
+});
+var scrollFlag = false;
+function dyCardInit() {
+    post('/ptweb/dyCard/init', {}, event_site_host()).done(d => {
+        if (d.code == 0) {
+            if(d.data.freeCount==0){
+                $(window).on('scroll', _.throttle(promoScroll, 300));
+                $('.back-close').click(function() {
+                    scrollFlag = true;
+                    $('.new-card-box').removeClass('fix-pos');
+                    $(".new-card-box").hide();
+                });
+            }else{
+                $(".new-card-box").hide();
+            }
+            $("#dyCard_1").text(d.data.dyCardInfo.cardOneNum);
+            $("#dyCard_2").text(d.data.dyCardInfo.cardTwoNum);
+            $("#dyCard_3").text(d.data.dyCardInfo.cardThreeNum);
+            $("#dyCard_4").text(d.data.dyCardInfo.cardFourNum);
+            $("#dyCard_5").text(d.data.dyCardInfo.cardFiveNum);
+            $("#dyCard_6").text(d.data.dyCardInfo.cardSixNum);
+            $("#dyCard_7").text(d.data.dyCardInfo.cardSevenNum);
+            $("#dyCard_8").text(d.data.dyCardInfo.cardEightNum);
+            $("#dyCard_9").text(d.data.dyCardInfo.cardNineNum);
+        } else {
+            error(d.message);
+        }
+    });
+}
+
+function promoScroll() {
+    if(!scrollFlag) {
+        if ($(window).scrollTop() >= 400) {
+            $('.new-card-box').addClass('fix-pos');
+        } else {
+            $('.new-card-box').removeClass('fix-pos');
+        }
+    }
+}
+
+function getFreeCard() {
+    post('/ptweb/dyCard/freeCard', {}, event_site_host()).done(d => {
+        if (d.code == 0) {
+            $("#free_card").attr('src','https://ezeu.ytyq8866.com/resources/dy/style/img/promotion/antiEpidemic/dyCard_'+d.data.cardId+'.png');
+            var count=parseInt($("#dyCard_"+d.data.cardId).text());
+            $("#dyCard_"+d.data.cardId).text(count+1);
+            $(".new-card-box").toggleClass('flipped');
+        } else {
+            error(d.message);
+        }
+    });
+}
+function exchangeCard(cardId) {
+    post('/ptweb/dyCard/exchange', {'cardId':cardId}, event_site_host()).done(d => {
+        if (d.code == 0) {
+            var count=parseInt($("#dyCard_"+cardId).text());
+            $("#dyCard_"+cardId).text(count+1);
+            success("兑换成功");
+        } else {
+            error(d.message);
+        }
+    });
+}
+function getBouns() {
+    post('/ptweb/dyCard/getBouns', {}, event_site_host()).done(d => {
+        if (d.code == 0) {
+            confirm_success("恭喜获得100元彩金","系统提示",function(){
+                document.location.reload();
+            });
+        } else {
+            error(d.message);
+        }
+    });
+}
+</script>
+</html>

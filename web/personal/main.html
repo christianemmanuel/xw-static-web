@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>真人</title>
+    <link rel="stylesheet" href="/style/css/main.css">
+</head>
+<body>
+@@include('header.html')
+<div class="main-container">
+    <div class="main-left">
+        <div class="personal-info">
+            <img src="/style/img/personal/avatar.png" class="avatar">
+            <span>欢迎您: <span id="avatarUserName"></span> <span id="avatarVip" class="badge badge-warning"
+                                                               style="font-size: 12px;">VIP</span></span>
+        </div>
+        <div class="personal-menu">
+            <span class="menu-title">财务中心</span>
+            <hr/>
+            <ul class="menu">
+                <li id="deposit" class="menu-item active" onclick="window.location.href='main.html?page=deposit'"><i
+                        class="remixicon-wallet-3-fill" style="color: #f789cf"></i>充值中心
+                </li>
+                <li id="withdrawal" class="menu-item" onclick="window.location.href='main.html?page=withdrawal'"><i
+                        class="remixicon-bank-card-2-fill" style="color: #00a9f2"></i>快速提款
+                </li>
+                <li id="transfer" class="menu-item" onclick="window.location.href='main.html?page=transfer'"><i class="remixicon-repeat-fill"></i>快速转账
+                </li>
+                <li id="records" class="menu-item" onclick="window.location.href='main.html?page=records'"><i
+                        class="remixicon-file-text-fill" style="color: #74c8cb"></i>交易记录
+                </li>
+            </ul>
+        </div>
+        <div class="personal-menu">
+            <span class="menu-title">个人中心</span>
+            <hr/>
+            <ul class="menu">
+                <li id="personal_info" class="menu-item" onclick="window.location.href='main.html?page=personal_info'"><i
+                        class="remixicon-account-box-fill" style="color:#f38046"></i>个人信息
+                </li>
+                <li id="message" class="menu-item" onclick="window.location.href='main.html?page=message'">
+                    <i class="remixicon-mail-fill" style="color:#f789cf"></i>站内信
+                </li>
+                <li id="vip" class="menu-item" onclick="window.open('/vip.html')"><i class="remixicon-vip-fill"></i>VIP专属</li>
+                <li id="privilege" class="menu-item" onclick="window.location.href='main.html?page=privilege'"><i
+                        class="remixicon-coupon-3-fill" style="color: #74c8cb"></i>优惠领取
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-right">
+        <div class="main-right-top">
+            <span style="color: #3d4b66;">账户余额：</span>
+            <span id="mainBalance" style="width: 100px;text-align: center;color: #99660d;"><span
+                    class="spinner-border spinner-border-sm"
+                    role="status" aria-hidden="true"></span>Loading...</span>
+            <span style="width: 30px;text-align: center;color: #0c76ff;font-size: 20px;cursor: pointer"
+                  onclick=" refreshBalance('main')"><i
+                    class="remixicon-refresh-line"></i></span>
+            <span style="width: 225px; font-size: 8px;color: #3d4b66;">（游戏前，请将余额转到相应场馆）</span>
+            <div style="border-left:1px solid #a1b7e0;height:31px"></div>
+            <span style="width: 100px;margin-left: 10px;color: #3d4b66;text-align: center">专属网址：</span>
+            <span id="vipUrl" class="badge badge-info">https-www-xxxxxxx-com</span>
+        </div>
+        <!--存款页面        -->
+        <div class="main-right-info" scrolling="no"></div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script src="/style/js/main.js"></script>
+<script>
+</script>
+</html>

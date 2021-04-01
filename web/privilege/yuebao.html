@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢余额宝</title>
+    <link rel="stylesheet" href="/style/css/yuebao.css">
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/plugins/tweenMax/TweenMax.min.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div class="piggy-bank-container">
+    <div class="piggy-bank-top-div"></div>
+    <div class="piggy-bank-redpacket-container">
+        <div class="piggy-bank-redpacket-box redpacket">
+            <img src="/style/img/promotion/yuebao/piggy.png"/>
+            <div class="bonu-amount" style="margin-top: 30px;">余额：<span id="bankBalanceSpan">0</span></div>
+            <div class="bonu-amount">利息：<span id="bankInterestSpan">0</span></div>
+            <div class="" style="display: flex;justify-content: space-between;margin-top: 33px;">
+                <div class="transfer-btn deposit">转入</div>
+                <div class="transfer-btn withdrawals">转出</div>
+            </div>
+            <div class="btn" onclick="yuebaoGetGain()"></div>
+        </div>
+    </div>
+    <table class="record-table">
+        <thead>
+            <tr>
+                <td width="34%">日期</td>
+                <td width="33%">利息</td>
+                <td width="33%">领取状态</td>
+            </tr>
+        </thead>
+        <tbody id="recordBody"><tr><td colspan='3'>暂无数据</td></tr></tbody>
+        <!--<tr>
+            <td>2020-07-21</td>
+            <td>100</td>
+            <td class="unget">待领取</td>
+        </tr>
+        <tr>
+            <td>2020-07-20</td>
+            <td>100</td>
+            <td class="got">已经领取</td>
+        </tr>
+        <tr>
+            <td>2020-07-19</td>
+            <td>100</td>
+            <td class="unvalid">已过期</td>
+        </tr>-->
+    </table>
+    <div class="page-list" id="record_page">
+        <div class="page-item">&lt;</div>
+        <div class="page-item active">1</div>
+        <!--<div class="page-item">2</div>
+        <div class="page-item">3</div>-->
+        <div class="page-item">&gt;</div>
+    </div>
+    <div class="rule-container">
+        <div class="piggy-content-title"></div>
+        <p style="margin-bottom: 28px;">活动时间：2020年8月1日起</p>
+        <table class="table">
+            <tr>
+                <td>余额宝余额要求</td>
+                <td>金额统计时间</td>
+                <td>利息领取条件</td>
+                <td>利率</td>
+                <td>利息领取时间</td>
+                <td>利息流水</td>
+            </tr>
+            <tr>
+                <td>&ge;100</td>
+                <td>当日23:59:59</td>
+                <td>次日完成余额宝金额的1倍流水</td>
+                <td>0.8%</td>
+                <td>第3日15:00后前往活动页面领取</td>
+                <td>1倍流水</td>
+            </tr>
+            <tr>
+                <td colspan="6">余额宝返利说明：如果用户当日余额宝余额为20000元，次日满足20000有效流水，第三日15:00可自行前往活动页面领取20000*0.8%=160元利息，利息发放后保留3天，如未领取则扣回。</td>
+            </tr>
+        </table>
+        <p>注：金额统计只统计玩家余额宝内的余额，请玩家当日23:59:59前将金额转入余额宝内，次日即可自由转出进行游戏。</p>
+        <div class="piggy-rule-content">
+            <p style="margin: 28px 0 15px 0;">规则与条款：</p>
+            <ul class="rule-list">
+                <li>所有电竞/体育赔率均为欧洲盘/香港盘，且投注赔率低于1.70/0.7和无效的、取消的、同局中对冲投注将不计算在有效投注内。</li>
+                <li>此优惠促销只适用于拥有一个独立账户的玩家。住址、电子邮箱地址﹑电话号码﹑支付方式（相同借记卡/信用卡/银行账户号码）IP地址，同一网络环境等将可以作为判定是否独立玩家的条件。</li>
+                <li>对于发现任何有违背、欺骗、或利用规则和条款进行非法获利的会员，东赢保留在任何时候都可以停止、取消优惠或索回已支付的全部优惠的权利。</li>
+                <li>在某些未知因素超出可控范围的情况下，东赢娱乐保留可单方面执行的决定权，并承诺会在这类紧急问题发生时解释给客户原因并听取客户反馈与客户沟通协商解决。</li>
+                <li>东赢保留对本次活动的修订、终止和最终解释权，超出本网站控制外的技术错误，东赢将不承担任何责任。</li>
+                <li>东赢娱乐有权延长，缩短，终止，或者修改此活动！此活动最终解释权归东赢所有。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="transferModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="font-size: 40px;color: #2b2929;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body customer-modal-body">
+                <form id="giftForm" action="#" novalidate="">
+                    <div class="form-group">
+                        <h2>转账金额</h2>
+                        <div style="margin-top: 50px;">
+                            <input type="input" id="transferAmount" name="transferAmount" class="form-control" autocomplete="off" required data-parsley-required-message="请输入转账金额" placeholder="请输入转账金额" style="height: 50px;width: 370px;margin: 0 auto;line-height: 50px;font-size: 22px;">
+                        </div>
+                        <input type="hidden" id="transferType" name="transferType">
+                    </div>
+                    <div class="form-group">
+                        <div class="transfer-btn" style="margin: 50px auto 0;" id="yebTransferBtn">确认</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+    var userExist = wap_is_user_notexist();
+    var yuebaoRecord=null;
+    var yuebaoBeginTime = new Date(2020, 7, 1, 0, 0, 0).getTime();//8月1号
+    $(function() {
+        if(!userExist){
+            if(new Date().getTime() > yuebaoBeginTime) {
+                yuebaoInit();
+                getYEBbalance();
+            }
+        }else{
+            error("请登入后重试");
+        }
+        $('.transfer-btn.deposit').click(function() {
+            if(new Date().getTime() < yuebaoBeginTime) {
+                info('活动2020年8月1日开始，敬请期待!');
+                return;
+            }
+            $('#transferType').val('deposit');
+            $('#transferModal').modal('show');
+        });
+        $('.transfer-btn.withdrawals').click(function() {
+            if(new Date().getTime() < yuebaoBeginTime) {
+                info('活动2020年8月1日开始，敬请期待!');
+                return;
+            }
+            $('#transferType').val('withdrawals');
+            $('#transferModal').modal('show');
+        });
+        $('#yebTransferBtn').click(function () {
+            if(new Date().getTime() < yuebaoBeginTime) {
+                info('活动2020年8月1日开始，敬请期待!');
+                return;
+            }
+            var type=$('#transferType').val();
+            var amount=$('#transferAmount').val();
+            yebTransfer(type,amount);
+        });
+    });
+    function yuebaoInit() {
+        if(userExist) {
+            info('请登录后操作');
+            return;
+        }
+        post('/ptweb/yuebao/init', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+                $('#bankInterestSpan').html(d.data.gain.toFixed(2));
+                loadMemberRecords();
+            } else {
+                error(d.message);
+            }
+        });
+    }
+    function yuebaoGetGain() {
+        if(new Date().getTime() < yuebaoBeginTime) {
+            info('活动2020年8月1日开始，敬请期待!');
+            return;
+        }
+        var gain=parseFloat($('#bankInterestSpan').text());
+        if(gain<=0){
+            error("暂无可领取的利息");
+            return;
+        }
+        post('/ptweb/yuebao/getGain', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+                info("成功领取余额宝利息");
+                $('#bankInterestSpan').html(0);
+                loadMemberRecords();
+            } else {
+                error(d.message);
+            }
+        });
+    }
+    function getYEBbalance(){
+        getBalance('YEB').done(d => {
+            if (d.code == 0) {
+                $('#bankBalanceSpan').html(d.data.toFixed(2));
+            }
+        });
+    }
+    function yebTransfer(type,amount){
+        if(userExist) {
+            info('请登录后操作');
+            return;
+        }
+        if(!/^[1-9]\d*$/.test(amount)){
+            info('请输入正整数');
+            return;
+        }
+        post(`/session/balance/${type}/YEB/${amount}/WEB`, {}).done(d => {
+            if (d.code == 0) {
+                $('#transferModal').modal('hide');
+                info('提交成功');
+                getYEBbalance();
+                refreshBalance('main');
+            } else {
+                info(d.message)
+            }
+        });
+    }
+    function loadMemberRecords() {
+        if(userExist) {
+            info('请登录后操作');
+        } else {
+            $('#recordBody').empty();
+            $('#recordBody').html("<tr><td colspan='3'>loading...</td></tr>");
+            post('/ptweb/yuebao/recordList', {}, event_site_host()).done(d => {
+                if (d.code == 0) {
+                $('#recordBody').empty();
+                if(d.data.records && d.data.records.length) {
+                    yuebaoRecord=d.data.records;
+                    showRecordPageItem();
+                    showRecordTableBody(1);
+                } else {
+                    $('#recordBody').html("<tr><td colspan='3'>暂无数据</td></tr>");
+                }
+            }
+        });
+        }
+    }
+    function showRecordPageItem() {//加载lottery分页div
+        if(yuebaoRecord.length>5){
+            var size=Math.ceil(yuebaoRecord.length/5);
+            console.log('record:'+yuebaoRecord.length+'size:'+size);
+            $('#record_page').html('');
+            var  appendHtml='<div class="page-item lottery_prev"><</div>'
+                +'<div class="page-item lottery_item active">'+1+'</div>';
+            for(var i=1;i<size;i++){
+                appendHtml+='<div class="page-item lottery_item">'+(i+1)+'</div>';
+            }
+            appendHtml+='<div class="page-item lottery_next">></div>';
+            $('#record_page').html(appendHtml);
+            $('.lottery_item').click(function(){
+                showRecordTableBody($(this).html());
+                $('.lottery_item').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('.lottery_prev').click(function(){
+                var index=parseInt(''+$('.lottery_item.active').html());
+                if(index!=1){
+                    showRecordTableBody(index-1);
+                    $('.lottery_item').removeClass('active');
+                    $('.lottery_item:nth-child('+index+')').addClass('active');
+                }
+            });
+            $('.lottery_next').click(function(){
+                var index= parseInt(''+$('.lottery_item.active').html());
+                var maxIndex=Math.ceil(yuebaoRecord.length/5);
+                if(index!=maxIndex){
+                    showRecordTableBody(index+1);
+                    $('.lottery_item').removeClass('active');
+                    $('.lottery_item:nth-child('+(index+2)+')').addClass('active');
+                }
+            });
+        }
+    }
+    function showRecordTableBody(index) {
+        $('#recordBody').html('');
+        $.each(yuebaoRecord, function(i,v){
+            if(i>=(index-1)*5 && i<5*index){
+                var statusStr='';
+                if(v.status==0){
+                    statusStr='<td class="unget">待领取</td>';
+                }else if(v.status==1){
+                    statusStr='<td class="got">已领取</td>';
+                }else{
+                    statusStr='<td class="unvalid">已过期</td>';
+                }
+                $('#recordBody').append('<tr><td>' + v.date +'</td><td>' + v.gain + '</td>' + statusStr );
+            }
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="heying-html">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	@@include('html-head.html')
+	<title>合营</title>
+	<link rel="stylesheet" href="/style/css/swiper.min.css">
+	<link rel="stylesheet" href="/style/layui/css/layui.css">
+	<link rel="stylesheet" href="/style/css/fullpage.css">
+	<link rel="stylesheet" href="/style/css/index.css">
+	<link rel="stylesheet" href="/style/css/youhui.css">
+	<link rel="stylesheet" href="/style/css/heying-base.css">
+	<link rel="stylesheet" href="/style/css/heying.css">
+	<link rel="stylesheet" href="/style/css/agent.css">
+	<script src="/style/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/style/js/swiper.min.js"></script>
+	<script src="/style/layui/layui.all.js"></script>
+	<script src="/style/js/fullpage.js" type="text/javascript" ></script>
+	<script src="/style/js/md5.js" type="text/javascript" ></script>
+	<script src="/style/js/common.js" type="text/javascript" ></script>
+	<script src="/style/plugins/three/three.min.js" type="text/javascript" ></script>
+
+</head>
+<body style="background-color: #fff;">
+@@include('header.html')
+<div class="full_page" id="fullpage">
+	<div class="section">
+		<div class="firstpage" >
+			<div style="position: absolute;width: 100%;left: 0;"><div class="y_a_m_f22" style="position: relative;top: 0px;z-index: 18999;margin: 50px auto;display: none"></div></div>
+			<!--<div style="position: absolute;width: 100%;left: 0;top: 196px"><div class="ju_txt22" ></div></div>-->
+			<img class="shou"  style="  width: 100%;  position: absolute;left: 0; top: 300px;" src="https://ezeu.ytyq8866.com/resources/web_h5/images/agent/bg_sc1_hands.png" />
+		</div>
+		<!--  第一屏 -->
+		<div class="main" id="main">
+			<div class="y_a_m_f" style="position: relative;top: 0px;z-index: 18999;margin: 50px auto;display: none"></div>
+			<div class="ju_txt" style="    position: relative; top: 100px;z-index: 18999; margin: 0px auto"></div>
+			<div class="ju_txt2" style="position: relative;top: 196px;margin: 0px auto;display: block"></div>
+			<button class="join_btn" id="open_win" onclick="openAgent('https://ag.xw533.com/agentRecord/toregist')">加入我们</button>
+			<button class="join_btn" id="open_win_login" style="margin-top:30px;" onclick="openAgent('https://ag.xw533.com/login.jsp')">登录</button>
+			<button class="join_btn" style="margin-top:30px;" onclick="contactUs('/agent.html#page4')">联系我们</button>
+		</div>
+		<div id="canvas"></div>
+		<!--  第一屏 end-->
+	</div>
+	<div class="section">
+		<!--<div  class="section201" ><img src="https://sm.zzwangjie.com/resources/web_h5/images/agent/YABOReinventsTheGame.png" /></div>
+		<div  class="section202"  ><img src="https://sm.zzwangjie.com/resources/web_h5/images/agent/chongxin.png" /></div>
+		<div  class="section203" ><img src="https://sm.zzwangjie.com/resources/web_h5/images/agent/dutext.png" /></div>-->
+		<div class="box_bj" style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/hy/bg02.jpg');background-size: 100% 100%">
+			<!--<div  class="section204" >
+				<img height="240px" style="margin-right:60px" src="https://sm.zzwangjie.com/resources/web_h5/images/agent/cc1.jpg" />
+				<img height="240px" src="https://sm.zzwangjie.com/resources/web_h5/images/agent/cc2.jpg" />
+				<img height="240px" style="float: left;margin:20px 60px 0 42px;" src="https://sm.zzwangjie.com/resources/web_h5/images/agent/cc3.jpg" />
+				<img height="240px" style="float: left;margin: 20px 0 0 36px" src="https://sm.zzwangjie.com/resources/web_h5/images/agent/cc4.jpg" />
+			</div>
+			<div class="section205"  >
+				<img src="https://sm.zzwangjie.com/resources/web_h5/images/agent/phone1.png" />
+			</div>-->
+		</div>
+	</div>
+	<div class="section">
+		<div class="box_bj" style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/hy/bg03.jpg');background-size: 100% 100%">
+			<div class="dl_w">
+				<!--<div class="bc_txt"></div>
+				<ul class="bc_ul"><li class="phone_bc"></li><li class="phone_ct"></li><li class="phone_ht"></li></ul>
+				<div class="bc_phone"></div>-->
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="box_bj  con" style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/hy/bg04.jpg');background-size: 100% 100%">
+			<div class="div4">
+				<div class="textBox">
+					<div class="leftBox"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/hy/logo02.png"><p>联系我们</p></div>
+					<div class="rightBox">
+						<p class="pTitle">合营部电邮</p>
+						<p class="p1">affiliate@dyvip99.com</p>
+						<p class="pTitle">合营QQ</p>
+						<p class="p1">3007737276（工作时间：14:00-23:00）</p>
+						<p class="pTitle">合营Skype</p>
+						<p class="p1">live:.cid.4bf671593b7b4992<span style="margin-left: 5px"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/hy/skype.png"></span>（点击图标以联系，联系时请提供用户名）</p>
+						<p class="pTitle">合营微信</p>
+						<p class="p1">XW512XW</p>
+						<img src="https://ezeu.ytyq8866.com/resources/web_h5/images/hy/pic04.png" width="154" class="codeImg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+<div class="hideAll"></div>
+</body>
+@@include('html-foot.html')
+<script>
+$(function () {
+	$('#fullpage').fullpage({
+		anchors: ['page1', 'page2', 'page3','page4'],
+		menu: '#menu',
+		'navigation': true,
+		afterRender:function() {
+
+			$('.y_a_m_f22').addClass('y_a_m_f22act');
+			$('.ju_txt22').addClass('y_a_m_f22act');
+			$('.shou').addClass('shoushow')
+
+			setTimeout(function(){
+				$('.firstpage').addClass('firstpageani');
+				$('#main').addClass('animation');
+			},2000);
+
+		},
+		afterLoad:function(anchorLink, index){
+			if(index != 1){
+				$('#main').removeClass('animation');
+				$('#main').removeClass('animation');
+
+
+			}else{
+				$('#main').addClass('animation')
+				$('#menu').show()
+
+			}
+
+		}
+
+	});
+	//
+
+	$("#pj-lunbo").Carousel({
+		'play':'true', //是否循环播放
+		'prevButton':'#prev', //左按钮
+		'nextButton':'#next',  //右按钮
+		'playTimer':'2000',
+		'auto':'true'   //是否自动播放
+
+	});
+});
+var camera, scene, renderer, particles, particle, material, particleCount, points, texture;
+var xSpeed, ySpeed;
+xSpeed = 0.0005;
+ySpeed = 0.001;
+var winWidth, winHeight;
+winWidth = window.innerWidth;
+winHeight = window.innerHeight;
+threeInit();
+threeAnimate();
+function threeInit(){
+    scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2('#222', 0.001);
+
+    camera = new THREE.PerspectiveCamera(75, winWidth/winHeight, 1, 1000);
+    camera.position.z = 500;
+
+    material = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 3,
+        transparent: true,
+        blending: THREE.AdditiveBlending
+    });
+
+    particleCount = 15000;
+    particles = new THREE.Geometry();
+
+    for (var i = 0; i < particleCount; i++) {
+        var px = Math.random() * 2000 - 1000;
+        var py = Math.random() * 2000 - 1000;
+        var pz = Math.random() * 2000 - 1000;
+        particle = new THREE.Vector3(px, py, pz);
+        particle.velocity = new THREE.Vector3(0, Math.random(), 0);
+        particles.vertices.push(particle);
+    }
+    points = new THREE.Points(particles, material);
+    points.sortParticles = true;
+    scene.add(points);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(winWidth, winHeight);
+    renderer.setClearColor('#222', 1);
+    document.getElementById('canvas').appendChild(renderer.domElement);
+}
+function threeAnimate(){
+    requestAnimationFrame(threeAnimate);
+    scene.rotation.y += xSpeed;
+    // 上下移動
+    var i = particleCount;
+    while(i--){
+        var particle = particles.vertices[i];
+        // y
+        if(particle.y > 1000){
+            particle.y = -1000;
+            particle.velocity.y = Math.random();
+        }
+        particle.velocity.y += Math.random() * ySpeed;
+
+        particle.add(particle.velocity);
+    }
+    points.geometry.verticesNeedUpdate = true;
+    render();
+}
+function render(){
+    camera.lookAt(scene.position);
+    renderer.render(scene, camera);
+}
+
+function openAgent(url) {
+	window.open(url,'_blank')
+}
+function contactUs(url) {
+	window.location.href=url;
+}
+</script>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>棋牌</title>
+    <link rel="stylesheet" href="/style/css/lottery.css">
+</head>
+<body>
+@@include('header.html')
+<div class="game-container">
+
+    <div class="game-tab-content">
+        <div class="pane-bg"></div>
+        <div class="lottery-pane-tcg-bg">
+            <div class="tcg-effect-left"></div>
+            <div class="tcg-effect-right"></div>
+        </div>
+        <div class="lottery-pane-bbin-bg" style="display: none">
+            <div class="bbin-effect-left"></div>
+            <div class="bbin-effect-right"></div>
+        </div>
+        <div id="tcgText" class="lottery-pane-right">
+            <img class="title" src="/style/img/lottery/tcg-title.webp">
+            <p class="context">
+                TCG，业界首创区块链彩票，汲取区块链的核心技术算法，只为公平、公正的开奖结果。多地域的官方时时彩、11选5、PK10、PC蛋蛋和官方六合彩，足不出户却能无时无刻的尽情游玩！
+            </p>
+            <div class="type-icon">
+                <img src="/style/img/lottery/img_1.5.webp">
+                <img src="/style/img/lottery/img_five.webp">
+                <img src="/style/img/lottery/img_eleven.webp">
+                <img src="/style/img/lottery/img_bjpk.webp">
+                <img src="/style/img/lottery/img_time.webp">
+            </div>
+            <button class="btn linear-blue" onclick="openELottery('/ptweb/playELottery?gameCode=Lobby')">进入游戏</button>
+        </div>
+        <div id="bbinText" class="lottery-pane-right" style="display: none">
+
+            <img class="title" src="/style/img/lottery/bbin-title.webp">
+            <p class="context">
+                BBIN彩票打造着高品质游戏体验、不断地求新求变，寻找最新的创意，秉持最好的服务……，种种这些都注定BBIN彩票的不俗传说，超百种彩票玩法任您赢！
+            </p>
+            <div class="type-icon">
+                <img src="/style/img/lottery/img_3d.webp">
+                <img src="/style/img/lottery/img_bbpk10.webp">
+                <img src="/style/img/lottery/img_cq.webp">
+                <img src="/style/img/lottery/img_k3.webp">
+                <img src="/style/img/lottery/img_pink11.webp">
+            </div>
+            <button class="btn linear-blue"
+                    onclick="openELottery('/ptweb/playGame?gameCode=lottery&amp;pid=36&amp;pfCode=BBIN')">进入游戏
+            </button>
+        </div>
+    </div>
+    <ul class="nav nav-tabs  lottery-tabs" id="myTab" role="tablist">
+        <li class="nav-item custom-nav-item">
+            <a class="nav-link  custom-nav-link tcg-nav-link active" id="tcg-tab" onclick="showTcg()">
+                TCG彩票
+            </a>
+        </li>
+        <li class="nav-item custom-nav-item ">
+            <a class="nav-link custom-nav-link bbin-nav-link" id="bbin-tab" onclick="showBBin()">bbin 彩票</a>
+        </li>
+    </ul>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+
+    var t1 = new TimelineMax(), t2 = new TimelineMax(), t3 = new TimelineMax();
+
+    function showTcg() {
+        paneChange('bbin', 'tcg');
+    }
+
+    function showBBin() {
+        paneChange('tcg', 'bbin');
+    }
+
+
+    function paneChange(outPane, inPane) {
+        $('#' + outPane + '-tab').removeClass('active')
+        $('#' + inPane + '-tab').addClass('active')
+        t3.to($('.pane-bg'), 0.2, {
+            scale: 1.5,
+            opacity: 0
+        }).addCallback(() => {
+            t3.fromTo($('.pane-bg'), 0.6, {
+                scale: 1.5,
+                opacity: 0
+            }, {
+                scale: 1,
+                opacity: 1
+            }).addCallback(() => $('.pane-bg').removeAttr('style'))
+        })
+        t1.to($('.lottery-pane-' + outPane + '-bg'), 0.3,
+            {scale: 1.5, opacity: 0}).addCallback(() => {
+            $('.lottery-pane-' + outPane + '-bg').removeAttr('style');
+            $('.lottery-pane-' + outPane + '-bg').hide();
+            $('.lottery-pane-' + inPane + '-bg').show();
+        });
+        t1.fromTo($('.lottery-pane-' + inPane + '-bg'), 0.5,
+            {scale: .5, opacity: 0}, {
+                scale: 1,
+                opacity: 1
+            }).addCallback(() => $('.lottery-pane-' + inPane + '-bg').removeAttr('style'));
+        t2.to($('#' + outPane + 'Text'), 0.3, {y: 100, opacity: 0}).addCallback(() => {
+            $('#' + outPane + 'Text').removeAttr('style')
+            $('#' + outPane + 'Text').hide();
+            $('#' + inPane + 'Text').show();
+        });
+        t2.fromTo($('#' + inPane + 'Text'), 0.5, {
+            y: -100,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1
+        }).addCallback(() => $('#' + inPane + 'Text').removeAttr('style'));
+    }
+
+
+</script>
+</html>

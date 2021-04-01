@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢助力LPL春季赛，投注奖金送不停</title>
+    <link rel="stylesheet" href="/style/css/betBonus.css">
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div class="bet-container">
+    <div class="bet-banner">
+        <img src="/style/img/promotion/betBonus/bet_banner.png" alt="" srcset="">
+    </div>
+    <div class="bet-content">
+        <div class="bet-title"><img src="/style/img/promotion/betBonus/bet_active.png" alt=""></div>
+        <div class="bet-active">
+            <p>活动时间:2021年3月1日-2021年3月28日</p>
+            <p>活动场馆：东赢电竞</p>
+            <p>活动内容：会员在活动期间内投注LPL春季赛指定赛事早盘盘口，根据本场赛事中总击杀数最多的选手与总击杀数排名第二的选手，击杀相减，差值越大，奖金越高</p>
+        </div>
+        <div class="active-title">2021.03.10</div>
+        <div class="active-content">
+            <h5 class="match-title">LPL春季赛</h5>
+            <div class="team-content">
+                <section>
+                    <p class="arrow-left"><img src="/style/img/promotion/betBonus/bet_left.png" alt=""></p> 
+                    <p>
+                        <img id="teamOne" src="/style/img/promotion/betBonus/bet_team.png" alt="" width="100">
+                    </p>
+                </section>
+                <section class="match-time-detail">16:00</section>
+                <section>
+                    <p>
+                        <img id="teamTwo" src="/style/img/promotion/betBonus/bet_team.png" alt="" width="100">
+                    </p>
+                    <p  class="arrow-right"><img src="/style/img/promotion/betBonus/bet_right.png" alt=""></p> 
+                </section>
+            </div>
+            <p class="team-name">
+                <span class="t1">T1</span>
+                <span class="t2">T1</span>
+            </p>
+        </div>
+        <div class="skill-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="8">击杀差值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>单场赛事有效投注额度</td>
+                        <td>1个</td>
+                        <td>2个</td>
+                        <td>3个</td>
+                        <td>4个</td>
+                        <td>5个</td>
+                        <td>6个</td>
+                        <td>7个</td>
+                    </tr>
+                    <tr>
+                        <td>≥1000</td>
+                        <td>8元</td>
+                        <td>12元</td>
+                        <td>18元</td>
+                        <td>28元</td>
+                        <td>38元</td>
+                        <td>58元</td>
+                        <td>88元</td>
+                    </tr>
+                    <tr>
+                        <td>≥3000</td>
+                        <td>18元</td>
+                        <td>28元</td>
+                        <td>38元</td>
+                        <td>68元</td>
+                        <td>128元</td>
+                        <td>258元</td>
+                        <td>368元</td>
+                    </tr>
+                    <tr>
+                        <td>≥5000</td>
+                        <td>28元</td>
+                        <td>38元</td>
+                        <td>68元</td>
+                        <td>88元</td>
+                        <td>188元</td>
+                        <td>288元</td>
+                        <td>388元</td>
+                    </tr>
+                    <tr>
+                        <td>≥10000</td>
+                        <td>38元</td>
+                        <td>68元</td>
+                        <td>88元</td>
+                        <td>188元</td>
+                        <td>288元</td>
+                        <td>388元</td>
+                        <td>588元</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="team-tip">注：指定赛事中，根据开出赛制，无论是BO1/BO3/BO5，均是计算总局数击杀差值来计算</p>
+            <p class="team-tip">例如：BO3比赛结束，统计单个选手总击杀数是16（替补计算在内）排名第二者总击杀数是10，人头相减（16-10=6 若早盘投注≥3000，对应奖金则是258元）</p>
+        </div>
+        <div class="bet-title"><img src="/style/img/promotion/betBonus/bet_ruler.png" alt=""></div>
+        <div class="bet-ruler">     
+            <p>1.此活动仅限在东赢电竞场馆投注，其余场馆投注不计算在内</p>
+            <p>2.会员开赛前投注指定赛事；单场有效投注额≥1000即可获得参与资格，开赛后的所有投注均为无效。</p>
+            <p>3.指定赛事结束后，对应的奖金会在次日下午16:00自动派发到主账户钱包。</p>
+            <p>4.此活动奖金仅限投注电竞/体育游戏，3倍流水即可提款。</p>
+            <p>5.所有电竞/体育赔率均为欧洲盘，且投注赔率低于1.70和无效的、取消的、同局中对冲投注将不计算在有效投注内。</p>
+            <p>6.东赢电竞保留对活动的修改、停止及最终解释权。</p>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+    $(function() {
+        $.ajax({
+            url:wap_site_host() +"/rest/api/getSafeBetInfo?type=LPL",
+            data:{'token': wap_get_user().token},
+            type:"GET",
+            dataType: 'json',
+            success:function(d){
+                if(d.code === 0) {
+                    $.each(d.data, function(k, v) {
+                        let matchTime = new Date(v.matchTime);
+                        $('#teamOne').attr('src', v.teamOneLogo);
+                        $('#teamTwo').attr('src', v.teamTwoLogo);
+                        $('.team-name .t1').text(v.teamOne);
+                        $('.team-name .t2').text(v.teamTwo);
+                        $('.match-title').text(v.matchTitle);
+                        $('.active-title').text(`${matchTime.getFullYear()}-${matchTime.getMonth() + 1}-${matchTime.getDate()}`);
+                        $('.match-time-detail').text(`${matchTime.getHours()}:${appendZero(matchTime.getMinutes())}`);
+                    });
+                }
+            }
+        })
+    });
+
+    function appendZero(v) {
+        if(v < 10)
+            v = '0' + v;
+        return v;
+    }
+</script>
+</html>

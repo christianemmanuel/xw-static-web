@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢 - 会员福利，邀请好友</title>
+    <link rel="stylesheet" href="/style/css/inviteFriends.css">
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/plugins/tweenMax/TweenMax.min.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div class="invite-friends-container">
+    <div class="invite-row-box">
+        <div>
+            <img src="../style/img/promotion/inviteFriends/content_388.png">
+        </div>
+        <div style="width: 610px;">
+            <div><img src="../style/img/promotion/inviteFriends/title_hyfl.png"></div>
+            <div class="txt-blue-tip" style="margin-top: 25px;">活动对象：全体会员</div>
+            <div class="txt-blue-tip" style="margin-top: 23px;">活动时间：长期</div>
+            <table class="invite-table white-bg">
+                <tr>
+                    <td>推荐新用户首存金额</td>
+                    <td>可获得推荐礼金</td>
+                    <td>流水要求</td>
+                </tr>
+                <tr>
+                    <td>&gt;188</td>
+                    <td>18</td>
+                    <td rowspan="8">1倍</td>
+                </tr>
+                <tr>
+                    <td>&gt;288</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>&gt;588</td>
+                    <td>38</td>
+                </tr>
+                <tr>
+                    <td>&gt;1088</td>
+                    <td>68</td>
+                </tr>
+                <tr>
+                    <td>&gt;288</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>&gt;2888</td>
+                    <td>118</td>
+                </tr>
+                <tr>
+                    <td>&gt;5888</td>
+                    <td>158</td>
+                </tr>
+                <tr>
+                    <td>&gt;10888</td>
+                    <td>258</td>
+                </tr>
+                <tr>
+                    <td>&gt;18888</td>
+                    <td>388</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="invite-row-box">
+        <div style="width: 730px;">
+            <div>
+                <img src="../style/img/promotion/inviteFriends/title_sqfs.png">
+            </div>
+            <div class="txt-blue-tip" style="margin-top: 86px;">邀请朋友共欢，领388元红包，好友助力一起赚！</div>
+            <div class="txt-blue-tip" style="margin-top: 6px;">分享链接：</div>
+            <div class="invite-input-box">
+                <input class="invite-input" value="https://www.xw283.com/XXX"/>
+                <button type="button" class="invite-btn copy">复制</button>
+            </div>
+            <div class="invite-btn-box">
+                <button type="button" class="invite-btn" onclick="showModal('inviteRecordModal')">推荐朋友注册记录</button>
+                <button type="button" class="invite-btn" onclick="showModal('inviteBonusRecordModal')">获得奖金记录</button>
+            </div>
+        </div>
+        <div class="scan-bg">
+            <div style="width: 200px;margin-left: 26px;">
+                <img src="../style/img/promotion/inviteFriends/scan_code.png"><br>
+                <button type="button" class="invite-btn" style="margin-top: 6px;">下载分享二维码</button>
+            </div>
+        </div>
+    </div>
+    <div class="invite-row-box">
+        <div>
+            <img src="../style/img/promotion/inviteFriends/content_left.png">
+        </div>
+        <div>
+            <div>
+                <img src="../style/img/promotion/inviteFriends/title_hdgh.png">
+            </div>
+            <ul class="rule-list">
+                <li>本活动全体用户皆可参与，用户点击推荐链接分享给新用户注册并进行存款后即可获得对应推荐礼金，被推荐用户无需填写推荐码；</li>
+                <li>每推荐一个新用户注册并存款皆可获得一次对应用户首存金额的推荐礼金；</li>
+                <li>推荐好友的存款不与其他任何存送优惠共享；</li>
+                <li>每位被推荐用户需满足：每一个手机号码、电子邮箱、IP地址、相同银行卡、同一台电脑仅可注册一个会员账号，如发现有违规用户，我们将保留无限期审核扣回红利及所产生利润的权利；</li>
+                <li>东赢保留本活动最终解释权。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="inviteRecordModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title">推荐好友注册记录</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="record-table">
+                    <thead>
+                    <tr>
+                        <th width="60%">好友邀请日期</th>
+                        <th width="40%">用户ID</th>
+                    </tr>
+                    </thead>
+                    <tbody id="recordBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="inviteBonusRecordModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title">获得奖金记录</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="record-table">
+                    <thead>
+                    <tr>
+                        <th width="60%">奖金获取日期</th>
+                        <th width="40%">奖金金额</th>
+                    </tr>
+                    </thead>
+                    <tbody id="bonuRecordBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+function showModal(m) {
+    $('#' + m).modal('show');
+}
+</script>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢官网 - MAD LIONS官方赞助商</title>
+    <link rel="stylesheet" href="/style/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/style/css/index_new.css">
+    <script type="text/javascript" src="/style/plugins/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/js/jquery.number-run.js"></script>
+    <script type="text/javascript">
+        var host = document.domain;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            var index = 0;
+            if (host.startsWith('www')) {
+                index = 1;
+            }
+            var noa = host.split('.')[index];
+            var domain_type=host.split('.')[(index+1)];
+            var _index_pathname = window.location.pathname;
+            if (noa.length == 5) {
+                window.location = "https://m." + noa + "."+domain_type + _index_pathname;
+            } else {
+                window.location = "http://m." + noa + "."+domain_type + _index_pathname;
+            }
+        }
+    </script>
+    <style>
+        #showOut .bannerBox .swiper-pagination {
+            z-index: 99;
+        }
+
+        #showOut .bannerBox .swiper-pagination-bullet {
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 0.8;
+            background: #EEF0ED;
+            margin: 0 5px;
+        }
+
+        #showOut .bannerBox .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+            width: 45px;
+            border-radius: 10px;
+        }
+
+        .scollBoxbottom .imgBox .swiper-slide {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+@@include('header.html')
+<div id="showOut" class="index-swiper-container"></div>
+@@include('right-side.html')
+<div class="index-container">
+    <div class="index-down-container">
+        <div class="down-left-box">
+            <div><img src="/style/img/index/img_txt_app_download.png"></div>
+            <div class="index-box-content">
+                引领市场的卓越技术，自主研发了全套终端应用，让您畅享Web,H5,更有iOS,Android原生APP，让您随时随地，娱乐投注！
+            </div>
+            <div class="down-url-box detail-all-box active app-detail-fadein">
+                <div class="down-url-item">
+                    <div><img src="https://sm.zzwangjie.com//static//image/6b088385-a13b-4637-b036-bb2a8105c64a.png" height="120"></div>
+                    <div class="down-url-text">扫描进入下载页面</div>
+                    <div class="down-url">ytgg8866.com</div>
+                </div>
+                <div class="down-url-item">
+                    <div><img src="/style/img/index/img_h5.png"></div>
+                    <div class="down-url-text">手机免下载地址</div>
+                    <div class="down-url">m.dyvip1.com</div>
+                </div>
+            </div>
+            <div class="down-url-box detail-esports-box">
+                <div class="down-url-item">
+                    <div><img src="https://sm.zzwangjie.com//static//image/3bdaa6cf-b0a6-45b0-a3ed-e857e574af07.png" height="120"></div>
+                    <div class="down-url-text">扫描进入下载页面</div>
+                    <div class="down-url">xwesport.app</div>
+                </div>
+                <div class="down-url-item">
+                    <div><img src="/style/img/index/img_h5.png"></div>
+                    <div class="down-url-text">手机免下载地址</div>
+                    <div class="down-url">m.dyvip1.com</div>
+                </div>
+            </div>
+            <div class="down-url-box detail-sport-box">
+                <div class="down-url-item">
+                    <div><img src="https://sm.zzwangjie.com//static//image/3bdaa6cf-b0a6-45b0-a3ed-e857e574af07.png" height="120"></div>
+                    <div class="down-url-text">扫描进入下载页面</div>
+                    <div class="down-url">www.dyvip1.com</div>
+                </div>
+                <div class="down-url-item">
+                    <div><img src="/style/img/index/img_h5.png"></div>
+                    <div class="down-url-text">手机免下载地址</div>
+                    <div class="down-url">m.dyvip1.com</div>
+                </div>
+            </div>
+            <div class="switch-btns-container">
+                <div class="switch-btn app-type-btn active" data-app-type="all">全站APP</div>
+                <div class="switch-btn app-type-btn" data-app-type="esports">电竞APP</div>
+                <div class="switch-btn app-type-btn" data-app-type="sport">体育APP</div>
+            </div>
+        </div>
+        <div>
+            <img src="/style/img/index/img_app_download.png">
+        </div>
+    </div>
+    <div class="index-event-container">
+        <div class="index-event-lex-box">
+            <div><img src="/style/img/index/img_txt_hot_event.png"></div>
+            <div class="index-box-content" style="width: 385px;">
+                引领市场的卓越技术，自主研发了全套终端应用，让您畅享Web,H5,更有iOS,Android原生APP，让您随时随地，娱乐投注！
+            </div>
+            <div><img src="/style/img/index/img_hot_event.png"></div>
+        </div>
+        <div>
+            <div class="switch-btns-container" style="width: 400px;margin-top: 69px;margin-left: 276px;">
+                <div class="switch-btn active">英雄联盟</div>
+                <div class="switch-btn">CS:GO</div>
+                <div class="switch-btn">DOTA2</div>
+            </div>
+            <div class="index-events-box">
+                <div class="index-event-main lol">
+                    <div>
+                        <div><img src="/style/img/index/icon_lol.png" class="event-match-icon">2020春季赛：欧洲</div>
+                        <div class="event-match-box">
+                            <div class="match-time">08月14日 20：00</div>
+                            <div class="match-teams-box">
+                                <div class="match-team">
+                                    <div class="team-logo">
+                                        <img src="https://assets.diaoq.com/media/images/logo/Afreecas%20111%20%281%29.png">
+                                    </div>
+                                    <div class="team-name home">Afreeca Freecs</div>
+                                </div>
+                                <div>
+                                    <div class="vs">VS</div>
+                                </div>
+                                <div class="match-team">
+                                    <div class="team-logo">
+                                        <img src="https://assets.diaoq.com/media/images/logo/Afreecas%20111%20%281%29.png">
+                                    </div>
+                                    <div class="team-name away">Afreeca Freecs</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top: 132px;">
+                        <div class="bet-btn">立即投注</div>
+                    </div>
+                </div>
+                <div class="index-event-sub-box">
+                    <div class="index-event-item">
+                        <div><img src="/style/img/index/icon_csgo.png" class="event-match-icon">2020春季赛：欧洲</div>
+                        <div class="match-time">08月14日 20：00</div>
+                        <div class="match-teams-box">
+                            <div class="match-team">
+                                <div class="team-logo">
+                                    <img src="https://assets.diaoq.com/media/images/logo/Afreecas%20111%20%281%29.png">
+                                </div>
+                                <div class="team-name home">Afreeca Freecs</div>
+                            </div>
+                            <div>
+                                <div class="vs">VS</div>
+                            </div>
+                            <div class="match-team">
+                                <div class="team-logo">
+                                    <img src="https://assets.diaoq.com/media/images/logo/Afreecas%20111%20%281%29.png">
+                                </div>
+                                <div class="team-name away">Afreeca Freecs</div>
+                            </div>
+                        </div>
+                        <div class="bet-btn">立即投注</div>
+                    </div>
+                    <div class="index-event-item">
+                        <div><img src="/style/img/index/icon_dota2.png" class="event-match-icon">2020春季赛：欧洲</div>
+                        <div class="match-time">08月14日 20：00</div>
+                        <div class="match-teams-box">
+                            <div class="match-team">
+                                <div class="team-logo">
+                                    <img src="https://assets.diaoq.com/media/images/logo/Afreecas%20111%20%281%29.png">
+                                </div>
+                                <div class="team-name home">Afreeca Freecs</div>
+                            </div>
+                            <div>
+                                <div class="vs">VS</div>
+                            </div>
+                            <div class="match-team">
+                                <div class="team-logo">
+                                    <img src="https://assets.diaoq.com/media/images/logo/Afreecas%20111%20%281%29.png">
+                                </div>
+                                <div class="team-name away">Afreeca Freecs</div>
+                            </div>
+                        </div>
+                        <div class="bet-btn">立即投注</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index-platforms-container">
+        <div><img src="/style/img/index/img_txt_platforms.png"></div>
+        <div class="index-box-content" style="width: 385px;">
+            引领市场的卓越技术，自主研发了全套终端应用，让您畅享Web,H5,更有iOS,Android原生APP，让您随时随地，娱乐投注！
+        </div>
+        <div class="switch-btns-container" style="width: 920px;margin: 35px auto 50px;">
+            <div class="switch-btn active">真人娱乐</div>
+            <div class="switch-btn">电子竞技</div>
+            <div class="switch-btn">体育竞技</div>
+            <div class="switch-btn">彩票投注</div>
+            <div class="switch-btn">棋牌游戏</div>
+            <div class="switch-btn">捕鱼达人</div>
+            <div class="switch-btn">电子游艺</div>
+        </div>
+        <div class="platforms-bg-box">
+            <div class="platforms-swiper-container swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_esports.png"></div>
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_sport.png"></div>
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_live.png"></div>
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_slot.png"></div>
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_fish.png"></div>
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_lottery.png"></div>
+                    <div class="swiper-slide"><img src="/style/img/index/img_platform_poker.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="sport" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content" style="width: 637px;">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title">体育免费竞猜</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="sport-body" style="padding: 1rem">
+                <iframe id="sportContext" style="width: 602px;height: 600px;border: none;overflow: hidden"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered inotice-modal-dialog" role="document">
+        <div class="modal-content inotice-modal-content">
+            <div class="modal-header inotice-modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title inotice-modal-title">重要公告</h4>
+            </div>
+            <div class="modal-body inotice-modal-body">
+                <ul class="inoticeContentList">
+                    <li class="inotice-title-li">
+                        <span class="inotice-modal-content-title"></span>
+                        <div class="form-group inotice-mod">
+
+                        </div>
+                        <div class="form-group">
+                            <br>
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="form-group" style="display: flex;justify-content: space-between;align-items: center;margin-top: 36px;padding: 0;">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input inotice-nomorecheck" id="inoticeNoMore">
+                        <label class="form-check-label inotice-check-label" for="inoticeNoMore">不再提醒</label>
+                    </div>
+                    <div class="inotice-btn knew">知道了</div>
+                    <a href="/promotion.html" target="_self" class="inotice-btn detail">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+    var lastType;
+    $(function () {
+        loadIndexAlert();
+        loadIndexPromotion();
+        initPlatforms();
+        initPlatformsSwiper();
+        showAppBySelect();
+        $('.app-type-btn').click(function() {
+            if(!$(this).hasClass('active')) {
+                if($(this).data('app-type') === 'sport') {
+                    info('敬请期待');
+                    return false;
+                }
+                lastType = $('.app-type-btn.active').data("app-type");
+                $('.app-type-btn').removeClass('active');
+                $(this).addClass('active');
+                showAppBySelect();
+            }
+        });
+    });
+    function initPlatformsSwiper() {
+        new Swiper('.platforms-swiper-container', {
+            loop: true,
+            effect : 'coverflow',
+            slidesPerView: 3,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 200,
+                depth: 100,
+                modifier: 1,
+                slideShadows : false
+            }
+        });
+    }
+    function loadIndexPromotion() {
+        var url = wap_site_host() + "/rest/api/webIndexPromotionList";
+        loadHTMLPage(url, "showIndexPromotion");
+    }
+
+    function loadIndexAlert() {
+        $.ajax({
+            url: wap_site_host() + "/rest/api/indexNoticeJSON",
+            type: "GET",
+            dataType: 'json',
+            success: function (data) {
+                if(data.data) {
+                    $('.inoticeContentList').empty();
+                    var ijson = JSON.parse(data.data), nc = "";
+                    for(var nt in ijson) {
+                        nc += '<li class="inotice-title-li"><span class="inotice-modal-content-title">' + ijson[nt].title +'</span><div class="form-group inotice-mod">' + ijson[nt].content + '</div></li>';
+                    }
+                    $('.inoticeContentList').html(nc);
+                }
+                if(!Cookies.get('indexNoticeNoMore')) {
+                    $('#noticeModal').modal('show');
+                }
+                $('.inotice-btn.knew').click(function() {
+                    if($('#inoticeNoMore').prop('checked')) {
+                        Cookies.set('indexNoticeNoMore', true, { expires: 1 });
+                    }
+                    $('#noticeModal').modal('hide');
+                });
+            }
+        });
+    }
+
+    function showIndexPromotion(data) {
+        if (data != '') {
+            $("#showOut").html(data);
+            $('#showOut .swiper-slide img').click(function () {
+                var url = $(this).attr("jump-url");
+                var blank_link = $(this).attr("blank-link");
+                if (blank_link != "" && blank_link != null && blank_link != undefined) {
+                    if (wap_is_user_notexist()) {
+                        fun_alertMsg('请登入后再做操作！', '系统提示', function () {
+                        });
+                    } else {
+                        window.open(blank_link + '?token=' + wap_get_user().token, '_blank');
+                    }
+                } else if (url != "" && url != null && url != undefined) {
+                    window.location.href = url;
+                } else {
+                    window.location.href = "/promotion.html";
+                }
+            });
+        }
+        new Swiper('.bannerBox', {
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+            parallax: true,
+            observer: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    }
+
+    function initPlatforms() {
+        getPlatforms().done(d => {
+            if (d.code == 0) {
+            showPlatforms(d.data);
+        }
+    })
+    }
+
+    function showPlatforms(data) {
+        let platforms = new Map();
+        data.forEach(p => {
+            if (platforms.has(p.ptype)) {
+            let array = platforms.get(p.ptype);
+            array.push(p);
+            platforms.set(p.ptype, array);
+        } else {
+            platforms.set(p.ptype, [p]);
+        }
+    })
+
+        for (let key of platforms.keys()) {
+            let platform = platforms.get(key);
+            let html = platform.slice(0, 4).map(p => {
+                return `<div class="game-platform">
+                            <img src="./style/img/index/${p.platformCode.toLowerCase()}.png">
+                            <div>${p.platformNameCn}</div>
+                        </div>`;
+        }).join("");
+            $('#type-' + key).html(html)
+        }
+    }
+
+    loadMatchInfo();
+    var matchTypes = {'CSGO': 0, 'DOTA2': 0, 'LOL': 0};
+    var lastMatchData;
+    var matchInterval;
+    function loadMatchInfo() {
+        loadIndexMatchs().done(d => {
+            if (d.code == 0) {
+            clearInterval(matchInterval);
+            lastMatchData = d.data;
+            initMatch();
+            matchInterval = setInterval(function() {
+                initMatch();
+            }, 20000);
+        }
+    });
+    }
+    function initMatch() {
+        for(var type in matchTypes) {
+            if(lastMatchData[type] && lastMatchData[type].length) {
+                var typeIndex = matchTypes[type];
+                if(typeIndex >= lastMatchData[type].length) {
+                    typeIndex = 0;
+                }
+                var matchInfo = lastMatchData[type][typeIndex];
+                var box = $('.index-match-' + type);
+                box.find('.index-match-title').text(matchInfo.competitionName);
+                box.find('.index-match-time').text(fun_timeFormat(matchInfo.time));
+                box.find('.match-home-logo').attr('src', matchInfo.homeLogo);
+                box.find('.match-away-logo').attr('src', matchInfo.awayLogo);
+                box.find('.match-home-name').text(matchInfo.home);
+                box.find('.match-away-name').text(matchInfo.away);
+                matchTypes[type] = (typeIndex + 1);
+            }
+        }
+    }
+
+    function showAppBySelect() {
+        var activeType = $('.switch-btn.active').data("app-type");
+        switchAppType(activeType);
+    }
+    function switchAppType(activeType) {
+        if(activeType) {
+            $('.down-url-box').removeClass('active');
+            $('.detail-' + activeType + '-box').addClass('active')
+        }
+    }
+</script>
+</html>

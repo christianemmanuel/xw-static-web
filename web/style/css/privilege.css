@@ -1,0 +1,129 @@
+.privilege-container {
+    width: 960px;
+    padding: 22px 34px
+}
+
+.privilege-panel {
+    width: 100%;
+    padding: 40px 70px;
+    height: 672px;
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    grid-template-rows: repeat(auto-fill, 117px);
+    grid-row-gap: 23px;
+    grid-column-gap: 40px;
+}
+
+.card-privilege {
+    width: 220px;
+    height: 117px;
+    padding: 0.5rem;
+    box-shadow: 2px 5px 8px 0px rgba(46, 71, 145, 0.2);
+    border-radius: 2px;
+}
+
+.card-privilege:hover {
+    box-shadow: 0px 3px 8px 0px rgba(39, 61, 86, 0.46);
+}
+
+.card-privilege .privilege-content {
+    width: 100%;
+    clear: none;
+    padding: 15px 0;
+}
+
+.card-privilege .privilege-content button {
+    width: 68px;
+    height: 24px;
+    border-radius: 2px;
+    padding: 0;
+    position: absolute;
+    bottom: 16px;
+    right: 10px;
+    font-size: 12px;
+}
+
+.privilege-icon {
+    width: 82px;
+    height: 82px;
+}
+
+.icon-1 {
+    background-image: url("../img/privilege/icon1.png");
+    background-size: 453px 82px;
+    background-position: -90px 0px;
+}
+
+.icon-2 {
+    background-image: url("../img/privilege/icon1.png");
+    background-size: 453px 82px;
+    background-position: -280px 0px;
+}
+
+.icon-3 {
+    background-image: url("../img/privilege/share_friend.png");
+    background-size: 82px 82px;
+}
+
+.icon-4 {
+    background-image: url("../img/privilege/cion_checkin.png");
+    background-size: 82px 82px;
+}
+
+.icon-5 {
+    background-image: url("../img/privilege/icon_sport.png");
+    background-size: 82px 82px;
+}
+
+.icon-6{
+    background-image: url("../img/privilege/live_hlepBouns.png");
+    background-size: 82px 82px;
+}
+
+.icon-7 {
+    background-image: url("../img/privilege/icon1.png");
+    background-size: 453px 82px;
+    background-position: -371px 0px;
+}
+
+.icon-8 {
+    background-image: url("../img/privilege/yuebao.png");
+    background-size: 82px 82px;
+}
+.icon-9 {
+    background-image: url("../img/privilege/poker_helpBouns.png");
+    background-size: 82px 82px;
+}
+.icon-10 {
+    background-image: url("../img/privilege/loose.png");
+    background-size: 82px 82px;
+}
+
+.icon-11 {
+    background-image: url("../img/privilege/icon_redpackage.png");
+    background-size: 82px 82px;
+}
+.modal form .form-group{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal form .form-group label span{
+    display: inline-block;
+    width: 60px;
+    text-align: justify;
+    text-align-last: justify;
+    font-size: 12px;
+    font-weight: 400;
+    color: #59606e;
+}
+
+.modal form .form-group input,.modal form .form-group select{
+    width: 300px;
+}
+
+#inviteFriends ul li{
+    list-style: decimal;
+}

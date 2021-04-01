@@ -1,0 +1,312 @@
+@charset "utf-8";
+body {
+    min-width: 1376px;
+}
+
+.promotion-container {
+    padding-top: 490px;
+    padding-bottom: 20px;
+    background-image: url("../img/promotion/bg-top.jpg");
+    background-color:  #f0f1f6;
+    background-repeat: no-repeat;
+    background-position: center 120px;
+}
+
+.discountBox {
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    width: 1269px;
+    padding: 27px 72px;
+}
+
+.discountBox .gameTab {
+    width: 100%;
+    overflow: hidden;
+}
+
+.discountBox .gameTab {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.discountBox .gameTab li {
+    background-image: url("../img/promotion/tab.png");
+    width: 193px;
+    height: 67px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    color: #626a7d;
+}
+
+.discountBox .gameTab li:hover {
+    color: #f9f9f9;
+    background-image: url("../img/promotion/tab-hover.png");
+
+}
+
+.discountBox .gameTab li.on {
+    background-image: url("../img/promotion/tab-hover.png");
+    color: #f9f9f9;
+}
+
+.i1::before {
+    content: " ";
+    background: url('../img/promotion/new.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+
+.i1.on::before, .i1:hover::before {
+    background: url('../img/promotion/new-hover.png') no-repeat;
+}
+
+.i2::before {
+    content: " ";
+    background: url('../img/promotion/slot.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+
+.i2.on::before, .i2:hover::before {
+    background: url('../img/promotion/slot-hover.png') no-repeat;
+}
+
+.i3::before {
+    content: " ";
+    background: url('../img/promotion/sport.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+
+.i3.on::before, .i3:hover::before {
+    background: url('../img/promotion/sport-hover.png') no-repeat;
+}
+
+.i4::before {
+    content: " ";
+    background: url('../img/promotion/live.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+
+.i4.on::before, .i4:hover::before {
+    background: url('../img/promotion/live-hover.png') no-repeat;
+}
+
+.i6::before {
+    content: " ";
+    background: url('../img/promotion/esport.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+
+.i6.on::before, .i6:hover::before {
+    background: url('../img/promotion/esport-hover.png') no-repeat;
+}
+
+.i7::before {
+    content: " ";
+    background: url('../img/promotion/poker.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+
+.i7.on::before, .i7:hover::before {
+    background: url('../img/promotion/poker-hover.png') no-repeat;
+}
+
+.discountBox hr {
+    width: 100%;
+    height: 1px;
+    background-color: #9ca5b9;
+}
+
+.new {
+    position: absolute;
+    background-image: url('../img/promotion/new-tips.png');
+    width: 95px;
+    height: 95px;
+    top: -5px;
+    right: -5px;
+    z-index: 1;
+}
+
+.hot {
+    position: absolute;
+    background-image: url('../img/promotion/hot-tips.png');
+    width: 95px;
+    height: 95px;
+    top: -5px;
+    right: -5px;
+    z-index: 1;
+}
+
+
+.iscountList, .iscountList ul {
+    width: 100%;
+}
+
+.iscountList {
+    margin-top: 20px;
+    min-height: 1000px;
+}
+
+.iscountList ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iscountList ul li {
+    position: relative;
+    width: 355px;
+    height: 237px;
+    cursor: pointer;
+    margin: 0 10px 25px 10px;
+}
+
+.iscountList ul li .pro-info {
+    position: relative;
+    width: 355px;
+    height: 237px;
+    overflow: hidden;
+    background-color: #f2f6ff;
+    box-shadow: 0px 3px 9px 0px rgba(112, 122, 143, 0.4);
+}
+
+.iscountList ul .pro-info p {
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    color: #232323;
+    height: 57px;
+    line-height: 57px;
+    display: block;
+}
+
+.iscountList ul li:hover .pro-info p {
+    color: #fefefe;
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient( #3077f6, #3077f6);
+    background-blend-mode: normal, normal;
+}
+
+.discountBox .pageList {
+    width: 379px;
+    overflow: hidden;
+    text-align: center;
+    margin: 60px auto 0;
+}
+
+.discountBox .pageList span {
+    display: inline-block;
+    width: 42px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 42px;
+    background-color: rgb(197, 197, 197);
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.discountBox .pageList span.on, .discountBox .pageList span:hover {
+    background-color: #245f90;
+    color: #fff;
+}
+
+.promo_detail_container {
+    width: 860px;
+    height: 750px;
+    background: url(https://ezeu.ytyq8866.com/resources/web_h5/images/discount/bg_pop.png) center top no-repeat;
+    background-size: 860px 750px;
+    border-radius: 10px;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: -385px;
+    z-index: 9006;
+    display: none;
+}
+
+.promo_detail_tip_bg {
+    height: 90px;
+}
+
+.promo_detail_cp {
+    height: 55px;
+    text-align: right;
+}
+
+.promo_detail_close {
+    width: 66px;
+    height: 65px;
+    background: url(https://ezeu.ytyq8866.com/resources/web_h5/images/discount/close.png) center top no-repeat;
+    display: block;
+    float: right;
+    margin-right: -25px;
+    margin-top: -25px;
+}
+
+.promo_detail_close:hover {
+    transform: scale(1.05);
+}
+
+.promo_detail_title {
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-left: 35px;
+    display: inline-block;
+    border-bottom: 2px solid #ffdd3d;
+}
+
+.promo_detail_content {
+    font-size: 13px;
+    color: #000;
+    letter-spacing: 1px;
+    padding: 35px;
+    line-height: 25px;
+    overflow-y: scroll;
+    height: 550px;
+    width: 770px;
+    margin-top: 30px;
+}
+
+.promo_detail_content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.promo_detail_content::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.promo_detail_content::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #80caff;
+}
+.promo_detail_content table, .promo_detail_content table>tbody>tr>td, .promo_detail_content table>thead>tr>td, .promo_detail_content table>thead>tr>th {
+    border: 1px solid #2b2e38!important;
+}
+.promo_detail_content h3 {
+    margin: 25px 0;
+}
+.less-padding-table td, .less-padding-table th {
+    padding: 9px 7px;
+}

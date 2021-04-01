@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>优惠</title>
+    <link rel="stylesheet" href="/style/css/youhui.css">
+</head>
+<body>
+@@include('header.html')
+@@include('right-side.html')
+<div class="promotion-container">
+    <div class="discountBox">
+        <ul class="gameTab">
+            <li class="pro_type_btn i1 on" onclick="ChangeDiv('all',this)">最新优惠</li>
+            <li class="pro_type_btn i6 " onclick="ChangeDiv('electronic',this)">电竞</li>
+            <li class="pro_type_btn i3" onclick="ChangeDiv('sport',this)">体育</li>
+            <li class="pro_type_btn i7" onclick="ChangeDiv('poker',this)">棋牌</li>
+            <li class="pro_type_btn i4" onclick="ChangeDiv('live',this)">真人娱乐</li>
+            <li class="pro_type_btn i2" onclick="ChangeDiv('slot',this)">老虎机/捕鱼</li>
+            <!--<li class="pro_type_btn" onclick="ChangeDiv('fish',this)"><i class="i5"></i></li>-->
+        </ul>
+        <hr/>
+        <div id="showOut" class="iscountList">
+
+        </div>
+    </div>
+</div>
+@@include('footer.html')
+<div class="hideAll"></div>
+</body>
+@@include('html-foot.html')
+<script>
+    $(function () {
+        loadPromotion();
+        /*$('.swiper-slide').click(function () {
+            window.location.href="/privilege/wage-games.html";
+        })*/
+    });
+
+    var liList;
+
+    function ChangeDiv(showType, e) {
+        $('.pro_type_btn').removeClass('on');
+        $(e).addClass("on");
+        if (showType == 'all') {
+            $('.promo_list_item').show();
+            $('#showOut ul').append(liList);
+        } else {
+            $('.promo_list_item').hide();
+            eval("$('." + showType + "').show()");
+            $('#showOut ul').find('li').each(function () {
+                var curClass = $(this).attr('class').replace(/\s/g, "");
+                var classStr = ('promo_list_item' + showType);
+                if (curClass != classStr) {
+                    $('#showOut ul').append($(this));
+                }
+            })
+        }
+    }
+
+    function loadPromotion() {
+        var url = wap_site_host() + "/rest/api/webPromotionList";
+        loadHTMLPage(url, "showPromotion");
+    }
+
+    function showPromotion(data) {
+        if (data != '') {
+            $("#showOut").html(data);
+        }
+
+        $('.iscountList li').click(function () {
+            $('.promo_detail_container').hide();
+            var needLogin = $(this).data('needLogin');
+            if(needLogin) {
+                if (wap_is_user_notexist()) {
+                    info("请登入后再操作");
+                } else {
+                    var openUrl = $(this).data('openUrl');
+                    if(openUrl) {
+                        var urlTarget = $(this).data('urlTarget');
+                        window.open(openUrl, urlTarget);
+                    }
+                }
+            } else {
+                $(this).find('.promo_detail_container').show();
+            }
+        });
+        $('.promo_detail_close').click(function () {
+            $(this).parent().parent().parent().hide();
+            return false;
+        });
+        liList = $('#showOut ul').find('li');
+    }
+</script>
+</html>

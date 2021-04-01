@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/style/css/ribbon.css">
+    <link rel="stylesheet" href="/style/css/transfer.css">
+</head>
+<body>
+<div class="transfer-container">
+    <span style="font-size: 14px;color: #586067;">快速转账</span>
+    <hr style="width: 100%"/>
+<!--    <div class="main-balance">-->
+<!--        <span style="font-size: 12px;font-weight: normal;color: #4b535a; width: 80px">主账户:</span>-->
+<!--        <span id="mainBalance"-->
+<!--              style="font-size: 12px;font-weight: normal;color: #a1793b;text-align: center; width: 110px">888888</span>-->
+<!--        <button class="btn custom-btn-primary" style="width: 165px;height: 35px; margin-right: 20px"-->
+<!--                onclick="refreshBalance('main')">一键刷新-->
+<!--        </button>-->
+        <div class="alert transfer-tip" role="alert">
+            <img src="/style/img/personal/transfer_tip.png">
+            东赢电竞、IM电竞、IM体育无需转账，共享主钱包
+        </div>
+<!--    </div>-->
+    <div class="transfer-panel">
+
+
+    </div>
+
+    <div class="modal fade" id="dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title custom-modal-title" id="dialog-title"></h5>
+                    <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="dialog-body">
+                    <form id="dialogForm" novalidate>
+                        <div class="form-group">
+                            <label class="col-sm-3 col-form-label"
+                                   style="font-size: 12px;font-weight: normal;color: #4b535a;width: 80px">转账金额：</label>
+                            <div class="col-sm-5" style="margin-right: 10px">
+                                <input type="input" class="form-control" name="amount"
+                                       min="1"
+                                       autocomplete="off" required
+                                       data-parsley-type="number"
+                                       data-parsley-required-message="转账金额不能为空"
+                                       data-parsley-min-message="转账金额不能小于1"
+                                       data-parsley-type-message="转账金額必须为数字"
+                                >
+                                <input type="hidden" name="platform" id="platform">
+                                <input type="hidden" name="type" id="type">
+                            </div>
+                            <button id="submit" type="submit" class="col-sm-4 btn btn-primary">提交</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="dialog-success" class="text-center success "
+                     style="height: 473px;padding: 105px; display: none">
+                    <div class="success-checkmark">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                             enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                            <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                    stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                            <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                      stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                            <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                    stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                    r="73.9"></circle>
+
+                                            </svg>
+
+                    </div>
+
+                    <h3>提交成功</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/style/js/transfer.js"></script>
+</html>

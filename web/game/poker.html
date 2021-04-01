@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	@@include('html-head.html')
+	<link rel="stylesheet" href="/style/css/swiper.min.css">
+	<link rel="stylesheet" href="/style/layui/css/layui.css">
+	<link rel="stylesheet" href="/style/css/index.css">
+	<link rel="stylesheet" href="/style/css/youhui.css">
+	<link rel="stylesheet" href="/style/css/tager.css">
+	<link rel="stylesheet" href="/style/css/casino-new.css">
+	<script src="/style/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/style/js/swiper.min.js"></script>
+	<script src="/style/layui/layui.all.js"></script>
+	<script src="/style/js/md5.js" type="text/javascript" ></script>
+	<script src="/style/js/common.js" type="text/javascript" ></script>
+	<style type="text/css">
+		/*body {
+			background-image: url('/images/live_bg.jpg');
+		}*/
+		.tagerBnaner .rightBox ul li{
+			font-size:12px;
+		}
+
+		.platform_list_item img {
+			height: 100%;
+			width: 100%;
+		}
+
+		.pitem3 .plat_play_btn {
+			display: block;
+		}
+		#winMessage li{
+			position: relative;
+		}
+		.casino-new-wrap {
+			width: 750px;
+			margin: -130px auto 0;
+			padding-bottom: 45px;
+		}
+	</style>
+</head>
+<body style="background-color: #fff;">
+@@include('header.html')
+<div class="tagerBnaner" style="background-image: url(https://xwsr3.16fass88.com/resources/web_h5/images/poker/bg.png);height: 576px">
+	<!--<div class="leftBox">
+		<p class="p1">真人娱乐城</p>
+		<p class="p2">最真实的线上娱乐</p>
+		<p class="p2">最好的游戏体验</p>
+		<p class="p2">等您来参与！</p>
+	</div>
+	<div class="rightBox swiper-container" id="winner" style="height: 330px;float: right;position: relative">
+		<div style="display: none"></div>
+		<ul class="swiper-wrapper" id="winMessage">
+
+		</ul>
+	</div>-->
+</div>
+<div class="casino-new-wrap clearfix" style="margin: -250px auto 0;">
+	<div class="casino-single" onclick="fun_openELottery('/ptweb/kyGame?gameCode=Lobby')">
+		<img src="https://xwsr3.16fass88.com/resources/web_h5/images/poker/ky.png"/>
+		<div class="overlay"></div>
+	</div>
+	<div class="casino-single" onclick="fun_openELottery('/ptweb/txGame?gameCode=Lobby')">
+	<!--<div class="casino-single" onclick="fun_alertMsg('敬请期待','系统提示',function () {})">-->
+		<img src="https://xwsr3.16fass88.com/resources/web_h5/images/poker/dt.png?1"/>
+		<div class="overlay"></div>
+	</div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+<div class="hideAll"></div>
+</body>
+@@include('html-foot.html')
+</html>

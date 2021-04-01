@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/style/css/withdraw.css">
+    <link rel="stylesheet" href="/style/plugins/bootstrap-select/bootstrap-select.min.css">
+    <script src="/style/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+</head>
+<body>
+<div class="withdraw-container">
+    <span class="title">快速提款</span>
+    <hr style="width: 100%"/>
+    <div class="withdraw-pane">
+        <span class="title">提款流程</span>
+        <ul class="progressbar">
+            <li>
+                <button class="btn custom-btn-primary">申请</button>
+            </li>
+            <li><i class="remixicon-arrow-right-s-line"></i></li>
+            <li>
+                <button class="btn custom-btn-primary">审核</button>
+            </li>
+            <li><i class="remixicon-arrow-right-s-line"></i></li>
+            <li>
+                <button class="btn custom-btn-primary">支付</button>
+            </li>
+            <li><i class="remixicon-arrow-right-s-line"></i></li>
+            <li>
+                <button class="btn custom-btn-primary">出款成功</button>
+            </li>
+        </ul>
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                <li>* 比赛结束后系统会核对比分和同步派彩，请您耐心等待5-10分钟，感谢您的理解与支持！</li>
+                <li>* 若提款失败请查看站内信提示的失败原因！</li>
+            </ul>
+        </div>
+        <div class="bank-tab" id="bank-way">
+            <section>提款方式:</section>
+            <section type='rmb' data-ways="rmb-form" class="draw-way">
+                <div>
+                    <img  class="bank-icon" src="/style/img/personal/BANK.png" alt="" srcset="">
+                </div>
+                <p>银行转账</p>
+            </section>
+            <!--<section tab='2'>
+                <div>
+                    <img class="usdt" src="/style/img/digitalCurrency/USDT.png" alt="" srcset="">
+                </div>
+                <p>USDT</p>
+            </section>-->
+        </div>
+        <div class="form-panel custom-panel form-content rmb-form" style="display: none">
+            <span class="title">提款信息</span>
+            <div class="withdraw-form">
+                <form id="withdraw-form" novalidate>
+                    <div class="form-group" style="position: relative">
+                        <label class="col-form-label">请选择已绑定卡号:</label>
+                        <div class="select-bank">
+                            <select id="bankcard-0" class="form-control select-cards" data-style="btn-light"
+                                    name="cardId"
+                                    required
+                                    data-parsley-required-message="请先选择银行卡">
+                                <option>请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="position: relative">
+                        <label class="col-form-label">提款金额:</label>
+                        <input type="text" class="form-control" name="amount" id="amount"
+                               autocomplete="off" required
+                               data-parsley-type="number"
+                               data-parsley-required-message="提款金额不能为空"
+                               data-parsley-type-message="提款金額必须为数字"
+                        >
+                    </div>
+                    <input type="hidden" value="WEB" name="osname">
+                </form>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <li>单笔提款：<span class="badge badge-danger" id="withdraw-limit">100元</span></li>
+                        <li>单日可提款：<span class="badge badge-danger" id="today-withdraw-limit"></span></li>
+                        <!--<li>每晚22点 - 08点期间提款500元起，其他时间段300元起</li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="form-btn">
+                <button class="btn btn-secondary" type="reset" form="withdraw-form">重置</button>
+                <button id="submit" class="btn custom-btn-primary" type="submit" form="withdraw-form">确认提款</button>
+            </div>
+        </div>
+        <div class="usdt-content form-content usdt-form" style="display: none">
+            <!--<section class="usdt-row">
+                <label for="">币种：</label>
+                <input type="text" placeholder="USDT" value="USDT">
+            </section>-->
+            <form id="usdt-withdraw-form" novalidate>
+                <section class="usdt-row">
+                    <label for="rate">可用协议：</label>
+                    <span class="green" id="protocols"></span>
+                </section>
+                <section class="usdt-row" style="display: flex;position: relative">
+                    <div><label for="bankcard-1">钱包地址：</label></div>
+                    <div class="usdt-draw" >
+                        <select name="cardId" id="bankcard-1" class="form-control select-cards"
+                                required
+                                data-parsley-required-message="请先选择钱包地址">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                </section>
+                <section class="usdt-row">
+                    <label for="rate">实时汇率：</label>
+                    <span class="green" id="rate"></span>
+                </section>
+                <section class="usdt-row cash">
+                    <div>
+                        <label for="amount">提款金额：</label>
+                    </div>
+                    <div class="draw-money">
+                        <div class="usdt-draw" >
+                            <div style="position: relative">
+                                <input type="text" id="usdtAmount" name="amount" placeholder="请输入RMB金额" class="form-control"
+                                       autocomplete="off" required
+                                       data-parsley-type="number"
+                                       data-parsley-required-message="提款金额不能为空"
+                                       data-parsley-type-message="提款金額必须为数字">
+                            </div>
+                            <div>
+                                <span id="usdt-limit" class="green"></span><br>
+                                <span id="today-usdt-limit" class="green"></span>
+                            </div>
+                        </div>
+                        <!--<p>每日00-07点期间500元起，其他时间段200元起</p>-->
+                    </div>
+                </section>
+                <section class="usdt-row">
+                    <label for="preview-account">预计到账：</label>
+                    <span class="green" id="preview-account"></span>
+                </section>
+                <input type="hidden" value="WEB" name="osname">
+            </form>
+            <div class="form-btn">
+                <button class="btn btn-secondary" type="reset" form="usdt-withdraw-form">重置</button>
+                <button id="usdt-submit" class="btn custom-btn-primary" type="submit" form="usdt-withdraw-form">确认提款</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/style/js/withdraw.js"></script>
+<script>
+    /*$('.bank-tab>section').click(function(){
+        $(this).find('div').addClass('bank-active');
+        $(this).siblings('section').find('div').removeClass('bank-active');
+        var tab ='1';
+        tab=$(this).attr('tab');
+        if(tab==='1'){
+            $('.custom-panel').show();
+            $('.usdt-content').hide();
+        }else{
+            $('.custom-panel').hide();
+            $('.usdt-content').show();
+        }
+    })*/
+</script>
+</html>

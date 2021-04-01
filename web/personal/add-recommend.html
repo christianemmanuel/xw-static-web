@@ -1,0 +1,209 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+<!--	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+<!--	@@include('html-head.html')-->
+<!--	<title>邀请朋友</title>-->
+<!--	<link rel="stylesheet" href="/style/css/swiper.min.css">-->
+<!--	<link rel="stylesheet" href="/style/layui/css/layui.css">-->
+<!--	<link rel="stylesheet" href="/style/css/index.css">-->
+<!--	<link rel="stylesheet" href="/style/css/youhui.css">-->
+<!--	<link rel="stylesheet" href="/style/css/center.css">-->
+<!--	<link rel="stylesheet" href="/style/plugins/page/pager.css" type="text/css">-->
+<!--	<script src="/style/js/jquery-3.3.1.min.js"></script>-->
+<!--	<script type="text/javascript" src="/style/js/swiper.min.js"></script>-->
+<!--	<script src="/style/layui/layui.all.js"></script>-->
+<!--	<script src="/style/js/md5.js" type="text/javascript" ></script>-->
+<!--	<script src="/style/js/common.js" type="text/javascript" ></script>-->
+<!--	<script src="/style/plugins/page/pager.js"></script>-->
+
+<!--</head>-->
+<!--<body style="background-color: #fff;">-->
+<!--@@include('header.html')-->
+<!--<div class="centerBox centerBox1">-->
+<!--	<div class="personBox">-->
+<!--		@@include('person-top.html')-->
+<!--		<div class="personContent">-->
+<!--			@@include('person-left.html')-->
+<!--			<div class="rightContent">-->
+<!--				<div class="depositBox">-->
+<!--					<div class="depositTop">-->
+<!--						<a class="on" id="tab1" onclick="selectPay(1)">邀请朋友</a><a id="tab2" onclick="selectPay(2)">会员返利记录</a>-->
+<!--					</div>-->
+<!--					<div class="depositContent">-->
+<!--						<div class="content-form" id="content1">-->
+<!--							<form class="layui-form" action="">-->
+<!--								<div class="vipInformation">-->
+<!--									<p class="pTitle">◆ 邀请信息 ◆</p>-->
+<!--									<div class="informationBox">-->
+<!--										<table class="layui-table layui-table1" lay-even="" lay-skin="nob" id="recordTable_1">-->
+<!--											<thead>-->
+<!--											<tr>-->
+<!--												<th>类型</th>-->
+<!--												<th>用户名</th>-->
+<!--												<th>姓名</th>-->
+<!--											</tr>-->
+<!--											</thead>-->
+<!--											<tbody>-->
+<!--												<tr><td>被邀请人</td><td colspan="2">无</td></tr>-->
+<!--											</tbody>-->
+<!--										</table>-->
+<!--										<div style="text-align: right;">-->
+<!--											<ul class="pagination" id="pagination-container1"></ul>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="line"></div>-->
+<!--								<div class="vipInformation">-->
+<!--									<p class="pTitle">◆ 活动说明 ◆</p>-->
+<!--									<p class="p2">1：邀请朋友只需您的朋友注册兴旺时在“邀请人”栏填写您的用户名，注册成功后就是您邀请的。</p>-->
+<!--									<p class="p2">2：您邀请的朋友每次存款都会给您返利存款金额的5%到您账户，终身返利！</p>-->
+<!--									<p class="p2">4：邀请人与被邀请人同一IP 同一姓名不参与返利。</p>-->
+<!--									<p class="p2">5：被邀请人只有玩PT MG SG BS FG可参与返利，其他场馆不参与返利。</p>-->
+<!--									<p class="p2">6：此优惠只针对于拥有一个独立账户的玩家。住址、电子邮箱地址﹑IP地址，同一网络环境等将可以作为判定是否独立玩家的条件。如果被判定为套利会员，兴旺有权扣除全部盈利不返还本金，严重者将冻结账户处理！</p>-->
+<!--								</div>-->
+<!--							</form>-->
+<!--						</div>-->
+<!--						<div class="content-form" id="content2" style="display: none">-->
+
+<!--							<table class="layui-table layui-table1" lay-even="" lay-skin="nob" id="recordTable_2">-->
+<!--								<colgroup>-->
+<!--									<col width="150">-->
+<!--									<col width="150">-->
+<!--									<col width="200">-->
+<!--									<col>-->
+<!--								</colgroup>-->
+<!--								<thead>-->
+<!--								<tr>-->
+<!--									<th  style="text-align: center">返利人</th>-->
+<!--									<th  style="text-align: center">返利金额</th>-->
+<!--									<th  style="text-align: center">时间</th>-->
+<!--								</tr>-->
+<!--								</thead>-->
+<!--								<tbody>-->
+<!--								<tr>-->
+<!--									<td class="no" colspan="3">抱歉, 没有找到记录</td>-->
+<!--								</tr>-->
+<!--								</tbody>-->
+<!--							</table>-->
+<!--							<div style="text-align: right;">-->
+<!--								<ul class="pagination" id="pagination-container2"></ul>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+<!--@@include('right-side.html')-->
+
+<!--@@include('footer.html')-->
+<!--<div class="hideAll"></div>-->
+<!--</body>-->
+<!--@@include('html-foot.html')-->
+<!--<script>-->
+<!--    $(function() {-->
+<!--        $('.li6').addClass('on');-->
+<!--        invite_record(1);-->
+<!--    });-->
+<!--    function selectPay(id){-->
+<!--        $('#tab'+id).addClass("on").siblings('a').removeClass('on');-->
+<!--        $('#content'+id).show().siblings('.content-form').hide();-->
+<!--        if(id==1){-->
+<!--            invite_record(1);-->
+<!--        }else{-->
+<!--            invite_privilege_record(1);-->
+<!--		}-->
+<!--    }-->
+
+<!--    function invite_record(pageNo){-->
+<!--        $.ajax({-->
+<!--            dataType: "jsonp",-->
+<!--            url:wap_site_host() + "/session/record/invite-record",-->
+<!--            type:"GET",-->
+<!--            data:{'pageNo':pageNo,"token":wap_get_user().token},-->
+<!--            dataType: 'json',-->
+<!--            success: function(resultData) {-->
+<!--                if (resultData.code == 0) {-->
+<!--                    var page = resultData.data;-->
+<!--                    if(page.list.length>0){-->
+<!--                        var appendHtml='';-->
+<!--                        $.each(page.list,function(n, v){-->
+<!--                            var name=v.lastName+v.firstName;-->
+<!--                            appendHtml+='<tr>\-->
+<!--                            				<td>被邀请人</td>\-->
+<!--											<td>'+fun_filterTxt(v.loginName)+'</td>\-->
+<!--											<td>'+fun_filterTxt(name)+'</td>\-->
+<!--										</tr>';-->
+<!--                        });-->
+<!--                        $('#recordTable_1 tbody').html(appendHtml);-->
+<!--                        $('#pagination-container1').html('');-->
+<!--                        Page({-->
+<!--                            num: page.totalPage,					//页码数-->
+<!--                            startnum: page.pageNo,				//指定页码-->
+<!--                            elem:$('#pagination-container1'),		//指定的元素-->
+<!--                            callback:function(pageNo){	//回调函数-->
+<!--                                invite_record(pageNo);-->
+<!--                            }-->
+<!--                        });-->
+<!--                    }else{-->
+<!--                        $('#recordTable_1 tbody').html('<tr><td>被邀请人</td><td colspan="2">无</td></tr>');-->
+<!--                    }-->
+<!--                }else {-->
+<!--                    fun_alertMsg(resultData.message, function() {});-->
+<!--                    wap_if_session_out(resultData.code);-->
+<!--                }-->
+<!--            },-->
+<!--            error:function( jqXHR, textStatus){-->
+<!--                wap_check_ajaxerror(jqXHR);-->
+<!--                fun_alertMsg('请求失败，请稍后重试', function() {});-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
+<!--    function invite_privilege_record(pageNo){-->
+<!--        $.ajax({-->
+<!--            dataType: "jsonp",-->
+<!--            url:wap_site_host() + "/session/record/invitePrivilegeRecord",-->
+<!--            type:"GET",-->
+<!--            data:{'pageNo':pageNo,"token":wap_get_user().token},-->
+<!--            dataType: 'json',-->
+<!--            success: function(resultData) {-->
+<!--                if (resultData.code == 0) {-->
+<!--                    var page = resultData.data;-->
+<!--                    if(page.list.length>0){-->
+<!--                        var appendHtml='';-->
+<!--                        $.each(page.list,function(n, v){-->
+<!--                            appendHtml+='<tr>\-->
+<!--											<td>'+fun_filterTxt(v.loginName)+'</td>\-->
+<!--											<td>'+v.bonus+'</td>\-->
+<!--											<td>'+fun_timeFormat(v.getTime)+'</td>\-->
+<!--										</tr>';-->
+<!--                        });-->
+<!--                        $('#recordTable_2 tbody').html(appendHtml);-->
+<!--                        $('#pagination-container2').html('');-->
+<!--                        Page({-->
+<!--                            num: page.totalPage,					//页码数-->
+<!--                            startnum: page.pageNo,				//指定页码-->
+<!--                            elem:$('#pagination-container2'),		//指定的元素-->
+<!--                            callback:function(pageNo){	//回调函数-->
+<!--                                invite_privilege_record(pageNo);-->
+<!--                            }-->
+<!--                        });-->
+<!--                    }else{-->
+<!--                        $('#recordTable_2 tbody').html('<tr><td class="no" colspan="3">抱歉, 没有找到记录</td></tr>');-->
+<!--                    }-->
+<!--                }else {-->
+<!--                    fun_alertMsg(resultData.message, function() {});-->
+<!--                    wap_if_session_out(resultData.code);-->
+<!--                }-->
+<!--            },-->
+<!--            error:function( jqXHR, textStatus){-->
+<!--                wap_check_ajaxerror(jqXHR);-->
+<!--                fun_alertMsg('请求失败，请稍后重试', function() {});-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
+<!--</script>-->
+<!--</html>-->

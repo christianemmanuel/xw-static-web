@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>手动修改DNS教程</title>
+    <link rel="stylesheet" href="/style/css/swiper.min.css">
+    <link rel="stylesheet" href="/style/layui/css/layui.css">
+    <link rel="stylesheet" href="/style/css/index.css">
+    <link rel="stylesheet" href="/style/css/youhui.css">
+    <link rel="stylesheet" href="/style/css/help.css">
+    <script src="/style/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/style/js/swiper.min.js"></script>
+    <script src="/style/layui/layui.all.js"></script>
+    <script src="/style/js/md5.js" type="text/javascript" ></script>
+    <script src="/style/js/common.js" type="text/javascript" ></script>
+</head>
+<body style="background-color: #000316;">
+@@include('header.html')
+<div style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/dns/bg.jpg') center 0px no-repeat;height:100%;min-width: 1020px;padding-top:100px;">
+    <div style="width:327px;margin: 0 auto;">
+        <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/updatem_title.png">
+    </div>
+    <div style="width:1000px;margin:0px auto 30px;padding-top:10px;color: #fff;">
+        <div style="width:1000px;border:8px solid #fff;border-radius: 8px;margin-top:110px;">
+            <div style="height: 109px;color: #FFF;font-size: 18px;font-weight: 600;line-height: 35px;margin-top:20px;width: 905px;margin-left: auto;margin-right: auto;">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/1.png" align="left" style="margin-top:8px;">
+                <div style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/dns/tip_bg.png')no-repeat;width:786px;height:109px;margin-left:119px;padding:18px;">
+                    点击桌面左下角的 [开始]按钮，打开 [控制面板]，查看方式为类别，点击 [网络和Internet]，再进入 [网络和共享中心]。
+                </div>
+            </div>
+            <div style="text-align: center;color:#feea07;margin:30px 0;">
+                <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/t4.png">
+                <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/t5.png">
+            </div>
+            <div style="height: 109px;color: #FFF;font-size: 18px;font-weight: 600;line-height: 35px;margin-top:20px;width: 905px;margin-left: auto;margin-right: auto;">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/2.png" align="left" style="margin-top:8px;">
+                <div style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/dns/tip_bg.png')no-repeat;width:786px;height:109px;margin-left:119px;padding:18px;">
+                    点击 [更改适配器设置]。
+                </div>
+            </div>
+            <div style="text-align: center;margin:30px 0;">
+                <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/t6.png">
+            </div>
+            <div style="height: 109px;color: #FFF;font-size: 18px;font-weight: 600;line-height: 35px;margin-top:20px;width: 905px;margin-left: auto;margin-right: auto;">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/3.png" align="left" style="margin-top:8px;">
+                <div style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/dns/tip_bg.png')no-repeat;width:786px;height:109px;margin-left:119px;padding:18px;">
+                    右键点击当前活动的网络连接，点弹出菜单中的 [属性]。
+                </div>
+            </div>
+            <div style="text-align: center;margin:30px 0;">
+                <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/t7.png">
+            </div>
+            <div style="height: 109px;color: #FFF;font-size: 18px;font-weight: 600;line-height: 35px;margin-top:20px;width: 905px;margin-left: auto;margin-right: auto;">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/4.png" align="left" style="margin-top:8px;">
+                <div style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/dns/tip_bg.png')no-repeat;width:786px;height:109px;margin-left:119px;padding:18px;">
+                    选择 [Internet 协议版本 4 (TCP/IPv4)]，再点击 [属性]。
+                </div>
+            </div>
+            <div style="text-align: center;margin:30px 0;">
+                <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/t8.png">
+            </div>
+            <div style="height: 109px;color: #FFF;font-size: 18px;font-weight: 600;line-height: 35px;margin-top:20px;width: 905px;margin-left: auto;margin-right: auto;">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/5.png" align="left" style="margin-top:8px;">
+                <div style="background: url('https://ezeu.ytyq8866.com/resources/web_h5/images/dns/tip_bg.png')no-repeat;width:786px;height:109px;margin-left:119px;padding:18px;">
+                    选择 [使用下面的DNS服务器地址]，输入 [首选 DNS服务器为 8.8.8.8 ]和 [备用DNS服务器为8.8.4.4]，然后点击 [确定]。
+                </div>
+            </div>
+            <div style="text-align: center;margin:30px 0;">
+                <img alt="" src="https://ezeu.ytyq8866.com/resources/web_h5/images/dns/t9.png">
+            </div>
+            <div style="color: #fff;padding:20px;">
+                <p>修改之后，国内外任何网站都可以访问。不受任何影响。此方法也并非修改你的IP，所以各位申请首存之类完全不受影响。</p>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+</html>

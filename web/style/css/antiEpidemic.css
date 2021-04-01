@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.anti-epidemic-container {
+    background-image: url(../img/promotion/antiEpidemic/top_banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    padding-top: 470px;
+    padding-bottom: 80px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 26px;
+    background-color: #fdfcfe;
+    letter-spacing: 0;
+    text-align: center;
+}
+.anti-epidemic-container .new-card-box {
+    width: 241px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    margin: 0 auto;
+}
+.anti-epidemic-container .new-card-box.fix-pos {
+    position: fixed;
+    left: 50%;
+    margin-left: -120.5px;
+    top: 150px;
+}
+.anti-epidemic-container .new-card-box.fix-pos .back-close, .anti-epidemic-container .new-card-box .new-card-back .back-close {
+    display: block;
+}
+.anti-epidemic-container .new-card-box.flipped{
+    transform: rotateY(180deg);
+}
+.anti-epidemic-container .new-card-box .back-close {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: -15px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/promotion/antiEpidemic/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.anti-epidemic-container .new-card-box .new-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.anti-epidemic-container .new-card-box .new-card-front {
+    padding-top: 202px;
+    background-image: url(../img/promotion/antiEpidemic/ae_card_front_bg.png);
+}
+.anti-epidemic-container .new-card-box .new-card-back {
+    padding-top: 65px;
+    transform: rotateY(180deg);
+    background-image: url(../img/promotion/antiEpidemic/ae_card_back_bg.png);
+}
+.anti-epidemic-container .ae-btn {
+    cursor: pointer;
+    background-image: linear-gradient(218deg, #68b4fc 0%, #2f76f6 99%), linear-gradient(#40aae6, #40aae6);
+    margin-left: auto;
+    margin-right: auto;
+}
+.anti-epidemic-container .exchange-btn {
+    font-size: 18px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    border-radius: 2px;
+}
+.anti-epidemic-container .bonu-btn {
+    font-size: 24px;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 30px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+.anti-epidemic-container .ae-card-row {
+    display: flex;
+    justify-content: space-between;
+}
+.anti-epidemic-container .ae-card-item {
+
+}
+.anti-epidemic-container .ae-card-item .ae-card-bg {
+    width: 210px;
+    height: 260px;
+    background-image: url(../img/promotion/antiEpidemic/ae_card_bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 20px;
+}
+.anti-epidemic-container .ae-card-item .ae-card-bg .ae-card-desc {
+    font-size: 14px;
+    margin: -29px auto 0;
+}
+.anti-epidemic-container .ae-card-item .ae-card-bg .ae-card-left-box {
+    font-size: 18px;
+    color: #000;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+.anti-epidemic-container .ae-card-item .ae-card-bg .ae-card-left-box .left-count {
+    color: #fff;
+}
+.anti-epidemic-container .anti-content {
+    color: #596281;
+    font-size: 16px;
+    text-align: left;
+    margin: 0 auto;
+    width: 812px;
+}
+.anti-epidemic-container .anti-content .ae-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-top: 28px;
+    margin-bottom: 36px;
+}
+.anti-epidemic-container .anti-content .ae-table td {
+    border: 2px solid #52acff;
+    text-align: center;
+    height: 50px;
+}
+.anti-epidemic-container .anti-content .role-list li {
+    list-style: decimal;
+    margin-bottom: 15px;
+}

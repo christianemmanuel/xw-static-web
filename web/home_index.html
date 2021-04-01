@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢官网 - MAD LIONS官方赞助商</title>
+    <link rel="stylesheet" href="/style/css/swiper.min.css">
+    <link rel="stylesheet" href="/style/css/shuffling.css">
+    <link rel="stylesheet" href="/style/css/home_index.css">
+    <script type="text/javascript" src="/style/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/js/jquery.number-run.js"></script>
+    <script type="text/javascript">
+        var host = document.domain;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            var index = 0;
+            if (host.startsWith('www')) {
+                index = 1;
+            }
+            var noa = host.split('.')[index];
+            var domain_type=host.split('.')[(index+1)];
+            var _index_pathname = window.location.pathname;
+            if (noa.length == 5) {
+                window.location = "https://m." + noa + "."+domain_type + _index_pathname;
+            } else {
+                window.location = "http://m." + noa + "."+domain_type + _index_pathname;
+            }
+        }
+    </script>
+    <style>
+        #showOut .bannerBox .swiper-pagination {
+            z-index: 99;
+        }
+
+        #showOut .bannerBox .swiper-pagination-bullet {
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 0.8;
+            background: #EEF0ED;
+            margin: 0 5px;
+        }
+
+        #showOut .bannerBox .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+            width: 45px;
+            border-radius: 10px;
+        }
+
+        .scollBoxbottom .imgBox .swiper-slide {
+            position: relative;
+        }
+    </style>
+</head>
+<body id="body">
+@@include('header.html')
+<div id="showOut" class="index-swiper-container"></div>
+@@include('right-side.html')
+<div class="index-container">
+    <div class="download public">
+        <div class="download-left">
+            <img class="download-title" src="/style/img/home/download-title.png" alt="">
+            <div class="introduce">
+                <p>引领市场的卓越技术，自主研发了全套终端应用，让您畅享</p>
+                <p>Web,H5,更有iOS,Android原生APP，让您随时随地，娱乐</p>
+                <p>投注！</p>
+            </div>
+            <div class="download-icon">
+                <div class="download-code">
+                    <img src="/style/img/home/download-code.png" alt="">
+                    <p>扫描进入下载页面</p>
+                    <a href="www.xxxx123.com">www.xxxx123.com</a>
+                </div>
+                <div class="download-h5">
+                    <img src="/style/img/home/download-h5.png" alt="">
+                    <p>手机下载地址</p>
+                    <a href="www.xxxx123.com">www.xxxx123.com</a>
+                </div>
+            </div>
+            <div class="app-select">
+                <p class="app-active">全站APP</p>
+                <p>电竞APP</p>
+                <p>体育APP</p>
+            </div>
+        </div>
+        <div class="download-right">
+            <img src="/style/img/home/download-app.png" alt="">
+        </div>
+    </div>
+    <div class="hot">
+        <div class="hot-left">
+            <img class="hot-title" src="/style/img/home/hot-title.png" alt="">
+            <div class="introduce">
+                <p>引领市场的卓越技术，自主研发了全套终端应用，让您畅享</p> 
+                <p>Web,H5,更有iOS,Android原生APP，让您随时随地，娱乐</p> 
+                <p> 投注！</p>
+            </div>
+            <img src="/style/img/home/hot-complter.png" alt="">
+        </div>
+        <div class="hot-right">
+            <div class="hot-select">
+                <p class="hot-active">英雄联盟</p>
+                <p>CS:GO</p>
+                <p>DOTA2</p>
+            </div>
+            <div class="hot-lol">
+                <div>
+                    <div class="lol-game-icon">
+                        <img class="hot-game" src="/style/img/home/hot-icon-lol.png" alt="">
+                        <span>2020春季赛：欧洲</span>
+                        <p class="hot-date">08月14日 20：00</p>
+                    </div>
+                    <div class="hot-vs">
+                        <div>
+                            <img src="/style/img/home/CSGO.png" alt="">
+                            <p class="blue">SKY</p>
+                        </div>
+                        <div class="vs-icon">
+                            VS
+                        </div>
+                        <div>
+                            <img src="/style/img/home/CSGO.png" alt="">
+                            <p  class="yellow">ONE THREE</p>
+                        </div>
+                    </div>
+                    <a class="betting" href="">进入投注</a>
+                </div>
+            </div>
+            <div class="hot-content">
+                <div>
+                    <div class="game-icon">
+                        <img  src="/style/img/home/hot-icon-lol.png" alt="">
+                        <span>2020春季赛：欧洲</span>
+                        <p>08月14日 20：00</p>
+                    </div>
+                    <div class="game-vs">
+                        <div>
+                            <img src="/style/img/home/CSGO.png" alt="">
+                            <p></p>
+                        </div>
+                        <div class="vs-icon">
+                            VS
+                        </div>
+                        <div>
+                            <img src="/style/img/home/Dota.png" alt="">
+                            <p></p>
+                        </div>
+                    </div>
+                    <a class="game-betting" href="">进入投注</a>
+                </div>
+                <div>
+                    <div class="game-icon">
+                        <img  src="/style/img/home/hot-icon-lol.png" alt="">
+                        <span>2020春季赛：欧洲</span>
+                        <p>08月14日 20：00</p>
+                    </div>
+                    <div class="game-vs">
+                        <div>
+                            <img src="/style/img/home/CSGO.png" alt="">
+                            <p></p>
+                        </div>
+                        <div class="vs-icon">
+                            VS
+                        </div>
+                        <div>
+                            <img src="/style/img/home/Dota.png" alt="">
+                            <p></p>
+                        </div>
+                    </div>
+                    <a class="game-betting" href="">进入投注</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="factory">
+        <img class="hot-title" src="/style/img/home/factory-title.png" alt="">
+        <div class="introduce">
+            <p>引领市场的卓越技术，自主研发了全套终端应用，让您畅享</p>
+            <p>Web,H5,更有iOS,Android原生APP，让您随时随地，娱乐</p>
+            <p>投注</p>
+        </div>
+        <div class="factory-select">
+            <p>真人娱乐</p>
+            <p>电子竞技</p>
+            <p>体育竞技</p>
+            <p>彩票投注</p>
+            <p>棋牌游戏</p>
+            <p  class="factory-active">捕鱼达人</p>
+            <p>电子游艺</p>
+        </div>
+    </div>
+    
+    <div class="wrapper horizontal demo1">
+        <ul class="containers">
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-competitive.png" alt="">
+                </div>
+            </li>
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-electronic.png" alt="">
+                </div>
+            </li>
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-live.png" alt="">
+                </div>
+            </li>
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-fish.png" alt="">
+                </div>
+            </li>
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-sports.png" alt="">
+                </div>
+            </li>
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-chess.png" alt="">
+                </div>
+            </li>
+            <li class="cards-list">
+                <div class="img">
+                    <img src="/style/img/home/factory-lottery.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="factory-bg">
+
+    </div>
+</div>
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript" src="/style/js/empile.js"></script>
+<script type="text/javascript" src="/style/js/shuffling.js"></script>
+<script>
+    $(function () {
+        loadIndexAlert();
+        loadIndexPromotion();
+        initPlatforms();
+        $('.factory-select>p').click(function(){
+            $(this).addClass('factory-active');
+            $(this).siblings('p').removeClass('factory-active');
+        })
+        $('.hot-select>p').click(function(){
+            $(this).addClass('hot-active');
+            $(this).siblings('p').removeClass('hot-active');
+        })
+        $('.app-select>p').click(function(){
+            $(this).addClass('app-active');
+            $(this).siblings('p').removeClass('app-active');
+        })
+        $(window).on('scroll', _.throttle(indexScroll, 300));
+
+        function indexScroll() {
+            if ($(window).scrollTop() > 1700) {
+                $('#avgDepAni').addClass('avg-animate-dep');
+                $('#avgWithdrawAni').addClass('avg-animate-withdraw');
+                $('#avgPayFullAni').addClass('avg-animate-full');
+                $('#avgPayAni').addClass('avg-animate-pay');
+                $('#avgDownFullAni').addClass('avg-animate-full');
+                $('#avgDownAni').addClass('avg-animate-down');
+
+                var depAvgTxt = $('.avg-dep-box'), withAvgTxt = $('.avg-with-box'),
+                payTxt = $('.avg-pay-box'), downTxt = $('.avg-down-box');
+                if(!depAvgTxt.text()) {
+                    depAvgTxt.numberRun({
+                        number: (randomNum(50, 80)),
+                        speed: 10
+                    });
+                    withAvgTxt.numberRun({
+                        number: (randomNum(70, 100)),
+                        speed: 10
+                    });
+                    payTxt.numberRun({
+                        number: 14,
+                        speed: 100
+                    });
+                    downTxt.numberRun({
+                        number: 90,
+                        speed: 10
+                    });
+                }
+            }
+        }
+
+        function randomNum(minNum,maxNum){
+            switch(arguments.length){
+                case 1:
+                    return parseInt(Math.random()*minNum+1,10);
+                    break;
+                case 2:
+                    return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+    });
+
+    function loadIndexPromotion() {
+        var url = wap_site_host() + "/rest/api/webIndexPromotionList";
+        loadHTMLPage(url, "showIndexPromotion");
+    }
+
+    function loadIndexAlert() {
+        $.ajax({
+            url: wap_site_host() + "/rest/api/indexNoticeJSON",
+            type: "GET",
+            dataType: 'json',
+            success: function (data) {
+                if(data.data) {
+                    $('.inoticeContentList').empty();
+                    var ijson = JSON.parse(data.data), nc = "";
+                    for(var nt in ijson) {
+                        nc += '<li class="inotice-title-li"><span class="inotice-modal-content-title">' + ijson[nt].title +'</span><div class="form-group inotice-mod">' + ijson[nt].content + '</div></li>';
+                    }
+                    $('.inoticeContentList').html(nc);
+                }
+                if(!Cookies.get('indexNoticeNoMore')) {
+                    $('#noticeModal').modal('show');
+                }
+                $('.inotice-btn.knew').click(function() {
+                    if($('#inoticeNoMore').prop('checked')) {
+                        Cookies.set('indexNoticeNoMore', true, { expires: 1 });
+                    }
+                    $('#noticeModal').modal('hide');
+                });
+            }
+        });
+    }
+
+    function showIndexPromotion(data) {
+        if (data != '') {
+            $("#showOut").html(data);
+            $('#showOut .swiper-slide img').click(function () {
+                var url = $(this).attr("jump-url");
+                var blank_link = $(this).attr("blank-link");
+                if (blank_link != "" && blank_link != null && blank_link != undefined) {
+                    if (wap_is_user_notexist()) {
+                        fun_alertMsg('请登入后再做操作！', '系统提示', function () {
+                        });
+                    } else {
+                        window.open(blank_link + '?token=' + wap_get_user().token, '_blank');
+                    }
+                } else if (url != "" && url != null && url != undefined) {
+                    window.location.href = url;
+                } else {
+                    window.location.href = "/promotion.html";
+                }
+            });
+        }
+        new Swiper('.bannerBox', {
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+            parallax: true,
+            observer: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    }
+
+    function initPlatforms() {
+        getPlatforms().done(d => {
+            if (d.code == 0) {
+                showPlatforms(d.data);
+            }
+        })
+    }
+
+    function showPlatforms(data) {
+        let platforms = new Map();
+        data.forEach(p => {
+            if (platforms.has(p.ptype)) {
+                let array = platforms.get(p.ptype);
+                array.push(p);
+                platforms.set(p.ptype, array);
+            } else {
+                platforms.set(p.ptype, [p]);
+            }
+        })
+
+        for (let key of platforms.keys()) {
+            let platform = platforms.get(key);
+            let html = platform.slice(0, 4).map(p => {
+                return `<div class="game-platform">
+                            <img src="./style/img/index/${p.platformCode.toLowerCase()}.png">
+                            <div>${p.platformNameCn}</div>
+                        </div>`;
+        }).join("");
+            $('#type-' + key).html(html)
+        }
+    }
+
+    loadMatchInfo();
+    var matchTypes = {'CSGO': 0, 'DOTA2': 0, 'LOL': 0};
+    var lastMatchData;
+    var matchInterval;
+    function loadMatchInfo() {
+        loadIndexMatchs().done(d => {
+            if (d.code == 0) {
+                clearInterval(matchInterval);
+                lastMatchData = d.data;
+                initMatch();
+                matchInterval = setInterval(function() {
+                    initMatch();
+                }, 20000);
+            }
+        });
+    }
+    function initMatch() {
+        for(var type in matchTypes) {
+            if(lastMatchData[type] && lastMatchData[type].length) {
+                var typeIndex = matchTypes[type];
+                if(typeIndex >= lastMatchData[type].length) {
+                    typeIndex = 0;
+                }
+                var matchInfo = lastMatchData[type][typeIndex];
+                var box = $('.index-match-' + type);
+                box.find('.index-match-title').text(matchInfo.competitionName);
+                box.find('.index-match-time').text(fun_timeFormat(matchInfo.time));
+                box.find('.match-home-logo').attr('src', matchInfo.homeLogo);
+                box.find('.match-away-logo').attr('src', matchInfo.awayLogo);
+                box.find('.match-home-name').text(matchInfo.home);
+                box.find('.match-away-name').text(matchInfo.away);
+                matchTypes[type] = (typeIndex + 1);
+            }
+        }
+    }
+</script>
+</html>

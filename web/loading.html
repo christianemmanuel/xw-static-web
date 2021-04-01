@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢 - 页面加载中...请稍后...</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #deebf3;
+        }
+        .loading-container {
+            padding-top: 500px;
+            height: 1080px;
+            background-image: url('/style/img/loading/loading_bg.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+        }
+        @-webkit-keyframes rotation-ani {
+            from {-webkit-transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);}
+        }
+
+        .rotation{
+            margin: 0 auto;
+            display: block;
+            -webkit-transform: rotate(360deg);
+            animation: rotation-ani 3s linear infinite;
+            -moz-animation: rotation-ani 3s linear infinite;
+            -webkit-animation: rotation-ani 3s linear infinite;
+            -o-animation: rotation-ani 3s linear infinite;
+        }
+        .loading-txt {
+            font-size: 20px;
+            letter-spacing: 0px;
+            color: #414655;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <img class="rotation" src="style/img/loading/loading_rotation.png">
+        <p class="loading-txt">自动选择线路中...请稍后...</p>
+    </div>
+</body>
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+    var queryToken = getQueryString("token");
+    $(function() {
+        if(queryToken){
+            tokenLogin(queryToken);
+        }
+    });
+    function tokenLogin(token) {
+        post(`/member/tokenLogin`, {'token':token}).done(d => {
+            if (d.code == 0) {
+            let user = {
+                'loginName': d.data.loginName,
+                'memberName': d.data.memberName,
+                'token': d.data.token,
+                'vipName': d.data.vip.vipName,
+                'vipLevel': (parseInt(d.data.vip.vipLevel) - 1),
+                'domain': wap_get_user().domain,
+                'cashierDomain': d.data.cashierDomain,
+                'userDomain': d.data.domain,
+                'evip': d.data.vip.exclusiveUrl,
+                'balance': d.data.balance
+            };
+            wap_set_user(user);
+            window.location.href = "/";
+            } else {
+                info(d.message)
+            }
+        });
+    }
+</script>
+</html>

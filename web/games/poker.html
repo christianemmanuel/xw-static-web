@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	@@include('html-head.html')
+	<title>东赢官网 - 最全面的电竞平台</title>
+	<link rel="stylesheet" href="/style/css/poker.css">
+</head>
+<body>
+@@include('header.html')
+<div class="poker-container">
+	<div class="poker-type-btn-box">
+		<div class="poker-type-btn active" data-poker-type="tx">大唐棋牌</div>
+		<div class="poker-type-btn" data-poker-type="ky">开元棋牌</div>
+	</div>
+	<div class="poker-platform-box">
+		<div class="poker-platform active poker-platform-tx">
+			<div class="platform-left-box">
+				<div class="tx-left-girl"></div>
+				<img src="/style/img/poker/bg_left_tx.webp" style="position: relative;">
+			</div>
+			<div class="platform-center-box">
+				<img src="/style/img/poker/txt_tx.webp">
+				<div class="platform-desc-box">
+					<p>抢庄牛牛龙虎斗，多款棋牌任君选</p>
+					<p>棋牌彰显胸怀，竞技娱乐烧脑，好友相约竞技，游戏改变生活</p>
+					<div class="poker-play-btn" onclick="openELottery('/ptweb/txGame?gameCode=Lobby')">立即游戏</div>
+				</div>
+			</div>
+			<div class="platform-right-box">
+				<div class="tx-right-girl"></div>
+				<img src="/style/img/poker/bg_right_tx.webp" style="position: relative;">
+				<div class="tx-right-poker-circle"></div>
+			</div>
+		</div>
+		<div class="poker-platform poker-platform-ky">
+			<div class="platform-left-box">
+				<div class="img-ky-left-bg"></div>
+				<div class="img-ky-float-top"></div>
+				<div class="img-ky-left-girl"></div>
+				<div class="ky-left-float-1"></div>
+				<div class="ky-left-float-2"></div>
+			</div>
+			<div class="platform-center-box">
+				<img src="/style/img/poker/txt_ky.webp" style="margin-bottom: 20px;"><br>
+				<img src="/style/img/poker/txt_ky_tip.webp">
+				<div class="platform-desc-box">
+					<p>双赢棋牌提供市面上热门游戏种类，选择全面多元，应有尽有</p>
+					<p>玩家能不断游戏不感无趣！</p>
+					<div class="poker-play-btn" onclick="openELottery('/ptweb/kyGame?gameCode=Lobby')">立即游戏</div>
+				</div>
+			</div>
+			<div class="platform-right-box">
+				<div class="img-ky-right-bg"></div>
+				<div class="img-ky-right-girl"></div>
+				<div class="ky-right-float-1"></div>
+				<div class="ky-right-float-2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+	$(function() {
+		var lastType;
+		showAppBySelect();
+		function showAppBySelect() {
+			var activeType = $('.poker-type-btn.active').data("poker-type");
+			switchAppType(activeType);
+		}
+
+		$('.poker-type-btn').click(function() {
+			if(!$(this).hasClass('active')) {
+				lastType = $('.poker-type-btn.active').data("poker-type");
+				$('.poker-type-btn').removeClass('active');
+				$(this).addClass('active');
+				showAppBySelect();
+			}
+		});
+
+		function switchAppType(activeType) {
+			if(activeType) {
+				$('.poker-platform-' + lastType).hide();
+				$('.poker-platform-' + activeType).show();
+			}
+		}
+	});
+</script>
+</html>

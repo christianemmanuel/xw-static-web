@@ -1,0 +1,225 @@
+.withdraw-container {
+    width: 960px;
+    padding: 22px 34px
+}
+
+.withdraw-container .title{
+    font-size: 14px;
+    color: #2d3944;
+}
+
+.withdraw-container .withdraw-pane {
+    padding: 22px 34px
+}
+
+.withdraw-container .withdraw-pane .progressbar {
+    margin-top: 32px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.alert-danger{
+    width: 770px;
+    margin: 0 auto;
+}
+.withdraw-container .withdraw-pane .progressbar button {
+    width: 146px;
+    height: 44px;
+    background-color: #3865e8;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.withdraw-container .withdraw-pane .progressbar i {
+    font-size: 22px;
+    line-height: 44px;
+}
+
+.withdraw-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px 20px;
+}
+
+.form-panel {
+    padding: 20px;
+}
+
+.withdraw-form form {
+    width: 400px;
+}
+
+.withdraw-form .form-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.withdraw-form .alert {
+    padding-left: 30px;
+    padding-right: 0px;
+    width: 310px;
+    height: 90px;
+}
+
+.withdraw-form .alert ul li {
+    list-style: decimal;
+    margin-bottom: 5px;
+}
+
+.withdraw-form form span {
+    display: block;
+}
+
+.withdraw-form .form-group label {
+    width: 150px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #2d3944;
+}
+
+.withdraw-form .form-group input, .select-bank {
+    width: 230px !important;
+    height: 37px;
+    border-radius: 2px;
+}
+
+.form-content .form-btn {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.withdraw-form .invalid-tooltip {
+    right: 5px;
+}
+.bank-tab{
+    display: flex;
+    justify-content: top;
+    margin: 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #DDDFE6;
+}
+.bank-tab section:nth-child(1){
+    width: 130px;
+    font-size: 14px;
+    color: #000000;
+}
+.bank-tab section:nth-child(2),
+.bank-tab section:nth-child(3){
+    text-align: center;
+    margin-left: 30px;
+}
+.bank-tab div,
+.bank-tab div{
+    width: 84px;
+    height: 37px;
+    line-height: 37px;
+	background-color: #ffffff;
+	border-radius: 2px;
+	border: solid 1px #ced4da;
+    text-align: center;
+}
+.bank-tab p,
+.bank-tab p{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+	letter-spacing: 1px;
+	color: #4a556c;
+}
+.bank-active{ 
+    background-color: #bad2ff !important;
+	border: solid 1px #4978ec !important;
+}
+.bank-icon{
+    width: 34px;
+	height: 21px;
+}
+.usdt{
+    width: 26px;
+	height: 26px;
+}
+.usdt-content{
+    display: none;
+}
+.usdt-row{
+    height: 70px;
+}
+.usdt-row label{
+    width: 130px;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 500;
+}
+.usdt-row input,
+.usdt-row select{
+    width: 258px;
+	height: 37px;
+	background-color: #ffffff;
+	border-radius: 2px;
+    border: solid 1px #ced4da;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #6c757d;
+    margin-left: 25px;
+}
+.green{
+    font-size: 14px;
+    margin-left: 25px;
+    color: #17cd27;
+}
+.draw-money{
+    display: inline-block;
+}
+.usdt-draw{
+    display: flex;
+    position: relative;
+}
+.usdt-draw>div{
+    display: inline-block;
+}
+.draw-money p{
+    font-size: 14px;
+    margin-left: 25px;
+    color: #4a556c;
+}
+
+.cash{
+    display: flex;
+    align-content: center;
+    margin-bottom: 20px;
+}
+.cash label{
+    line-height: 40px !important;
+}
+.usdt-sure{
+    width: 100%;
+    text-align: center;
+}
+/*.usdt-btn{
+    width: 200px;
+    height: 43px;
+    line-height: 43px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #6293F3;
+    border: none;
+    border-radius: 5px;
+}*/
+.usdt-draw .invalid-tooltip{
+    position: absolute;
+    top:37px;
+    right: 0px;
+}
+.form-content .form-btn button {
+    width: 200px;
+    height: 43px;
+    border-radius: 3px;
+}

@@ -1,0 +1,69 @@
+.help-container {
+    min-height: 1182px;
+    position: relative;
+    z-index: 1;
+}
+.help-container .help-menu-container {
+    position: fixed;
+    left: 0;
+    top: 120px;
+    background-image: url("../img/help/bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1062px;
+    width: 566px;
+    padding-top: 183px;
+}
+.help-container .help-menu-container .help-menu-box {
+    position: absolute;
+    width: 213px;
+    right: 0;
+}
+.help-container .help-menu-container .help-menu-box .help-menu-list {
+
+}
+.help-container .help-menu-container .help-menu-box .help-menu-list li {
+    list-style: none;
+    line-height: 60px;
+    font-size: 16px;
+    color: #707f9d;
+    padding-left: 40px;
+    cursor: pointer;
+}
+.help-container .help-menu-container .help-menu-box .help-menu-list li.on, .help-container .help-menu-container .help-menu-box .help-menu-list li:hover {
+    background-image: url("../img/help/menu-action.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+}
+.help-container .help-content-container {
+    margin-left: 586px;
+    padding-top: 120px;
+    padding-left: 36px;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #25415b;
+    line-height: 30px;
+    width: 1010px;
+}
+.help-container .help-content-container .help-title {
+    height: 78px;
+    padding-top: 40px;
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 22px;
+}
+.help-container .help-content-container .content-title {
+    border-left: 3px solid #045db5;
+    height: 20px;
+    padding-left: 16px;
+    line-height: 20px;
+    margin-top: 24px;
+}
+.help-container .help-content-container .content-sub-title {
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-top: 29px;
+}
+.help-container .help-main-box {
+    padding-left: 20px;
+}

@@ -1,0 +1,276 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.game-container {
+    width: 100%;
+    padding-top: 150px;
+    background-image: url("../img/esports/esport_bg.webp");
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    height: 902px;
+}
+
+.nav-pane {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 628px;
+}
+
+
+.nav-pane .teams {
+    position: relative;
+    width: 938px;
+    height: 404px;
+    top: 58px;
+}
+
+.nav-pane .ray {
+    width: 1274px;
+    height: 404px;
+    top: -18px;
+}
+
+.nav-pane .teams img {
+    position: absolute;
+}
+
+.nav-pane .dy img:nth-child(2) {
+    left: 180px;
+    top: -45px;
+}
+
+.nav-pane .dy img:nth-child(3) {
+    left: 356px;
+    top: -80px;
+}
+
+.nav-pane .dy img:nth-child(4) {
+    left: 558px;
+    top: -42px;
+}
+
+.nav-pane .dy img:nth-child(5) {
+    left: 725px;
+    top: -2px;
+}
+
+.nav-pane .ray img:nth-child(1) {
+    left: 0px;
+    top: -81px;
+}
+
+.nav-pane .ray img:nth-child(2) {
+    left: 207px;
+    top: -6px;
+}
+
+.nav-pane .ray img:nth-child(3) {
+    left: 452px;
+    top: 31px;
+}
+
+.nav-pane .ray img:nth-child(4) {
+    left: 703px;
+    top: -6px;
+}
+
+.nav-pane .ray img:nth-child(5) {
+    left: 944px;
+    top: -44px;
+}
+
+.nav-pane .im img:nth-child(1) {
+    left: 0px;
+    top: -22px;
+}
+
+.nav-pane .im img:nth-child(2) {
+    left: 180px;
+    top: -43px;
+}
+
+.nav-pane .im img:nth-child(3) {
+    left: 370px;
+    top: -55px;
+}
+
+.nav-pane .im img:nth-child(4) {
+    left: 571px;
+    top: -43px;
+}
+
+.nav-pane .im img:nth-child(5) {
+    left: 761px;
+    top: -22px;
+}
+
+.nav-pane .game-name {
+    position: absolute;
+    background-image: url("../img/esports/dy-title.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 642px;
+    height: 229px;
+    top: 215px;
+    left: 143px;
+}
+
+.nav-pane .ray .game-name {
+    position: absolute;
+    background-image: url("../img/esports/ray-title.webp");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 735px;
+    height: 299px;
+    top: 211px;
+    left: 269px;
+}
+.nav-pane .im .game-name {
+    position: absolute;
+    background-image: url("../img/esports/im-title.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 735px;
+    height: 299px;
+    top: 134px;
+    left: 112px;
+}
+
+.nav-pane .teams .game-info {
+    width: 100%;
+    position: absolute;
+    top: 408px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-pane .ray .game-info {
+    top: 480px;
+    left: 10px;
+}
+
+.nav-pane .teams .game-info .left {
+    font-size: 36px;
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    color: #e9981d;
+    margin-right: 12px;
+}
+
+.nav-pane .teams .game-info .right {
+    font-size: 36px;
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    color: #6ba0ff;
+    margin-left: 12px;
+}
+
+.nav-pane .teams .game-info button {
+    width: 198px;
+    height: 52px;
+    color: #ffffff;
+}
+
+
+.nav-pane .teams .game-info .left-icon {
+    background-image: url("../img/esports/icon-left.webp");
+    background-repeat: no-repeat;
+    width: 148px;
+    height: 40px;
+}
+
+.nav-pane .teams .game-info .right-icon {
+    background-image: url("../img/esports/icon-right.webp");
+    background-repeat: no-repeat;
+    width: 148px;
+    height: 40px;
+}
+
+.nav-pane .pane-bg-bottom {
+    margin-top: 0px;
+    background-image: url("../img/esports/map.webp");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+    height: 224px;
+    text-align: center;
+}
+
+.nav-pane .pane-bg-bottom .game-icon {
+    margin-top: 122px;
+}
+
+.dy-point-group, .ray-point-group {
+    width: var(--default-min-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.point-left, .point-right {
+    position: relative;
+}
+
+.point-left img, .point-right img {
+    position: absolute;
+}
+
+.point-left img:nth-child(1) {
+    top: 40px;
+    left: 316px;
+}
+
+.point-left img:nth-child(2) {
+    top: 54px;
+    left: 218px;
+}
+
+.point-left img:nth-child(3) {
+    top: 94px;
+    left: 316px;
+}
+
+.point-left img:nth-child(4) {
+    top: 119px;
+    left: 154px;
+}
+
+.point-left img:nth-child(5) {
+    top: 152px;
+    left: 41px;
+}
+
+
+.point-right img:nth-child(1) {
+    top: 40px;
+    right: 316px;
+}
+
+.point-right img:nth-child(2) {
+    top: 54px;
+    right: 218px;
+}
+
+.point-right img:nth-child(3) {
+    top: 84px;
+    right: 119px;
+}
+
+.point-right img:nth-child(4) {
+    top: 119px;
+    right: 154px;
+}
+
+.point-right img:nth-child(5) {
+    top: 95px;
+    right: 208px;
+}

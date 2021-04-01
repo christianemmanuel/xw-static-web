@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢体育</title>
+    <link rel="stylesheet" href="/style/css/sport.css">
+    <script type="text/javascript">
+        var host = document.domain;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location = "https://m." + host.split('.')[1] + ".com" + window.location.pathname;
+        }
+    </script>
+</head>
+<body>
+@@include('header.html')
+<div class="sport-container" style="padding-top: 120px;">
+    <div id="sportContent"></div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+
+    $(function () {
+        loadSportPage();
+    });
+
+    function loadSportPage() {
+        if (wap_is_user_notexist()) {
+            info('请登录后再操作');
+            return;
+        }
+        var gameUrl = event_site_host() + '/ptweb/imSport?gameCode=IM&pid=50&token=' + wap_get_user().token;
+        var iframe = '<iframe id="esportForm" allowfullscreen="true" width="1440px" height="930px" scrolling="yes" frameborder="0" style="overflow:hidden!important;margin: 0 auto;display:block;" src="' + gameUrl + '"></iframe>';
+        $('#sportContent').html(iframe);
+    }
+</script>
+</html>

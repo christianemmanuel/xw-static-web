@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢官网 - 最全面的电竞平台</title>
+    <link rel="stylesheet" href="/style/css/sportPlatforms.css">
+</head>
+<body>
+@@include('header.html')
+@@include('right-side.html')
+<div class="sport-platform-container">
+    <div class="sport-platform-bg bg-circle"></div>
+    <div class="sport-platform-bg bg-wave"></div>
+    <div class="sport-platform-left">
+        <div class="sport-main-box sport-dy-main active">
+            <img src="/style/img/sport/sport_left_dy.webp" class="sport-left-img sport-dy-img sport-left-fadein active">
+            <img src="/style/img/sport/sport_left_pb.webp" class="sport-left-img sport-pb-img">
+        </div>
+    </div>
+    <div class="sport-platform-right">
+        <div class="sport-btn-box">
+            <a class="sport-platform-btn active" data-sport-type="dy">东赢体育</a>
+            <a class="sport-platform-btn" data-sport-type="pb">IM体育</a>
+        </div>
+        <div class="sport-desc-content">
+            <div class="sport-detail-box detail-dy-box active sport-right-fadein">
+                <img src="/style/img/sport/txt_dy_sport.png" style="margin-left: 20px;">
+                <p class="sport-desc">倾力打造的刺激火爆的体育娱乐游戏，每天为您提供千场精彩体育赛事，多种娱乐方式 选择，让您拥有完美游戏体验。</p>
+                <a href="/games/sportPlatforms.html" class="sport-bet-btn">立即投注</a>
+            </div>
+            <div class="sport-detail-box detail-pb-box">
+                <img src="/style/img/sport/txt_im_sport.png" style="margin-left: 20px;">
+                <p class="sport-desc">全球首家一体化娱乐原生APP，尽显流畅、完美操作。海量体育、电竞顶尖赛事，真人娱乐、彩票投注及电子游艺等，最新最全娱乐项目尽在掌中体验扫码下载，即刻拥有！</p>
+                <button class="sport-bet-btn" onclick="urlOpen('/games/im-sport.html')">立即投注</button>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+    $(function() {
+        var lastType;
+        showAppBySelect();
+        function showAppBySelect() {
+            var activeType = $('.sport-platform-btn.active').data("sport-type");
+            switchAppType(activeType);
+        }
+
+        $('.sport-platform-btn').click(function() {
+            if(!$(this).hasClass('active')) {
+                lastType = $('.sport-platform-btn.active').data("sport-type");
+                $('.sport-platform-btn').removeClass('active');
+                $(this).addClass('active');
+                showAppBySelect();
+            }
+        });
+
+        function switchAppType(activeType) {
+            if(activeType) {
+                $('.detail-' + lastType + '-box').removeClass('sport-right-fadein').addClass('sport-right-fadeout');
+                $('.sport-' + lastType + '-img').removeClass('sport-left-fadein').addClass('sport-left-fadeout');
+                setTimeout(function () {
+                    $('.detail-' + lastType + '-box').removeClass('active');
+                    $('.detail-' + activeType + '-box').removeClass('sport-right-fadeout').addClass('active').addClass('sport-right-fadein');
+
+                    $('.sport-' + lastType + '-img').removeClass('active');
+                    $('.sport-' + activeType + '-img').removeClass('sport-left-fadeout').addClass('active').addClass('sport-left-fadein');
+                }, 700);
+            }
+        }
+    });
+</script>
+</html>

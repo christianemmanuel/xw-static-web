@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/style/css/ribbon.css">
+    <link rel="stylesheet" href="/style/css/privilege.css">
+</head>
+<body>
+<div class="privilege-container">
+    <span style="font-size: 14px;color: #586067;">优惠活动</span>
+    <div class="privilege-panel">
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-pink float-right shape"><i class="mdi mdi-access-point mr-1"></i>电子救援金</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-1"></div>
+                <button class=" btn custom-btn-primary" onclick="helpBonus()">马上领取</button>
+            </div>
+        </div>
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-purple float-right shape"><i class="mdi mdi-access-point mr-1"></i>体育保险投注</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-2"></div>
+                <button class=" btn custom-btn-primary" data-toggle="modal" data-target="#sportInsurance">马上进入</button>
+            </div>
+        </div>
+
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-primary float-right shape"><i class="mdi mdi-access-point mr-1"></i>推荐好友</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-3"></div>
+                <button class=" btn custom-btn-primary" data-toggle="modal" data-target="#inviteFriends">马上进入</button>
+            </div>
+        </div>
+
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-warning float-right shape"><i class="mdi mdi-access-point mr-1"></i>体育免费竞猜</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-5"></div>
+                <button class=" btn custom-btn-primary" data-toggle="modal" data-target="#sportPane">马上进入</button>
+            </div>
+        </div>
+
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-warning float-right shape"><i class="mdi mdi-access-point mr-1"></i>APP存款红包</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-7"></div>
+                <button class=" btn custom-btn-primary" onclick="getAppDepositBonu(this)">马上领取</button>
+            </div>
+        </div>
+        <!--<div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-primary float-right shape"><i class="mdi mdi-access-point mr-1"></i>余额宝</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-8"></div>
+                <button class=" btn custom-btn-primary" onclick="urlGoto('/privilege/yuebao.html')">马上领取</button>
+            </div>
+        </div>-->
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-primary float-right shape"><i class="mdi mdi-access-point mr-1"></i>棋牌救援金</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-9"></div>
+                <button class=" btn custom-btn-primary" onclick="urlGoto('/privilege/rescueBonu.html?type=poker')">马上进入</button>
+            </div>
+        </div>
+        <div class="card-box ribbon-box card-privilege">
+             <div class="ribbon ribbon-danger float-right shape"><i class="mdi mdi-access-point mr-1"></i>真人救援金</div>
+             <div class="ribbon-content privilege-content">
+                 <div class="privilege-icon icon-6"></div>
+                 <button class=" btn custom-btn-primary" onclick="urlGoto('/privilege/rescueBonu.html?type=live')">马上进入
+                 </button>
+             </div>
+         </div>
+        <div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-danger float-right shape"><i class="mdi mdi-access-point mr-1"></i>零钱宝</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-10"></div>
+                <button class=" btn custom-btn-primary" onclick="urlGoto('/privilege/loose.html')">马上进入
+                </button>
+            </div>
+        </div>
+        <!--<div class="card-box ribbon-box card-privilege">
+            <div class="ribbon ribbon-danger float-right shape"><i class="mdi mdi-access-point mr-1"></i>新春红包</div>
+            <div class="ribbon-content privilege-content">
+                <div class="privilege-icon icon-10"></div>
+                <button class=" btn custom-btn-primary" onclick="urlGoto('/privilege/vitality.html')">马上进入
+                </button>
+            </div>
+        </div>-->
+    </div>
+</div>
+
+<div class="modal fade" id="sportInsurance" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title" id="exampleModalLabel">体育保险</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="insurance-body" style="padding: 1rem">
+                <form action="/session/memberSportInsurance/save" id="insuranceForm" novalidate>
+                    <div class="form-group">
+                        <label class="col-form-label"><span>账号</span>:</label>
+                        <div class="">
+                            <input type="text" class="form-control" readonly name="playerAccount" id="playerAccount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label"><span>投注平台</span>:</label>
+                        <div class="">
+                            <select class="form-control" name="platName">
+                                <option>东赢体育</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class=" col-form-label"><span>注单号</span>:</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="betNumber"
+                                   required minlength="14" maxlength="15"
+                                   data-parsley-required-message="注单号不能为空"
+                                   data-parsley-length-message="注单号必须为14-15位"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-secondary col-sm-5">重置</button>
+                        <button type="submit" class="btn custom-btn-primary col-sm-5" id="submit">提交</button>
+                    </div>
+                </form>
+            </div>
+            <div id="insurance-success" class="text-center success "
+                 style="height: 473px;padding: 105px; display: none">
+                <div class="success-checkmark">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                         enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                        <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                        <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                  stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                        <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                r="73.9"></circle>
+
+                                            </svg>
+
+                </div>
+
+                <h3>提交成功</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="inviteFriends" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title">推荐好友</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="invite-body" style="padding: 1rem">
+                <form action="/session/recommend/member/saveMemberRecommend" id="inviteForm" novalidate>
+                    <div class="form-group">
+                        <label class="col-form-label"><span style="width: 67px">好友姓名</span>:</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="recommendRealName" id="recommendRealName"
+                                   required
+                                   data-parsley-required-message="好友姓名不能为空"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label"><span style="width: 67px">好友用户名</span>:</label>
+                        <div class="">
+                            <input type="text" class="form-control" name="recommendName" id="recommendName"
+                                   autocomplete="off"
+                                   minlength="6"
+                                   maxlength="12" required pattern="^[A-Za-z0-9]+$"
+                                   data-parsley-notequalto="#loginName"
+                                   data-parsley-required-message="用户名不能为空"
+                                   data-parsley-length-message="用户名长度6-12位"
+                                   data-parsley-pattern-message="用户名必须为英文字母以及数字的组合"
+                                   data-parsley-notequalto-message="不可自己推荐自己"
+                            >
+                        </div>
+                    </div>
+                    <input type="hidden" id="loginName">
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-secondary col-sm-5">重置</button>
+                        <button type="submit" class="btn custom-btn-primary col-sm-5" id="inviteSubmit">提交</button>
+                    </div>
+                </form>
+                <div class="alert alert-warning">
+                    <ul>
+                        <li>邀请人必须在东赢网站有过至少累积200元的存款。</li>
+                        <li>被邀请人必须最低累积存款500元。</li>
+                        <li>被邀请人必须第一次在本网站存款且游戏。</li>
+                        <li>被邀请人必须和邀请人使用的不同电脑，不同住址。</li>
+                        <li>被邀请人的账户不能在合营商（代理）名下。</li>
+                        <li>被邀请人必须比邀请人晚注册的会员，并且在一周之内申请推荐朋友奖金。</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div id="invite-success" class="text-center success " style="height: 473px;padding: 105px; display: none">
+                <div class="success-checkmark">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                         enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                        <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                        <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                  stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                        <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                r="73.9"></circle>
+
+                                            </svg>
+
+                </div>
+
+                <h3>提交成功</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sportPane" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content" style="width: 637px;">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title">体育免费竞猜</h5>
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="sport-body" style="padding: 1rem">
+                <iframe id="sportContext" style="width: 602px;height: 600px;border: none;overflow: hidden"></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="/style/js/privilege.js"></script>
+</html>

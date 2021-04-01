@@ -1,0 +1,1028 @@
+<header>
+    <div class="top-container">
+        <div class="top-box">
+            <div id="realTime"></div>
+            <div class="station-notice-container">
+                <i class="remixicon-volume-up-fill" id="headerNotice" style="font-size: 18px;color: #5c78f0;cursor: pointer;"></i>
+                <div class="station-notice-box">
+                    <div class="station-notice"></div>
+                </div>
+            </div>
+            <div class="header-login-view">
+                <form id="loginForm" novalidate>
+                    <ul id="loginUI" class="top-right-ui clearfix" style="display: none">
+                        <li>
+                            <input type="text" id="loginName" name="loginName" class="form-control"
+                                   placeholder="账号"
+                                   maxlength="12" minlength="6" required autocomplete="off"
+                                   pattern="^[A-Za-z0-9]+$"
+                                   data-parsley-required-message="用户名不能为空"
+                                   data-parsley-length-message="用户名长度6-12位"
+                                   data-parsley-pattern-message="用户名必须为英文字母以及数字的组合"
+                            >
+                        </li>
+                        <li>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="密码"
+                                   minlength="6"
+                                   autocomplete="off"
+                                   maxlength="12" required
+                                   pattern="^[A-Za-z0-9]+$"
+                                   data-parsley-required-message="密码不能为空"
+                                   data-parsley-length-message="密码长度6-12位"
+                                   data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                            >
+                        </li>
+                        <li>
+                            <button type="submit" class="top-btn top-login-btn">登录</button>
+                        </li>
+                        <li>
+                            <button type="button" id="register" class="top-btn top-reg-btn"
+                                    data-toggle="modal" data-target="#registeredModal">注册
+                            </button>
+                        </li>
+                        <li>
+                            <a style="cursor: pointer" data-toggle="modal" data-target="#findPassword"><span
+                                    style="color: #78919d;width: 70px;">忘记密码？</span></a>
+                        </li>
+                    </ul>
+                </form>
+
+                <ul id="loginInfo" class="list-unstyled topnav-menu float-right mb-0 loginInfo" style="display:none">
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle  mr-0 " data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false" style="padding-top: 2px;padding-bottom: 2px;">
+                            <i class="remixicon-mail-line noti-icon"></i>
+                            <span id="msgCount" class="badge badge-danger rounded-circle noti-icon-badge"
+                                  style="display: none"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                            <!-- item-->
+                            <div class="dropdown-header noti-title">
+                                <h5 class="m-0">
+                                    <span class="float-right">
+                                        <a href="" class="text-dark">
+                                            <small>全部已读</small>
+                                        </a>
+                                    </span>
+                                    站内信
+                                </h5>
+                            </div>
+
+                            <div id="msgList" class="slimscroll noti-scroll">
+
+                            </div>
+
+                            <!-- All-->
+                            <a href="/personal/main.html?page=message" class="dropdown-item text-center notify-item notify-all">
+                                查看全部
+                                <i class="fi-arrow-right"></i>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle  mr-0 "
+                           data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"
+                           style="display: flex;align-items: center">
+                            <div class="vip"></div>
+                            <span id="userName" class="ml-1" style="margin-right: 10px">
+
+                            </span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            <a href="../personal/main.html?page=personal_info" class="dropdown-item notify-item">
+                                <i class="remixicon-account-circle-line"></i>
+                                <span>个人信息</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="../personal/main.html?page=deposit" class="dropdown-item notify-item">
+                                <i class="remixicon-money-cny-circle-line"></i>
+                                <span>充值中心</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="../personal/main.html?page=transfer" class="dropdown-item notify-item">
+                                <i class="remixicon-bank-card-line"></i>
+                                <span>快速转账</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="../personal/main.html?page=privilege" class="dropdown-item notify-item">
+                                <i class="remixicon-coupon-line"></i>
+                                <span>优惠领取</span>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <!-- item-->
+                            <a href="javascript:logout();" class="dropdown-item notify-item">
+                                <i class="remixicon-logout-box-line"></i>
+                                <span>退出登陆</span>
+                            </a>
+
+                        </div>
+                    </li>
+
+
+                    <li class="dropdown notification-list">
+                        <a href="javascript:refreshHeaderMainBalance();" class="nav-link right-bar-toggle account-amount">
+                            <span>余额：</span>
+                            <span class="amount">0.00</span>
+                            <i class="remixicon-refresh-line" style="font-size: 18px!important;"></i>
+                        </a>
+                    </li>
+
+                    <li class="dropdown notification-list">
+                        <button class="nav-link right-bar-toggle btn custom-btn-primary" style="height: 35px;color: #fff;" onclick="window.location.href='/personal/main.html?page=deposit'">充值</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="nav-container">
+        <div class="top-box margin-center nav-box">
+            <ul class="nav-logo-list">
+                <li>
+                    <a href="/index.html">
+                        <img src="/style/img/logo.png">
+                    </a>
+                </li>
+                <li style="border-left: 1px solid #8f99a3;padding-left: 9px;margin-left: 4px;">
+                    <a href="/index.html">
+                        <img src="/style/img/index/lions_sponsor.png">
+                    </a>
+                </li>
+                <li>
+                    <ul id="navigationMenu" class="nav-ul">
+                        <li class="active header-index-nav">
+                            <a href="/index.html">
+                                <div>首页</div>
+                                <div class="nav-menu-second no-letter-space">HOME</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                        </li>
+                        <li class="header-esport-nav header-rg-esport-nav header-im-esport-nav">
+                            <a href="/games/esports.html">
+                                <div>电子竞技</div>
+                                <div class="nav-menu-second no-letter-space">ESPORTS</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 1200px;">
+                                    <a class="header-esport-box" href="/games/esport.html">
+                                        <div class="header-esport-title">东赢电竞</div>
+                                        <div class="header-esport-desc">亚洲第一 实时滚球</div>
+                                        <div class="header-esport-bottom-box">
+                                            <div class="header-esport-bimg dy"></div>
+                                        </div>
+                                    </a>
+                                    <a class="header-esport-box" href="/games/rg-esport.html">
+                                        <div class="header-esport-title">RG电竞</div>
+                                        <div class="header-esport-desc">赛事最多 玩法最多</div>
+                                        <div class="header-esport-bottom-box">
+                                            <div class="header-esport-bimg rg"></div>
+                                        </div>
+                                    </a>
+                                    <div class="header-esport-box" onclick="urlOpen('/games/im-esport.html')">
+                                        <div class="header-esport-title">IM电竞</div>
+                                        <div class="header-esport-desc">赛事齐全 玩法新颖</div>
+                                        <div class="header-esport-bottom-box">
+                                            <div class="header-esport-bimg im"></div>
+                                        </div>
+                                    </div>
+                                    <div class="header-fs-box">
+                                        <p class="fs-name">ELECTRONIC<br>SPORT</p>
+                                        <p class="fs-desc">返水最高可达</p>
+                                        <div class="fs-percentage p1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-sport-nav header-sportPlatforms-nav header-im-sport-nav">
+                            <a href="/games/sport.html">
+                                <div>体育</div>
+                                <div class="nav-menu-second no-letter-space">SPORTS</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 1200px;">
+                                    <a class="menu-half-box sport" href="/games/sportPlatforms.html">
+                                        <div class="box-left" style="background-position: -248px 0px;width: 248px;"></div>
+                                        <div class="box-right">
+                                            <h3 class="box-right-title">东赢体育</h3>
+                                            <p class="box-right-desc">最全赛事 应有尽有</p>
+                                            <span class="box-right-name">SPORTS GAME</span>
+                                        </div>
+                                    </a>
+                                    <div class="menu-half-box sport" onclick="urlOpen('/games/im-sport.html')">
+                                        <div class="box-left" style="background-position: 0px 0px;"></div>
+                                        <div class="box-right">
+                                            <h3 class="box-right-title">IM体育</h3>
+                                            <p class="box-right-desc">赛事最多 玩法新颖</p>
+                                            <span class="box-right-name">SPORTS GAME</span>
+                                        </div>
+                                    </div>
+                                    <div class="header-fs-box">
+                                        <p class="fs-title">体育博彩</p>
+                                        <p class="fs-name">SPORTS<br>EVENTS</p>
+                                        <p class="fs-desc">返水最高可达</p>
+                                        <div class="fs-percentage p1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-live-nav">
+                            <a href="/games/live.html">
+                                <div>真人</div>
+                                <div class="nav-menu-second no-letter-space">LIVE CASINO</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 800px;">
+                                    <ul class="menu-small-list">
+                                        <li style="width: 33.333%;" onclick="fun_openGame('0',5)">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/live_logo_ag.png" width="109" height="35">
+                                                <p class="platform-title">AG真人</p>
+                                                <div class="platform-img ag"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 33.333%;" onclick="fun_openGame('zhenren',36,'BBIN')">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/live_logo_bbin.png" width="109" height="35">
+                                                <p class="platform-title">BBIN真人</p>
+                                                <div class="platform-img bbin"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 33.333%;" onclick="fun_openGame('100',26)">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/live_logo_allbet.png" width="109" height="35">
+                                                <p class="platform-title">欧博真人</p>
+                                                <div class="platform-img allbet"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="header-fs-box">
+                                        <p class="fs-title">真人娱乐</p>
+                                        <p class="fs-name">LIVE<br>CASINO</p>
+                                        <p class="fs-desc">返水最高可达</p>
+                                        <div class="fs-percentage p1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-poker-nav">
+                            <a href="/games/poker.html">
+                                <div>棋牌</div>
+                                <div class="nav-menu-second no-letter-space">POKER</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 1200px;">
+                                    <div class="menu-half-box live" onclick="openELottery('/ptweb/txGame?gameCode=Lobby')">
+                                        <div class="box-left" style="background-position: 0px 0px;"></div>
+                                        <div class="box-right">
+                                            <h3 class="box-right-title">大唐棋牌</h3>
+                                            <p class="box-right-desc">玩出运气 赢得喜气</p>
+                                            <span class="box-right-name">CHESS GAME</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-half-box live" onclick="openELottery('/ptweb/kyGame?gameCode=Lobby')">
+                                        <div class="box-left" style="background-position: -244px 0px;width: 248px;height: 269px;"></div>
+                                        <div class="box-right">
+                                            <h3 class="box-right-title">开元棋牌</h3>
+                                            <p class="box-right-desc">玩出运气 赢得喜气</p>
+                                            <span class="box-right-name">CHESS GAME</span>
+                                        </div>
+                                    </div>
+                                    <div class="header-fs-box">
+                                        <p class="fs-title">棋牌游戏</p>
+                                        <p class="fs-name">CHESS<br>GAME</p>
+                                        <p class="fs-desc">返水最高可达</p>
+                                        <div class="fs-percentage p12"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-slots-nav">
+                            <a href="/games/slots.html">
+                                <div>老虎机</div>
+                                <div class="nav-menu-second no-letter-space">SLOTS</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 1200px;">
+                                    <ul class="menu-small-list">
+                                        <li style="width: 20%;" onclick="location.href='/games/slots.html?platform=pt'">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_slot_logo_pt.png" style="width: 75px;">
+                                                <p class="platform-title">PT电子</p>
+                                                <div class="platform-img" style="background-image: url('/style/img/header/header_slot_pt.png');"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 20%;" onclick="location.href='/games/slots.html?platform=sw'">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_slot_logo_sw.png" style="width: 75px;">
+                                                <p class="platform-title">SW电子</p>
+                                                <div class="platform-img" style="background-image: url('/style/img/header/header_slot_sw.png');"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 20%;" onclick="location.href='/games/slots.html?platform=agdz'">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_slot_logo_ag.png" style="width: 75px;">
+                                                <p class="platform-title">AG电子</p>
+                                                <div class="platform-img" style="background-image: url('/style/img/header/header_slot_ag.png');"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 20%;" onclick="location.href='/games/slots.html?platform=bbin'">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_slot_logo_bbin.png" style="width: 75px;">
+                                                <p class="platform-title">BBIN电子</p>
+                                                <div class="platform-img" style="background-image: url('/style/img/header/header_slot_bbin.png');"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 20%;" onclick="location.href='/games/slots.html?platform=cq'">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_slot_logo_cq.png" style="width: 75px;">
+                                                <p class="platform-title">CQ电子</p>
+                                                <div class="platform-img" style="background-image: url('/style/img/header/header_slot_cq.png');"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 20%;" onclick="location.href='/games/slots.html?platform=mg_plus'">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_slot_logo_mg.png" style="width: 75px;">
+                                                <p class="platform-title">MG电子</p>
+                                                <div class="platform-img" style="background-image: url('/style/img/header/header_slot_mg.png');"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="header-fs-box">
+                                        <p class="fs-title">电子游艺</p>
+                                        <p class="fs-name">SLOT<br>GAME</p>
+                                        <p class="fs-desc">返水最高可达</p>
+                                        <div class="fs-percentage p20"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-lottery-nav">
+                            <a href="/games/lottery.html">
+                                <div>彩票</div>
+                                <div class="nav-menu-second no-letter-space">LOTTERY</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 480px;">
+                                    <ul class="menu-small-list lottery">
+                                        <li style="width: 50%;padding-bottom: 10px;" onclick="openELottery('/ptweb/playGame?gameCode=lottery&amp;pid=36&amp;pfCode=BBIN')">
+                                            <div class="platform-box bbin">
+                                                <i class="platform-logo" style="width: 70px;"></i>
+                                                <p class="platform-title">BBIN彩票</p>
+                                                <div class="platform-img"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 50%;padding-bottom: 10px;" onclick="openELottery('/ptweb/playELottery?gameCode=Lobby')">
+                                            <div class="platform-box tcg">
+                                                <i class="platform-logo"></i>
+                                                <p class="platform-title">TCG彩票</p>
+                                                <div class="platform-img"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-fish-nav">
+                            <a href="/games/fish.html">
+                                <div>捕鱼</div>
+                                <div class="nav-menu-second no-letter-space">FISHING</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 900px;">
+                                    <ul class="menu-small-list fish">
+                                        <li style="width: 33.33%;" onclick="fun_openGame('6',5)">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_fish_ag.png">
+                                                <p class="platform-title">AG捕鱼王</p>
+                                                <div class="platform-img ag-fish"></div>
+                                            </div>
+                                        </li>
+                                        <li style="width: 33.33%;" onclick="fun_openGame('cmf0001', 53)">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_fish_icg.png">
+                                                <p class="platform-title">龙珠捕鱼</p>
+                                                <div class="platform-img icg-lz"></div>
+                                            </div>
+                                        </li>
+                                        <!--<li style="width: 25%;" onclick="fun_openGame('cmt0001', 53)">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_fish_icg.png">
+                                                <p class="platform-title">神魔塔防</p>
+                                                <div class="platform-img icg-ms"></div>
+                                            </div>
+                                        </li>-->
+                                        <li style="width: 33.33%;" onclick="openELottery('/ptweb/gpsGame?t=1')">
+                                            <div class="platform-box">
+                                                <img src="/style/img/header/header_fish_gps.png">
+                                                <p class="platform-title">决战中途岛</p>
+                                                <div class="platform-img gps-fish"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+<!--                                    <div class="header-fs-box">-->
+<!--                                        <p class="fs-title">捕鱼游戏</p>-->
+<!--                                        <p class="fs-name">SLOT<br>GAME</p>-->
+<!--                                        <p class="fs-desc">返水最高可达</p>-->
+<!--                                        <div class="fs-percentage p18"></div>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-promotion-nav" style="margin-left: -10px;">
+                            <a href="/promotion.html">
+                                <div style="line-height: 24px;height: 24px;">
+                                    <i class="remixicon-coupon-2-line" style="font-size: 20px;color: #5c78f0;cursor: pointer;"></i>
+                                </div>
+                                <div class="nav-menu-second no-letter-space">优惠</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 840px;">
+                                    <a class="menu-half-box sport" href="/promotion.html">
+                                        <img src="/style/img/header/header_promo1.png" height="256">
+                                        <div class="box-right">
+                                            <h3 class="header-menu-title">劲爆优惠</h3>
+                                            <p class="qrcode-scan-txt">新用户开户即享<br>
+                                                68%优惠红利</p>
+                                        </div>
+                                    </a>
+                                    <a class="menu-half-box sport" href="/vip.html">
+                                        <img src="/style/img/header/header_promo2.png" height="256">
+                                        <div class="box-right">
+                                            <h3 class="header-menu-title">VIP尊享</h3>
+                                            <p class="qrcode-scan-txt">贵者为宾 尊者为君<br>
+                                                尽享VIP尊贵礼遇</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-agent-nav" style="margin-left: -10px;">
+                            <a href="https://partner.dyvip90.com" target="_blank">
+                                <div style="line-height: 24px;height: 24px;">
+                                    <i class="remixicon-vip-diamond-line" style="font-size: 20px;color: #5c78f0;cursor: pointer;"></i>
+                                </div>
+                                <div class="nav-menu-second no-letter-space">加盟</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                        </li>
+                        <li class="header-sponsor-nav" style="margin-left: -10px;">
+                            <a href="sponsor.html">
+                                <div style="line-height: 24px;height: 24px;">
+                                    <i class="fe-star" style="font-size: 22px;color: #5c78f0;cursor: pointer;"></i>
+                                </div>
+                                <div class="nav-menu-second no-letter-space">赞助</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                        </li>
+                        <li class="header-download-nav" style="margin-left: -10px;">
+                            <a href="/download.html">
+                                <div style="line-height: 24px;height: 24px;">
+                                    <i class="fe-tablet" style="font-size: 22px;color: #5c78f0;cursor: pointer;"></i>
+                                </div>
+                                <div class="nav-menu-second no-letter-space">APP</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                            <div class="header-sub-menu-container">
+                                <div class="header-sub-menu-box" style="width: 1626px;">
+                                    <div>
+                                        <img src="/style/img/header/header_nav_app.png" height="300">
+                                    </div>
+                                    <div>
+                                        <h3 class="header-menu-title">全站APP</h3>
+                                        <div id="heard_all_img">
+                                            <!--<img src="https://sm.zzwangjie.com//static//image/6b088385-a13b-4637-b036-bb2a8105c64a.png" height="97">-->
+                                        </div>
+                                        <p class="qrcode-scan-txt">扫一扫下载全站APP</p>
+                                        <p class="qrcode-scan-support">支持IOS & Android等全部移动设备</p>
+                                        <a href="http://ytgg8866.com" class="download-url" id="heard_all_url">ytgg8866.com</a>
+                                    </div>
+                                    <div style="margin-left: 30px">
+                                        <img src="/style/img/header/header_nav_esport_app.png" height="300">
+                                    </div>
+                                    <div>
+                                        <h3 class="header-menu-title">电竞APP</h3>
+                                        <div id="heard_esport_img">
+                                            <!--<img src="https://sm.zzwangjie.com//static//image/3bdaa6cf-b0a6-45b0-a3ed-e857e574af07.png" height="97">-->
+                                        </div>
+                                        <p class="qrcode-scan-txt">扫一扫下载电竞APP</p>
+                                        <p class="qrcode-scan-support">支持IOS & Android等全部移动设备</p>
+                                        <a href="https://xwesport.app" class="download-url" id="heard_esport_url">xwesport.app</a>
+                                    </div>
+                                    <div style="margin-left: 20px">
+                                        <img src="/style/img/header/header_nav_sport_app.png" height="300">
+                                    </div>
+                                    <div>
+                                        <h3 class="header-menu-title">体育APP</h3>
+                                        <div id="heard_sport_img">
+                                           <!-- <img src="https://sm.zzwangjie.com//static//image/3bdaa6cf-b0a6-45b0-a3ed-e857e574af07.png" height="97">-->
+                                        </div>
+                                        <p class="qrcode-scan-txt">扫一扫下载体育APP</p>
+                                        <p class="qrcode-scan-support">支持IOS & Android等全部移动设备</p>
+                                        <a href="https://xwesport.app" class="download-url" id="heard_sport_url">xwesport.app</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header-vip-nav" style="margin-left: -10px;">
+                            <a href="/vip.html">
+                                <div style="line-height: 24px;height: 24px;">
+                                    <i class="remixicon-vip-crown-line" style="font-size: 22px;color: #5c78f0;cursor: pointer;"></i>
+                                </div>
+                                <div class="nav-menu-second no-letter-space">VIP</div>
+                                <div class="header-nav-bline"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" id="registeredModal" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="modal-dialog registered-dialog modal-dialog-centered" role="document">
+            <div class="modal-content registered-content">
+                <button type="button" class="close registered-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="registered-left">
+                    <div class="title"></div>
+                    <ul class="tips">
+                        <li>标记有 * 者为必填项目。</li>
+                        <li>手机号码为找回密码的重要凭证，请务必填写真实信息。</li>
+                        <li>若公司有其他活动会邮件通知您，请您务必填写真实有效的邮箱。"</li>
+                    </ul>
+                </div>
+                <div class="registered-right">
+                    <form id="registered" class="form-inline " novalidate>
+                        <span class="title account">注册账号</span>
+                        <div class="form-group">
+                            <label><p class="text-danger">*</p><span>用户名</span>:</label>
+                            <input type="text" name="loginName" class="form-control mx-sm-3"
+                                   maxlength="12" minlength="6" required autocomplete="off"
+                                   pattern="^[A-Za-z0-9]+$"
+                                   data-parsley-required-message="用户名不能为空"
+                                   data-parsley-length-message="用户名长度6-12位"
+                                   data-parsley-pattern-message="用户名必须为英文字母以及数字的组合"
+                                   data-parsley-remote
+                                   data-parsley-remote-validator='checkLoginName'
+                                   data-parsley-remote-message="该用户名已经存在，请重新填写"
+                                   data-parsley-remote-options
+                            >
+                            <small id="loginNameHelpInline" class="text-muted">
+                                范围在6-12位之间, 由字母和数字组成
+                            </small>
+
+                        </div>
+                        <div class="form-group">
+                            <label><p class="text-danger">*</p><span>密码</span>:</label>
+                            <input type="password" name="password" id="regPassword" class="form-control mx-sm-3"
+                                   aria-describedby="passwordHelpInline"
+                                   minlength="6"
+                                   autocomplete="off"
+                                   maxlength="12" required
+                                   pattern="^[A-Za-z0-9]+$"
+                                   data-parsley-required-message="密码不能为空"
+                                   data-parsley-length-message="密码长度6-12位"
+                                   data-parsley-pattern-message="密码必须为英文字母以及数字的组合">
+                            <small id="passwordHelpInline" class="text-muted">
+                                密码范围在6-12位之间, 由字母和数字组成
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirm"><p class="text-danger">*</p><span>确认密码</span>:</label>
+                            <input type="password" id="password_confirm" class="form-control mx-sm-3"
+                                   aria-describedby="password_confirmHelpInline"
+                                   minlength="6"
+                                   maxlength="12" required data-parsley-equalto="#regPassword"
+                                   pattern="^[A-Za-z0-9]+$"
+                                   data-parsley-required-message="密码不能为空"
+                                   data-parsley-length-message="密码长度6-12位"
+                                   data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                                   data-parsley-equalto-message="两次密码输入不一致">
+                            <small id="password_confirmHelpInline" class="text-muted">
+                                密码范围在6-12位之间, 由字母和数字组成
+                            </small>
+                        </div>
+                        <span class="title info">会员资料</span>
+                        <div class="form-group">
+                            <label><p class="text-danger">*</p><span>手机</span>:</label>
+                            <input type="text" name="telephone" id="telephone" class="form-control mx-sm-3"
+                                   aria-describedby="telphoneHelpInline"
+                                   maxlength="11" minlength="11"
+                                   pattern="^[0-9]*[1-9][0-9]*$"
+                                   autocomplete="off" required
+                                   data-parsley-type-message="手机号必须为数字"
+                                   data-parsley-required-message="手机号码不能为空"
+                                   data-parsley-length-message="请输入11位手机号"
+                                   data-parsley-pattern-message="请输入正确的手机号码"
+                                   data-parsley-remote
+                                   data-parsley-remote-validator='checkTelephone'
+                                   data-parsley-remote-message="该手机号码已经存在，请重新填写"
+                                   data-parsley-remote-options
+                            >
+                            <small id="telphoneHelpInline" class="text-muted">
+                                手机号码
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label><p class="text-danger">*</p><span>验证码</span>:</label>
+                            <input type="text" name="validCode" class="form-control mx-sm-3" style="width: 134px"
+                                   aria-describedby="validCodeHelpInline"
+                                   autocomplete="off" minlength="4"
+                                   maxlength="4" required
+                                   data-parsley-required-message="验证码不能为空"
+                                   data-parsley-length-message="验证码长度不正确">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="phoneCode"
+                                        onclick="sendValidateCode()">获取验证码
+                                </button>
+                            </div>
+                            <small id="validCodeHelpInline" class="text-muted">
+                                发送验证码到手机
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label><p class="text-danger">*</p><span>邮箱地址</span>:</label>
+                            <input type="text" name="mailbox" class="form-control mx-sm-3"
+                                   aria-describedby="emailCodeHelpInline"
+                                   autocomplete="off"
+                                   pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"
+                                   required
+                                   data-parsley-required-message="邮箱不能为空"
+                                   data-parsley-pattern-message="邮箱格式不正确"
+                                   data-parsley-remote
+                                   data-parsley-remote-validator='checkMailbox'
+                                   data-parsley-remote-message="该邮箱已经存在，请重新填写"
+                                   data-parsley-remote-options
+                            >
+                            <small id="emailCodeHelpInline" class="text-muted">
+                                邮件格式：abc@gmail.com, 找回密码的重要依据
+                            </small>
+                        </div>
+                        <div  class="form-group agent-code">
+                            <label><p class="text-danger">&nbsp;</p><span>推荐代码</span>:</label>
+                            <input type="text" id="agentCode" name="agentCode" class="form-control mx-sm-3">
+<!--                                   aria-describedby="agentCodeCodeHelpInline"-->
+<!--                                   data-parsley-remote-->
+<!--                                   data-parsley-remote-validator='checkAgentCode'-->
+<!--                                   data-parsley-remote-message="该代理码不存在，请重新填写"-->
+<!--                                   data-parsley-remote-options-->
+<!--                            >-->
+                            <small id="agentCodeCodeHelpInline" class="text-muted">
+                                若不是代理下玩家，无需填写
+                            </small>
+                        </div>
+                        <!--<div class="form-group check">
+                            <input id="trigger" type="checkbox" required data-parsley-required-message="请阅读并同意开户协议"
+                                   aria-describedby="triggerTipInline"
+                                   data-parsley-checkmin="1"
+                                   data-parsley-trigger="click">
+                            <label for="trigger" class="checker" id="confirm"></label>
+                            <label class="form-check-label text" for="trigger">同意遵守<span
+                                    class="text2">《开户协议》</span></label>
+                            <small id="triggerTipInline" class="text-muted">
+
+                            </small>
+                        </div>-->
+                        <input type="hidden" name="token" id="regPhoneCode">
+                        <div class="form-group btn-submit">
+                            <button type="reset" class="btn btn-secondary">重新填写</button>
+                            <button type="submit" class="btn btn-primary" style="margin-left: 47px">确认注册</button>
+                        </div>
+                    </form>
+                    <div class="text-center success " style="display: none">
+                        <div class="success-checkmark">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                                 enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                                <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                        stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                                <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                          stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                                <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                        stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                        r="73.9"></circle>
+
+                                            </svg>
+
+                        </div>
+
+                        <h3>注册成功</h3>
+
+                        <p class="" style="margin-top: 20px;font-size: 16px;color: #3d4145;"> 你已经注册成功，点击<a href="/" style="color: #4784ff;">此处</a>继续 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="findPassword" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered findPassword-dialog" role="document">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-header custom-modal-header">
+                    <h5 class="modal-title custom-modal-title" id="exampleModalLabel">忘记密码</h5>
+                    <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body findPassword-modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="find-by-tel-tab" data-toggle="tab" href="#find-by-tel"
+                               role="tab" aria-controls="find-by-tel" aria-selected="true">手机找回密码</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="find-by-email-tab" data-toggle="tab" href="#find-by-email"
+                               role="tab"
+                               aria-controls="find-by-email" aria-selected="false">邮箱找回密码</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="find-account-by-email-tab" data-toggle="tab"
+                               href="#find-account-by-email" role="tab"
+                               aria-controls="find-account-by-email" aria-selected="false">邮箱找回账号</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane findPassword-dialog-pane fade show active " id="find-by-tel"
+                             role="tabpanel"
+                             aria-labelledby="home-tab">
+                            <span>方式：请输入您需找回登陆密码的用户名和预留手机</span>
+                            <form class="form-inline findPassword-form" id="findByTelephone"
+                                  action="/member/updatePasswordByCode"
+                                  novalidate>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>会员账户</span>:</label>
+                                    <input type="text" class="form-control mx-sm-3" name="loginName"
+                                           autocomplete="off" minlength="6" id="phoneLoginName"
+                                           maxlength="12" required pattern="^[A-Za-z0-9]+$"
+                                           data-parsley-required-message="用户名不能为空"
+                                           data-parsley-length-message="用户名长度6-12位"
+                                           data-parsley-pattern-message="用户名必须为英文字母以及数字的组合">
+                                    <small class="text-muted">
+                                        请输入有效用户名
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>预留手机</span>:</label>
+                                    <input type="tel" class="form-control mx-sm-3" name="telephone"
+                                           maxlength="11" minlength="11" id="getCodePhone"
+                                           pattern="^[0-9]*[1-9][0-9]*$"
+                                           autocomplete="off" required type="number"
+                                           data-parsley-type-message="手机号必须为数字"
+                                           data-parsley-required-message="手机号码不能为空"
+                                           data-parsley-length-message="请输入11位手机号"
+                                           data-parsley-pattern-message="请输入正确的手机号码">
+                                    <small class="text-muted">
+                                        请输入11位手机号
+                                    </small>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>验证码</span>:</label>
+                                    <div class="mx-sm-3">
+                                        <input type="text" class="form-control validCode" name="code"
+                                               autocomplete="off" minlength="4"
+                                               maxlength="4" required
+                                               data-parsley-required-message="验证码不能为空">
+                                        <button type="button" onclick="getUpdatePasswordCodeByPhone()"
+                                                class="btn custom-btn-primary"
+                                                style="margin-top: unset;height: 38px; margin-left: 10px;width: 120px;">获取验证码
+                                        </button>
+                                    </div>
+                                    <small class="text-muted">
+                                        请输入验证码
+                                    </small>
+                                    <input type="hidden" id="phoneCodeId" name="codeId" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>密码</span>:</label>
+                                    <input type="password" class="form-control mx-sm-3"
+                                           id="phonePassword" name="plainPassword"  maxlength="11" minlength="6"
+                                           autocomplete="off" required
+                                           pattern="^[A-Za-z0-9]+$"
+                                           data-parsley-required-message="密码不能为空"
+                                           data-parsley-length-message="密码长度6-11位"
+                                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合">
+                                    <small class="text-muted">
+                                        请输入6-11位字母/数字组合
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>确认密码</span>:</label>
+                                    <input type="password" class="form-control mx-sm-3"
+                                           maxlength="11" minlength="6"
+                                           autocomplete="off"
+                                           required data-parsley-equalto="#phonePassword"
+                                           pattern="^[A-Za-z0-9]+$"
+                                           data-parsley-required-message="密码不能为空"
+                                           data-parsley-length-message="密码长度6-11位"
+                                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                                           data-parsley-equalto-message="两次密码输入不一致">
+                                    <small class="text-muted">
+                                        请确认密码
+                                    </small>
+                                </div>
+                                <button type="submit" class="btn custom-btn-primary">修改密码</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane findPassword-dialog-pane fade" id="find-by-email" role="tabpanel"
+                             aria-labelledby="profile-tab">
+
+                            <span>方式：请输入您需找回登陆密码的用户名和预留邮箱地址</span>
+                            <form class="form-inline findPassword-form" id="findByEmail"
+                                  action="/member/updatePasswordByCode"
+                                  novalidate>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>会员账户</span>:</label>
+                                    <input type="text" class="form-control mx-sm-3" name="loginName"
+                                           autocomplete="off" minlength="6" id="emailLoginName"
+                                           maxlength="12" required pattern="^[A-Za-z0-9]+$"
+                                           data-parsley-required-message="用户名不能为空"
+                                           data-parsley-length-message="用户名长度6-12位"
+                                           data-parsley-pattern-message="用户名必须为英文字母以及数字的组合">
+                                    <small class="text-muted">
+                                        请输入有效用户名
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>预留邮箱</span>:</label>
+                                    <input type="tel" class="form-control mx-sm-3" name="mail"
+                                           autocomplete="off" id="getCodeEmail"
+                                           pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"
+                                           required
+                                           data-parsley-required-message="邮箱不能为空"
+                                           data-parsley-pattern-message="邮箱格式不正确">
+                                    <small class="text-muted">
+                                        请输入有效的邮箱地址
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>验证码</span>:</label>
+                                    <div class="mx-sm-3">
+                                        <input type="text" class="form-control validCode" name="code"
+                                               autocomplete="off" minlength="4"
+                                               maxlength="4" required
+                                               data-parsley-required-message="验证码不能为空">
+                                        <button type="button" onclick="getUpdatePasswordCodeByEmail()"
+                                                class="btn custom-btn-primary"
+                                                style="margin-top: unset;height: 38px; margin-left: 10px;width: 120px;">获取验证码
+                                        </button>
+                                    </div>
+                                    <small class="text-muted">
+                                        请输入验证码
+                                    </small>
+                                    <input type="hidden" id="emailCodeId" name="codeId" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>密码</span>:</label>
+                                    <input type="password" class="form-control mx-sm-3"
+                                           id="emialPassword" name="plainPassword"  maxlength="11" minlength="6"
+                                           autocomplete="off" required
+                                           pattern="^[A-Za-z0-9]+$"
+                                           data-parsley-required-message="密码不能为空"
+                                           data-parsley-length-message="密码长度6-11位"
+                                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合">
+                                    <small class="text-muted">
+                                        请输入6-11位字母/数字组合
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>确认密码</span>:</label>
+                                    <input type="password" class="form-control mx-sm-3"
+                                           maxlength="11" minlength="6"
+                                           autocomplete="off"
+                                           required data-parsley-equalto="#emialPassword"
+                                           pattern="^[A-Za-z0-9]+$"
+                                           data-parsley-required-message="密码不能为空"
+                                           data-parsley-length-message="密码长度6-11位"
+                                           data-parsley-pattern-message="密码必须为英文字母以及数字的组合"
+                                           data-parsley-equalto-message="两次密码输入不一致">
+                                    <small class="text-muted">
+                                        请确认密码
+                                    </small>
+                                </div>
+                                <button type="submit" class="btn custom-btn-primary">修改密码</button>
+                            </form>
+
+
+                        </div>
+                        <div class="tab-pane findPassword-dialog-pane fade" id="find-account-by-email" role="tabpanel"
+                             aria-labelledby="contact-tab">
+                            <span>方式：请输入您的预留邮箱</span>
+                            <form class="form-inline findPassword-form" id="findAccountByEmail"
+                                  action="/member/forget-account"
+                                  novalidate>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>预留邮箱</span>:</label>
+                                    <input type="tel" class="form-control mx-sm-3" name="email"
+                                           autocomplete="off"
+                                           pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"
+                                           required
+                                           data-parsley-required-message="邮箱不能为空"
+                                           data-parsley-pattern-message="邮箱格式不正确">
+                                    <small class="text-muted">
+                                        请输入有效的邮箱地址
+                                    </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label"><span>验证码</span>:</label>
+                                    <div class="mx-sm-3">
+                                        <input type="text" class="form-control validCode2" name="validCode"
+                                               autocomplete="off" minlength="4"
+                                               maxlength="4" required
+                                               data-parsley-required-message="验证码不能为空">
+                                        <img id="verificationCodeImg" onclick="refreshCode()"
+                                             style="width: 81px; height: 29px;cursor: pointer">
+                                    </div>
+                                    <input id="randomCodeId" name="token" type="hidden">
+                                    <small class="text-muted">
+                                        请输入验证码
+                                    </small>
+                                </div>
+                                <button type="submit" class="btn custom-btn-primary">帐号找回</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="success" class="text-center success " style="height: 473px;padding: 105px; display: none">
+                    <div class="success-checkmark">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                             enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                            <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                    stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                            <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                      stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                            <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                    stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                    r="73.9"></circle>
+
+                                            </svg>
+
+                    </div>
+
+                    <h3>提交成功</h3>
+
+                    <p class="text-muted" style="margin-top: 20px"> 信息已经发送，请注意查收</p>
+                </div>
+                <div id="success2" class="text-center success " style="height: 473px;padding: 105px; display: none">
+                    <div class="success-checkmark">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 161.2 161.2"
+                             enable-background="new 0 0 161.2 161.2" xml:space="preserve">
+                                                <path class="logout-path" fill="none" stroke="#d1dee4"
+                                                      stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
+                                                    c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
+                                                    c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"></path>
+                            <circle class="success-path" fill="none" stroke="#1abc9c" stroke-width="4"
+                                    stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"></circle>
+                            <polyline class="success-path" fill="none" stroke="#1abc9c" stroke-width="6"
+                                      stroke-linecap="round" stroke-miterlimit="10" points="113,52.8
+                                                    74.1,108.4 48.2,86.4 "></polyline>
+
+                            <circle class="success-spin" fill="none" stroke="#d1dee4" stroke-width="4"
+                                    stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6"
+                                    r="73.9"></circle>
+
+                                            </svg>
+
+                    </div>
+
+                    <h3>密码修改成功</h3>
+
+                    <p class="text-muted" style="margin-top: 20px"> 密码已经修改成功，请牢记修改后的密码</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script src="/style/js/qrcode.js" type="text/javascript" ></script>
+<script type="text/javascript" src="/style/js/header.js"></script>

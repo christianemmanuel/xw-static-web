@@ -1,0 +1,83 @@
+.rescue-bonu-container {
+    background-color: #fff;
+    font-size: 16px;
+    color: #414655;
+    padding: 86px 0 20px 0;
+}
+.rescue-bonu-container .top-banner {
+    height: 570px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.rescue-bonu-container .top-banner.live {
+    background-image: url("../img/promotion/rescueBonu/top_banner_live.jpg");
+}
+.rescue-bonu-container .top-banner.poker {
+    background-image: url("../img/promotion/rescueBonu/top_banner_poker.jpg");
+}
+.rescue-bonu-container .rescue-bonu-content {
+    width: 1130px;
+    text-align: center;
+}
+.rescue-bonu-container .rescue-bonu-content .title-box {
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+.rescue-bonu-container .rescue-bonu-content .rescue-tab {
+    width: 550px;
+}
+.rescue-bonu-container .rescue-bonu-content .rescue-tab th {
+    height: 56px;
+    line-height: 56px;
+    color: #fff;
+    background-image: linear-gradient(0deg, #0094ff 0%, #19c6ff 100%), linear-gradient(#f4f6f9, #f4f6f9);
+}
+.rescue-bonu-container .rescue-bonu-content .rescue-tab td {
+    height: 52px;
+    line-height: 52px;
+    border: 1px solid #dcdce8;
+}
+.rescue-bonu-container .rescue-bonu-content .rule-list {
+    margin-top: 36px;
+    text-align: left;
+}
+.rescue-bonu-container .rescue-bonu-content .rule-list > li {
+    list-style-type: decimal;
+    margin-bottom: 43px;
+}
+.rescue-bonu-container .rescue-bonu-content .receive-container {
+    margin: 46px auto 57px;
+    width: 500px;
+}
+.rescue-bonu-container .rescue-bonu-content .receive-container .receive-btn {
+    border: 0;
+    text-align: center;
+    line-height: 57px;
+    color: #fff;
+    font-size: 16px;
+    width: 225px;
+    height: 57px;
+    background-image: linear-gradient(90deg, #19c6ff 0%, #0094ff 100%), linear-gradient(#ffffff, #ffffff);
+    box-shadow: 0px 3px 4px 0px rgba(13, 110, 200, 0.29);
+    border-radius: 8px;
+}
+.rescue-bonu-container .page-list {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 27px auto 0;
+}
+.rescue-bonu-container .page-list .page-item {
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 4px;
+    border: solid 1px #dcdce8;
+}
+.rescue-bonu-container .page-list .page-item.active, .rescue-bonu-container .page-list .page-item:hover {
+    background-color: #0094ff;
+    color: #fff;
+}

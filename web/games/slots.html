@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>真人</title>
+    <link rel="stylesheet" href="/style/css/slot.css">
+    <link rel="stylesheet" href="/style/plugins/paginationjs/pagination.css">
+    <script type="text/javascript" src="/style/js/solts.js"></script>
+    <script type="text/javascript" src="/style/plugins/paginationjs/pagination.min.js"></script>
+    <script type="text/javascript" src="https://tickers.playtech.com/jackpots/new_jackpotjs.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div id="numBox" class="numBox" style=""></div>
+<div class="game-container">
+    <div class="slot-left">
+
+    </div>
+    <div class="slot-right">
+
+        <div class="slot-selector">
+            <select id="gameTypes" class="form-control">
+                <option selected>所有游戏</option>
+                <option>...</option>
+            </select>
+            <input type="text" class="form-control" id="gameName">
+            <input type="hidden" id="proId">
+            <input type="hidden" id="proCode">
+            <a class="search" href="javascript:void(0);" onclick="searchGames()"> <i class="remixicon-search-line"></i></a>
+        </div>
+        <hr/>
+        <div id="slotGamePane">
+            <div class="slot-game" id="dataContainer">
+
+            </div>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript" src="/style/js/jackpot.js"></script>
+</html>

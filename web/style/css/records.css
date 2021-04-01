@@ -1,0 +1,73 @@
+.records-container {
+    width: 960px;
+    padding: 37px 25px;
+}
+
+.records-container .title{
+    font-size: 14px;
+    color: #586067;
+}
+
+.records-container .search-type{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.records-container .search-type,.records-container .search-type ul{
+    display: flex;
+}
+
+.records-container .search-type span{
+    width: 80px;
+    font-size: 12px;
+    color: #35425f;
+}
+
+.records-container .search-type ul li{
+    width: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+.record-search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.record-search span {
+    font-size: 12px;
+    color: #35425f;
+}
+
+.record-search input {
+    width: 180px;
+    height: 37px;
+    background-color: #c0c4cf;
+    border-radius: 2px;
+    border: solid 1px #abb2c3;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.record-search select {
+    width: 180px;
+    height: 37px;
+    border-radius: 2px;
+    border: solid 1px #abb2c3;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.record-table thead tr {
+    background-color: #a0acca;
+    color: #3d4b66;
+}
+
+.record-table{
+    width: 100% !important;
+}
+

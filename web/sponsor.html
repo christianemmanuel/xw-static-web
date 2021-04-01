@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢 - 赞助</title>
+    <link rel="stylesheet" href="/style/css/index.css">
+</head>
+<style>
+    html,body{
+        margin: 0;
+        padding: 0;
+    }
+    .banner_bg{
+        width: 100%;
+        height: 888px;
+    }
+    .banner_bg>img{
+        width: 100%;
+        height: 888px;
+    }
+    .lions{
+        background-image: url('./style/img/introduce/bg2.jpg');
+        background-size: 100%;
+        height: 888px;
+    }
+    .lions>h2{
+        width: 100%;
+        text-align: center;
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 48px;
+        line-height: 30px;
+        letter-spacing: 5px;
+        color: #0094ff;
+        margin: 0;
+        padding: 109px 0;
+    }
+    .lions_content{
+        width: 60%;
+        margin: 0 auto;
+        height: 53%;
+        background-color: #fff;
+        display: flex;
+    }
+    .lions_content div:nth-child(1){
+        width: 60%;
+    }
+    .lions_img>img{
+        margin-top: 46px;
+        margin-left: 19px;
+        width: 100%;
+    }
+    .lions_content div:nth-child(2){
+        width: 40%;
+        text-align: center;
+    }
+    .lions_content p{
+        margin: 0 auto;
+        width: 67%;
+        line-height: 30px;
+        letter-spacing: 1px;
+        color: #3c4147;
+        font-size: 14px;
+    }
+    .logo_img{
+        margin-top: 46px;
+    }
+    .picture{
+        display: flex;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .player{
+       background-color: #fff;
+       margin-right: 3%;
+    }
+    .player>p:nth-child(1){
+        float: right;
+        margin-right: 20px;
+    }
+    .player_name{
+       width: 100%;
+       text-align: center;
+    }
+    .certification{
+        width: 60%;
+        margin: 50px auto;
+        background-color: #fff;
+    }
+</style>
+<body>
+@@include('header.html')
+@@include('right-side.html')
+    <div class="banner_bg">
+        <img src="./style/img/introduce/bg1.jpg" alt="">
+    </div>
+    <div class="lions">
+        <h2>带您了解MAD LIONS</h2>
+        <div class="lions_content">
+            <div class="lions_img"><img src="./style/img/introduce/figure.jpg" alt=""></div>
+            <div>
+                <img class="logo_img" src="./style/img/introduce/logo.png" alt="">
+                <p style="text-align: left;">MAD Lions是来自丹麦的一支CSGO战队，现世界排名已经来到了第13，在AcilioN上任后队伍的实力不断地进步，东赢电竞平台以赞助商的身份联手MAD Lions俱乐部，将给为俱乐部增添新的助力，推动MAD Lions的持续发展</p>
+            </div>
+        </div>
+    </div>
+    <div class="lions">
+        <h2>MAD LIONS队员展示</h2>
+        <div class="picture">
+            <div class="player">
+                <p>1</p>
+                <img src="./style/img/introduce/players1.png" alt="">
+                <p class="player_name">sjuush</p>
+            </div>
+            <div class="player">
+                <p>2</p>
+                <img src="./style/img/introduce/players2.png" alt="">
+                <p class="player_name">acor</p>
+            </div>
+            <div class="player">
+                <p>3</p>
+                <img src="./style/img/introduce/players3.png" alt="">
+                <p class="player_name">acillion</p>
+            </div>
+            <div class="player">
+                <p>4</p>
+                <img src="./style/img/introduce/players4.png" alt="">
+                <p class="player_name">roej</p>
+            </div>
+            <div class="player">
+                <p>5</p>
+                <img src="./style/img/introduce/players5.png" alt="">
+                <p class="player_name">bubzkji</p>
+            </div>
+        </div>
+        <div class="certification">
+            <img src="./style/img/introduce/certification.png" alt="">
+        </div>
+    </div>
+    @@include('footer.html')
+</body>
+@@include('html-foot.html')
+</html>

@@ -1,0 +1,362 @@
+:root {
+    --main-font-color: #c2c2c2;
+    --default-min-width:1300px
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+    letter-spacing: 1px !important;
+    color: var(--main-font-color);
+    min-width: var(--default-min-width);
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.no-letter-space {
+    letter-spacing: 0;
+}
+
+.margin-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-left-0 {
+    margin-left: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.height-full {
+    height: 100%;
+}
+
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/**
+统一弹框样式
+ */
+
+.custom-modal-content {
+    border-radius: 0px;
+    border: none;
+}
+
+.custom-modal-header {
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    background-image: linear-gradient(90deg,
+    #3056c6 0%,
+    #5378e8 100%),
+    linear-gradient(
+            #3151b0,
+            #3151b0);
+    background-blend-mode: normal,
+    normal;
+}
+
+.custom-modal-title {
+    font-size: 14px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1px 3px;
+}
+
+.custom-close {
+    font-weight: normal;
+    color: #ffffff;
+    text-shadow: none;
+}
+
+/**
+    蓝色确认按钮
+ */
+
+.custom-btn-primary {
+    background-size: 150%;
+    background-image: linear-gradient(267deg,
+    #78abfa 0%,
+    #4877ec 100%),
+    linear-gradient(
+            #5b80e7,
+            #5b80e7);
+    background-blend-mode: normal,
+    normal;
+    font-size: 14px;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #ffffff;
+    border-radius: 0;
+    border: none;
+}
+
+.custom-btn-primary:hover {
+    background-position: right;
+    color: #ffffff;
+}
+
+/**
+灰色按钮
+ */
+
+.custom-btn-gray {
+    font-size: 14px;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #ffffff;
+    border-radius: 0;
+    border: none;
+    background-color: #5e6a87;
+}
+
+.custom-btn-gray:hover {
+    color: #ffffff;
+}
+
+/**
+页面tab
+ */
+
+.custom-tabs {
+    border: none;
+}
+
+.custom-nav-item {
+    margin-right: -25px;
+}
+
+.custom-nav-link {
+    background-image: url("../img/esports/tabs.png");
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    width: 164px;
+    height: 142px;
+    border: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #4474ce !important;
+}
+
+.custom-nav-link:hover {
+    background-image: url("../img/esports/tabs-hover.png");
+    background-color: transparent;
+    color: #ffffff !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .custom-nav-link.active {
+    background-image: url("../img/esports/tabs-hover.png");
+    background-color: transparent;
+    color: #ffffff !important;
+}
+
+/**
+開始游戲按鈕
+ */
+.btn-game-start {
+    background-image: url("../img/esports/game-btn.png");
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    width: 256px;
+    height: 66px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #e5e8ec;
+}
+
+.btn-game-start:hover {
+    background-image: url("../img/esports/game-btn-hover.png");
+    color: #e5e8ec;
+}
+
+/**
+panel样式
+ */
+
+.custom-panel {
+    box-shadow: 0px 3px 8px 0px rgba(39, 61, 86, 0.46);
+    border-radius: 5px;
+}
+
+/**
+下拉菜单样式
+ */
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100% !important;
+}
+
+.bootstrap-select .dropdown-toggle:after {
+    content: "\F140";
+    display: inline-block;
+    font-family: "Material Design Icons";
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+    outline-offset: 0;
+}
+
+.bootstrap-select a {
+    outline: none !important;
+}
+
+.bootstrap-select .inner {
+    overflow-y: inherit !important;
+}
+
+/**
+弹窗样式
+ */
+
+.swal2-popup {
+    background-color: #fff !important;
+}
+
+.swal2-title {
+    color: #59606e; !important;
+    font-size: 1.2rem !important;
+}
+
+.swal2-content {
+    margin-top: 10px !important;
+    color: #59606e; !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+}
+
+.swal2-confirm {
+    background-size: 150% !important;
+    background-image: linear-gradient(267deg,
+    #78abfa 0%,
+    #4877ec 100%),
+    linear-gradient(
+            #5b80e7,
+            #5b80e7); !important;
+    background-blend-mode: normal,
+    normal;
+    border: none !important;
+    border-radius: 0;
+    transition: .5s;
+    color: #ffffff !important;
+    letter-spacing: 2px;
+    width: 200px;
+    height: 43px;
+}
+
+.swal2-confirm:hover {
+    background-position: right !important;
+}
+
+.swal2-confirm:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/**
+蓝色渐变按钮圆角样式
+ */
+
+.linear-blue{
+    background-image: linear-gradient(90deg,
+    #2d74f6 0%,
+    #7abdfc 100%),
+    linear-gradient(
+            #000000,
+            #000000);
+    background-blend-mode: normal,
+    normal;
+    border-radius: 26px;
+    border: none;
+}
+
+.linear-blue:hover{
+    background-position: right;
+    color: #ffffff;
+}
+
+/**
+蓝色渐变导航按钮
+ */
+.nav-group{
+    width: 100%;
+    text-align: center;
+}
+
+.nav-group .nav-btn{
+    width: 181px;
+    height: 50px;
+    margin-right: 27px;
+    background-image: linear-gradient(0deg,
+    #f2f2f2 0%,
+    #fefefe 100%),
+    linear-gradient(
+            #000000,
+            #000000);
+    background-blend-mode: normal,
+    normal;
+    box-shadow: 0px 6px 20px 2px
+    rgba(103, 204, 255, 0.75);
+    border-radius: 6px!important;
+    border: none;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #222222;
+}
+
+.nav-group .nav-btn:hover, .nav-group .nav-btn.active{
+    background-image: linear-gradient(90deg,
+    #2d74f6 0%,
+    #7abdfc 100%),
+    linear-gradient(
+            #000000,
+            #000000);
+    background-blend-mode: normal,
+    normal;
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+    border-radius: 6px!important;
+    border: none;
+    color: #ffffff;
+}
+
+.swal2-styled.swal2-confirm {
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient(#000000, #000000) !important;
+}
+.hide {
+    display: none;
+}

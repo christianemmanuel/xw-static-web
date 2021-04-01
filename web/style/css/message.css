@@ -1,0 +1,64 @@
+.message-container {
+    width: 960px;
+    padding: 22px 34px
+}
+
+
+.message-content {
+    height: 1000px;
+}
+
+.message-content table{
+    table-layout:fixed;
+}
+
+.message-content table td,.message-content table th{
+    padding: .5rem;
+}
+
+.message-content table tr{
+    cursor: pointer;
+}
+
+
+.message-pane {
+    height: 100%;
+}
+
+.paginationjs {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#inboxContainer i {
+    font-size: 16px;
+    margin-right: 10px;
+    vertical-align:middle;
+}
+
+#inboxContainer .title {
+    line-height: 26px;
+}
+
+#inboxContainer .context {
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#inboxContainer .date {
+    line-height: 26px;
+}
+
+
+.send-email {
+    padding: 40px;
+}
+
+.send-email label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #505961;
+}

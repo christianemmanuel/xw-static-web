@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢官网 - 最全面的电竞平台</title>
+    <link rel="stylesheet" href="/style/css/live.css">
+</head>
+<body>
+@@include('header.html')
+@@include('right-side.html')
+<div class="live-container">
+    <div class="live-bg bg-circle"></div>
+    <div class="live-bg bg-wave"></div>
+    <div class="live-left">
+        <div class="live-main-box live-ag-main active live-left-fadein">
+            <img src="/style/img/live/left_bg_ag_1.webp" class="live-float-img" style="bottom: 0;">
+            <img src="/style/img/live/left_bg_ag_2.webp" class="live-float-img" style="bottom: -78px;right: 0;">
+            <img src="/style/img/live/left_float_ag_1.webp" class="live-float-img img-down-up" style="left: 26px;top: 280px;">
+            <img src="/style/img/live/left_float_ag_2.webp" class="live-float-img img-up-down" style="right: 67px;top: 176px;">
+            <img src="/style/img/live/left_person_ag.webp" class="live-float-img" style="left: 116px;">
+        </div>
+        <div class="live-main-box live-bbin-main">
+            <img src="/style/img/live/left_bg_bbin_1.webp" class="live-float-img" style="bottom: 0;left: 183px;">
+            <img src="/style/img/live/left_bg_bbin_2.webp" class="live-float-img" style="bottom: 73px;left: 476px;">
+            <img src="/style/img/live/left_float_bbin_5.webp" class="live-float-img img-right-left" style="left: 220px;top: 406px;">
+            <img src="/style/img/live/left_float_bbin_4.webp" class="live-float-img img-up-down10" style="left: 124px;top: 386px;">
+            <img src="/style/img/live/left_float_bbin_3.webp" class="live-float-img img-left-right" style="left: 110px;top: 288px;">
+            <img src="/style/img/live/left_float_bbin_2.webp" class="live-float-img img-right-left" style="left: 130px;top: 200px;">
+            <img src="/style/img/live/left_float_bbin_1.webp" class="live-float-img img-left-right" style="left: 188px;top: 180px;">
+            <img src="/style/img/live/left_float_bbin_6.webp" class="live-float-img img-right-left" style="left: 110px;top: 515px;">
+            <img src="/style/img/live/left_float_bbin_7.webp" class="live-float-img img-right-left" style="left: 626px;top: 255px;">
+            <img src="/style/img/live/left_person_bbin.webp" class="live-float-img" style="left: 280px;top: 54px;">
+        </div>
+        <div class="live-main-box live-allbet-main">
+            <img src="/style/img/live/left_bg_allbet_1.webp" class="live-float-img" style="bottom: 50px;left: 40px;">
+            <img src="/style/img/live/left_bg_allbet_2.webp" class="live-float-img" style="bottom: 0px;left: 400px;">
+            <img src="/style/img/live/left_bg_allbet_3.webp" class="live-float-img" style="bottom: 0;left: 70px;">
+            <img src="/style/img/live/left_float_allbet_1.webp" class="live-float-img img-down-up" style="left: 60px;top: 280px;">
+            <img src="/style/img/live/left_float_allbet_2.webp" class="live-float-img img-up-down" style="left: 430px;top: 290px;">
+            <img src="/style/img/live/left_person_allbet.webp" class="live-float-img" style="left: 212px;top: 60px;">
+        </div>
+    </div>
+    <div class="live-right">
+        <div class="live-btn-box">
+            <a class="live-btn active" data-live-type="ag">AG平台</a>
+            <a class="live-btn" data-live-type="bbin">BBIN平台</a>
+            <a class="live-btn" data-live-type="allbet">欧博平台</a>
+        </div>
+        <div class="live-desc-content">
+            <div class="live-detail-box detail-ag-box active live-right-fadein">
+                <img src="/style/img/live/txt_desc_ag.webp">
+                <img src="/style/img/live/live_ag_icons.webp" style="margin: 46px 0 62px;">
+                <a href="javascript:fun_openGame('0',5)" class="live-bet-btn">立即投注</a>
+            </div>
+            <div class="live-detail-box detail-bbin-box">
+                <img src="/style/img/live/txt_desc_bbin.webp">
+                <img src="/style/img/live/live_bbin_icons.webp" style="margin: 46px 0 62px;">
+                <a href="javascript:fun_openGame('zhenren',36,'BBIN')" class="live-bet-btn">立即投注</a>
+            </div>
+            <div class="live-detail-box detail-allbet-box">
+                <img src="/style/img/live/txt_desc_allbet.webp">
+                <img src="/style/img/live/live_allbet_icons.webp" style="margin: 46px 0 62px;">
+                <a href="javascript:fun_openGame('100',26)" class="live-bet-btn">立即投注</a>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('footer.html')
+<script>
+    $(function() {
+        var lastType;
+        showAppBySelect();
+        function showAppBySelect() {
+            var activeType = $('.live-btn.active').data("live-type");
+            switchAppType(activeType);
+        }
+
+        $('.live-btn').click(function() {
+            if(!$(this).hasClass('active')) {
+                lastType = $('.live-btn.active').data("live-type");
+                $('.live-btn').removeClass('active');
+                $(this).addClass('active');
+                showAppBySelect();
+            }
+        });
+
+        function switchAppType(activeType) {
+            if(activeType) {
+                $('.detail-' + lastType + '-box').removeClass('live-right-fadein').addClass('live-right-fadeout');
+                $('.live-' + lastType + '-main').removeClass('live-left-fadein').addClass('live-left-fadeout');
+                setTimeout(function () {
+                    $('.detail-' + lastType + '-box').removeClass('active');
+                    $('.detail-' + activeType + '-box').removeClass('live-right-fadeout').addClass('active').addClass('live-right-fadein');
+
+                    $('.live-' + lastType + '-main').removeClass('active');
+                    $('.live-' + activeType + '-main').removeClass('live-left-fadeout').addClass('active').addClass('live-left-fadein');
+                }, 700);
+            }
+        }
+    });
+</script>
+</html>

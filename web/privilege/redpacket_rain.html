@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	@@include('html-head.html')
+	<title>vip</title>
+	<link rel="stylesheet" href="/style/css/swiper.min.css">
+	<link rel="stylesheet" href="/style/plugins/bootstrap/css/bootstrap-v4.2.1.css">
+    <link rel="stylesheet" href="/style/layui/css/layui.css">
+	<link rel="stylesheet" href="/style/css/index.css">
+	<link rel="stylesheet" href="/style/css/redpacket-rain.css">
+	<script src="/style/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/style/js/swiper.min.js"></script>
+    <script src="/style/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/style/layui/layui.all.js"></script>
+	<script src="/style/js/md5.js" type="text/javascript" ></script>
+	<script src="/style/js/common.js" type="text/javascript" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" type="text/javascript" ></script>
+
+</head>
+<body style="background-color:#000; ">
+@@include('header.html')
+<div class="redpacket-rain">
+    <div class="title">距离本期结束</div>
+    <div class="wrap">
+        <div class="countdown">
+            <div class="bloc-time hours" data-init-value="0">
+                <div class="figure hours hours-1">
+                    <span class="top">0</span>
+                    <span class="top-back">
+                        <span>0</span>
+                    </span>
+                    <span class="bottom">0</span>
+                    <span class="bottom-back">
+                        <span>0</span>
+                    </span>
+                </div>
+
+                <div class="figure hours hours-2">
+                    <span class="top">0</span>
+                    <span class="top-back">
+                        <span>0</span>
+                    </span>
+                    <span class="bottom">0</span>
+                    <span class="bottom-back">
+                        <span>0</span>
+                    </span>
+                </div>
+            </div>
+            <div class="bloc-time min" data-init-value="0">
+                <div class="figure min min-1">
+                    <span class="top">0</span>
+                    <span class="top-back">
+                        <span>0</span>
+                    </span>
+                    <span class="bottom">0</span>
+                    <span class="bottom-back">
+                        <span>0</span>
+                    </span>
+                </div>
+                <div class="figure min min-2">
+                    <span class="top">0</span>
+                    <span class="top-back">
+                        <span>0</span>
+                    </span>
+                    <span class="bottom">0</span>
+                    <span class="bottom-back">
+                        <span>0</span>
+                    </span>
+                </div>
+            </div>
+            <div class="bloc-time sec" data-init-value="0">
+                <div class="figure sec sec-1">
+                    <span class="top">0</span>
+                    <span class="top-back">
+                        <span>0</span>
+                    </span>
+                    <span class="bottom">0</span>
+                    <span class="bottom-back">
+                        <span>0</span>
+                    </span>
+                </div>
+                <div class="figure sec sec-2">
+                    <span class="top">0</span>
+                    <span class="top-back">
+                        <span>0</span>
+                    </span>
+                    <span class="bottom">0</span>
+                    <span class="bottom-back">
+                        <span>0</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="couten">
+    </ul>
+    <div class="pop-up-congrats">
+        <div class="sen">
+            <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/label.png">
+            <h2>恭喜您获得</h2>
+            <p>¥<span id="amount">0</span></p>
+            <a href="#"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/close.png"></a>
+        </div>
+    </div>
+    <div class="container-wrap">
+        <div class="winners">
+            <div class="winners-wrap">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/winners.png">
+                <hr>
+                <div class="row winners-table">
+                <table class="table" id="contain">
+                    <tbody id="wlHistoryTab">
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="details-wrap">
+                <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/details.png">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" width="16%">当天累积存款</th>
+                            <th scope="col" width="15%">红包次数</th>
+                            <th scope="col" width="23%">单个红包最大金额</th>
+                            <th scope="col" width="23%">流水限制</th>
+                            <th scope="col" width="23%">活动时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">300+</th>
+                            <td>1</td>
+                            <td rowspan="8">88888元</td>
+                            <td rowspan="8">5倍流水<br>即可出款</td>
+                            <td rowspan="8">每天北京时间<br>下午15：00至24:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1000+</th>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5000+</th>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">20000+</th>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">50000+</th>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">100000+</th>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">200000+</th>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">500000+</th>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">会员达到条件后在该时间段没抢红包，视为自动弃权。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="rules">
+        <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/rules.png">
+        <ul>
+            <li>当日累积存款300元或以上，有1次抢红包机会；当日累积存款1000元或以上，有2次抢红包机会；当日累积存款5000元或以上，有3次抢红包机会！每个账号当天最多可参与20次抢红包！(累积存款均以提交时间为准北京时间当日0：00-23：59：59)</li>
+            <li>获得的彩金5倍流水即可提款，不限制游戏,此优惠不与首存优惠共享！</li>
+            <li>此优惠促销只适用于拥有一个独立账户的玩家。住址、电子邮箱地址﹑电话号码﹑支付方式（相同借记卡/信用卡/银行账户号码）IP地址，同一网络环境等将可以作为判定是否独立玩家的条件。</li>
+            <li>对于发现任何有违背、欺骗、或利用规则和条款进行非法获利的会员，东赢娱乐保留在任何时候都可以停止、取消优惠或索回已支付的全部优惠的权利。</li>
+            <li>在某些未知因素超出可控范围的情况下，兴旺娱乐保留可单方面执行的决定权，并承诺会在这类紧急问题发生时解释给客户原因并听取客户反馈与客户沟通协商解决。</li>
+            <li>兴旺禁止一切对赌行为！如：在百家乐中同时投注“庄-闲”；轮盘中同时投注“黑-红”“大-小”“单-双”；龙虎中同时投注“龙-虎”；骰宝中同时投注“大-小”“单-双”等行为！若发现会员存在以上行为，兴旺有权扣除账户全部盈利，在情节严重时，不返还本金并冻结账户及相关联账户</li>
+            <li>兴旺娱乐有权延长，缩短，终止，或者修改此活动！此活动最终解释权归兴旺娱乐所有。</li>
+        </ul>
+    </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+<div class="hideAll"></div>
+
+</body>
+@@include('html-foot.html')
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var win = (parseInt($(".couten").css("width"))) - 200;
+        $(".pop-up-congrats").css("height", "1800px");
+        $(".couten").css("height", "1800px");
+        $("li").css({});
+        // 点击确认的时候关闭模态层
+        $(".sen a").click(function(){
+            $(".pop-up-congrats").css("display", "none")
+        });
+        /*var del = function(){
+            nums++;
+            $(".li" + nums).remove();
+            setTimeout(del,200)
+        }*/
+        var add = function() {
+            var hb = parseInt(Math.random() * (3 - 1) + 1);
+            var Wh = parseInt(Math.random() * (70 - 30) + 80 );
+            var Left = parseInt(Math.random() * (win - 0) + 40);
+            var rot = (parseInt(Math.random() * (45 - (-45)) - 45));
+            num++;
+            $(".couten").append("<li class='li" + num + "' ><a href='javascript:;'><img src='https://ezeu.ytyq8866.com/resources/web_h5/images/redpacket-rain/redpacket.png'></a></li>");
+            $(".li" + num).css({
+                "left": Left,
+            });
+            $(".li" + num + " a img").css({
+                "width": Wh,
+            });
+            $(".li" + num).animate({'top':$(window).height()+20},10000,function(){
+                //删掉已经显示的红包
+                this.remove()
+            });
+            //点击红包的时候弹出模态层
+            $(".li" + num).click(function(){
+                $.ajax({
+                    dataType: "jsonp",
+                    url:wap_site_host() + "/session/redEnvelopPrivilege/apply",
+                    type:"POST",
+                    data:{'token': wap_get_user().token},
+                    dataType: 'json',
+                    success:function(d){
+                        if (d.code == 0) {
+                            $("#amount").html(d.data.prizeNum);
+                            $(".pop-up-congrats").css("display", "block");
+                        } else {
+                            fun_alertMsg(d.msg, function() {});
+                            wap_if_session_out(d.code);
+                        }
+                    },
+                    error:function(jqXHR, textStatus, errorThrown){
+                        wap_check_ajaxerror(jqXHR);
+                        fun_alertMsg('红包雨初始化异常，请刷新重试！', function() {});
+                    }
+                });
+            });
+            setTimeout(add,800)
+        }
+        //增加红包
+        var num = 0;
+        //setTimeout(add,3000);
+        if(wap_is_user_notexist()){
+            fun_alertMsg("请登入后再操作", function() {
+                window.location.href="/";
+            });
+        }else{
+            redEnvelopInit();
+        }
+        function redpacketBegin(){
+            setTimeout(add,3000);
+        }
+        function redEnvelopInit(){
+            $.ajax({
+                dataType: "jsonp",
+                url:wap_site_host() + "/session/redEnvelopPrivilege/pageInit",
+                type:"POST",
+                data:{'token': wap_get_user().token},
+                dataType: 'json',
+                success:function(d){
+                    if (d.code == 0) {
+                        $(".title").html("距离本期开始")
+                        setTime(d.data.timeSec);
+                        redpacketBegin();
+                        Countdown.init();
+                        if(d.data.isBegin=="true") {
+                            $(".title").html("距离本期结束")
+                            winnersInit(d);
+                            pageScroll();
+                        }
+                    } else {
+                        fun_alertMsg(d.msg, function() {});
+                        wap_if_session_out(d.code);
+                    }
+                },
+                error:function(jqXHR, textStatus, errorThrown){
+                    wap_check_ajaxerror(jqXHR);
+                    fun_alertMsg('红包雨初始化异常，请刷新重试！', function() {});
+                }
+            });
+        }
+    });
+
+    var Countdown = {
+        // Backbone-like structure
+        $el: $('.countdown'),
+        // Params
+        countdown_interval: null,
+        total_seconds     : 0,
+        // Initialize the countdown
+        init: function() {
+            //console.log("III");
+            // DOM
+            this.$ = {
+                hours  : this.$el.find('.bloc-time.hours .figure'),
+                minutes: this.$el.find('.bloc-time.min .figure'),
+                seconds: this.$el.find('.bloc-time.sec .figure')
+            };
+            // Init countdown values
+            this.values = {
+                hours  : this.$.hours.parent().attr('data-init-value'),
+                minutes: this.$.minutes.parent().attr('data-init-value'),
+                seconds: this.$.seconds.parent().attr('data-init-value'),
+            };
+            // Initialize total seconds
+            this.total_seconds = this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds;
+            // Animate countdown to the end
+            this.count();
+        },
+
+        count: function() {
+            var that    = this,
+                $hour_1 = this.$.hours.eq(0),
+                $hour_2 = this.$.hours.eq(1),
+                $min_1  = this.$.minutes.eq(0),
+                $min_2  = this.$.minutes.eq(1),
+                $sec_1  = this.$.seconds.eq(0),
+                $sec_2  = this.$.seconds.eq(1);
+            this.countdown_interval = setInterval(function() {
+                if(that.total_seconds > 0) {
+                    --that.values.seconds;
+                    if(that.values.minutes >= 0 && that.values.seconds < 0) {
+                        that.values.seconds = 59;
+                        --that.values.minutes;
+                    }
+                    if(that.values.hours >= 0 && that.values.minutes < 0) {
+                        that.values.minutes = 59;
+                        --that.values.hours;
+                    }
+                    // Update DOM values
+                    // Hours
+                    that.checkHour(that.values.hours, $hour_1, $hour_2);
+                    // Minutes
+                    that.checkHour(that.values.minutes, $min_1, $min_2);
+                    // Seconds
+                    that.checkHour(that.values.seconds, $sec_1, $sec_2);
+                    --that.total_seconds;
+                }
+                else {
+                    clearInterval(that.countdown_interval);
+                }
+            }, 1000);
+        },
+        animateFigure: function($el, value) {
+            var that         = this,
+                $top         = $el.find('.top'),
+                $bottom      = $el.find('.bottom'),
+                $back_top    = $el.find('.top-back'),
+                $back_bottom = $el.find('.bottom-back');
+            // Before we begin, change the back value
+            $back_top.find('span').html(value);
+            // Also change the back bottom value
+            $back_bottom.find('span').html(value);
+            // Then animate
+            TweenMax.to($top, 0.1, {
+                rotationX           : '-180deg',
+                transformPerspective: 300,
+                ease                : Quart.easeOut,
+                onComplete          : function() {
+                    $top.html(value);
+                    $bottom.html(value);
+                    TweenMax.set($top, { rotationX: 0 });
+                }
+            });
+            TweenMax.to($back_top, 1, {
+                rotationX           : 0,
+                transformPerspective: 300,
+                ease                : Quart.easeOut,
+                clearProps          : 'all'
+            });
+        },
+        checkHour: function(value, $el_1, $el_2) {
+            var val_1       = value.toString().charAt(0),
+                val_2       = value.toString().charAt(1),
+                fig_1_value = $el_1.find('.top').html(),
+                fig_2_value = $el_2.find('.top').html();
+            if(value >= 10) {
+                // Animate only if the figure has changed
+                if(fig_1_value !== val_1) this.animateFigure($el_1, val_1);
+                if(fig_2_value !== val_2) this.animateFigure($el_2, val_2);
+            }
+            else {
+                // If we are under 10, replace first figure with 0
+                if(fig_1_value !== '0') this.animateFigure($el_1, 0);
+                if(fig_2_value !== val_1) this.animateFigure($el_2, val_1);
+            }
+        }
+    };
+
+    function setTime(timeSec){
+        timeSec=parseInt(timeSec);
+        var h=parseInt(timeSec/(60*60*1000));
+        var m=parseInt(timeSec/(60*1000))-h*60;
+        var s=parseInt(timeSec/1000)-h*60*60-m*60;
+        $('.bloc-time.hours').attr('data-init-value',h);
+        $('.bloc-time.min').attr('data-init-value',m);
+        $('.bloc-time.sec').attr('data-init-value',s);
+    }
+    function pageScroll() {
+        var objDiv = document.getElementById("contain");
+        objDiv.scrollTop = objDiv.scrollTop + 1;
+        if (objDiv.scrollTop == (objDiv.scrollHeight - 200)) {
+            objDiv.scrollTop = 0;
+        }
+        my_time = setTimeout('pageScroll()', 25);
+    }
+    function winnersInit(obj) {
+        //var testing = '{"code": 0,"data": {"count": 5, "winnerList": [{"id": 8,"memberId": 58,"encryptName": "XWco****01","prizeNum": 63, "prizeTxt": "63元奖金","winningTime": 1552355896000,"winnerTimeStr": "2019-03-12"},{"id": 9,"memberId": 58,"encryptName": "XWco****01","prizeNum": 33,"prizeTxt": "33元奖金","winningTime": 1552355899000,"winnerTimeStr": "2019-03-12"},{"id": 5,"memberId": 58,"encryptName": "XWco****01","prizeNum": 20,"prizeTxt": "20元奖金","winningTime": 1552355339000,"winnerTimeStr": "2019-03-12"},{"id": 7,"memberId": 58,"encryptName": "XWco****01","prizeNum": 16,"prizeTxt": "16元奖金","winningTime": 1552355890000,"winnerTimeStr": "2019-03-12"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"},{"id": 3,"memberId": 58,"encryptName": "XWco****01","prizeNum": 14,"prizeTxt": "14元奖金","winningTime": 1552293917000,"winnerTimeStr": "2019-03-11"}]}, "msg": null}';
+        //var obj = JSON.parse(testing);
+        if(obj.code==0 && obj.data.winnerList.length>0) {
+            var winnerList=obj.data.winnerList;
+            console.log(winnerList[0]);
+            $('#wlHistoryTab').empty();
+            $.each(winnerList, function(i,v){
+                var dateStr = v.winnerTimeStr;
+                //var datetime = new Date(v.winningTime);
+                //var datetimeStr =  appendZero(datetime.getHours())+ ":" + appendZero(datetime.getMinutes()) + ":" + appendZero(datetime.getSeconds());
+                $('#wlHistoryTab').append('<tr><td class="td1">恭喜兴旺玩家： '+v.encryptName+'</td><td class="td2">'+v.prizeTxt +'</td><td class="td3">' + dateStr +'</td></tr>');
+            });
+        } else {
+            $('#wlHistoryTab').append('<tr><td colspan="3">暂无数据</td></tr>');
+        }
+    }
+    function appendZero(v) {
+        if(v < 10)
+            return "0" + v;
+        return v;
+    }
+</script>
+</html>

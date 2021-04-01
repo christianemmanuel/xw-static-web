@@ -1,0 +1,141 @@
+.bet-container{
+    background-color: #fff;
+    font-size: 14px;
+    color: #555657;
+    padding: 120px 0 20px 0;
+}
+.bet-banner{
+    width: 100%;
+}
+.bet-banner>img{
+    width: 100%;
+}
+.bet-content{
+    width: 1150px;
+    margin: 0 auto;
+}
+.bet-active p{
+    font-size: 14px;
+    margin: 15px 0;
+}
+.bet-title{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.bet-ruler{
+    width: 1150px;
+    margin: 0 auto;
+    color: #555657;;
+    font-size: 14px;
+}
+.bet-ruler>p{
+    margin: 30px 0;
+}
+.active-title{
+    width:100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+	background-image: linear-gradient(0deg, 
+		#0094ff 0%, 
+		#19c6ff 100%), 
+	linear-gradient(
+		#2e3039, 
+		#2e3039);
+	background-blend-mode: normal, 
+		normal;
+}
+.active-content{
+    padding-bottom: 30px;
+    border: solid 1px #dcdce8;
+}
+h5{
+    width: 100%;
+    margin: 30px 0 10px 0;
+    font-size: 18px;
+    text-align:center;
+    color: #555657;
+}
+.team-content{
+    display: flex;
+    width: 100%;
+}
+.team-content section:nth-child(1),
+.team-content section:nth-child(3){
+    width: 45%;
+    text-align: center;
+}
+.team-content section:nth-child(2){ 
+    width: 10%;
+    font-size:24px;
+    text-align: center;
+    color: #555657;
+    line-height: 100px;
+}
+.team-content>section>p{
+    display: inline-block;
+}
+.team-name{
+    width: 100%;
+}
+.team-name span{
+    display:inline-block;
+    width: 49%;
+    text-align: center;
+}
+.team-name span:nth-child(2){
+    padding-left: 35px;
+}
+.arrow-left{
+    margin-right: 20px;
+}
+.arrow-right{
+    margin-left: 20px;
+}
+.skill-content{
+    margin-top: 20px;
+    width: 100%;
+}
+.skill-content table{
+    width: 100%;
+}
+.skill-content table th{
+    color: #ffffff;
+    text-align: center;
+    background-image: linear-gradient(0deg, 
+		#0094ff 0%, 
+		#19c6ff 100%), 
+	linear-gradient(
+		#2e3039, 
+		#2e3039);
+	background-blend-mode: normal, 
+		normal;
+}
+.skill-content table th:nth-child(1){
+    width: 80px;
+	height: 39px;
+    font-size: 12px;
+    padding: 0 5px;
+
+}
+.skill-content table td{
+    height: 56px;
+    text-align: center;
+    background-color: #ffffff;
+	border: solid 1px #dcdce8;
+    color: #555657;
+}
+.skill-content tbody>tr:nth-child(1)>td{
+    background-color: #d2f1ff;
+	border: solid 1px #8fd8ff;
+}
+.team-tip{
+    height: 56px;
+    line-height: 56px;
+    font-size: 14px;
+	color: #ff0000;
+}

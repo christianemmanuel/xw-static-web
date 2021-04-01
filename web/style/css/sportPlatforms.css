@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+
+}
+.sport-platform-container {
+    height: 902px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    color: #2e79fc;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/sport/sport_bg.webp);
+    background-repeat: no-repeat;
+    background-position: center 120px;
+    padding-top: 120px;
+}
+.sport-platform-container .sport-platform-bg {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+.sport-platform-container .sport-platform-bg.bg-circle {
+    width: 475px;
+    height: 475px;
+    background-image: url("../img/sport/img_bg_bule.webp");
+    top: 128px;
+    left: 380px;
+}
+.sport-platform-container .sport-platform-bg.bg-wave {
+    width: 1507px;
+    height: 331px;
+    background-image: url("../img/sport/sport_bg_bottom.webp");
+    left: 0;
+    top: 580px;
+}
+
+.sport-platform-container .sport-platform-left {
+    width: 1034px;
+}
+.sport-platform-container .sport-platform-left .sport-left-img {
+    position: absolute;
+    left: 273px;
+    top: 60px;
+    display: none;
+}
+.sport-platform-container .sport-platform-left .sport-left-img.active {
+    display: block;
+}
+.sport-platform-container .sport-platform-left .sport-left-img.sport-left-fadeout {
+    -webkit-animation: sport-left-fadeout-ani .8s forwards;
+    animation: sport-left-fadeout-ani .8s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.sport-platform-container .sport-platform-left .sport-left-img.sport-left-fadein {
+    -webkit-animation: sport-left-fadein-ani .8s forwards;
+    animation: sport-left-fadein-ani .8s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.sport-platform-container .sport-platform-left .sport-main-box {
+    position: relative;
+    width: 100%;
+    height: 724px;
+    background-repeat: no-repeat;
+    background-position: 405px 54px;
+    display: none;
+}
+.sport-platform-container .sport-platform-left .sport-main-box.active {
+    display: block;
+}
+.sport-platform-container .sport-platform-right {
+    padding-top: 66px;
+}
+.sport-platform-container .sport-platform-right .sport-btn-box {
+    display: flex;
+    margin-bottom: 100px;
+    padding-left: 51px;
+}
+.sport-platform-container .sport-platform-right .sport-platform-btn {
+    display: block;
+    width: 172px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px;
+    background-image: linear-gradient(0deg, #f2f2f2 0%, #fefefe 100%), linear-gradient(#000000, #000000);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 6px 20px 2px rgba(203, 203, 203, 0.75);
+    border-radius: 26px;
+    font-size: 18px;
+    color: #545454;
+    cursor: pointer;
+    margin-right: 21px;
+}
+.sport-platform-container .sport-platform-right .sport-platform-btn.active, .sport-platform-container .sport-platform-right .sport-platform-btn:hover {
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient(#000000, #000000);
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+    color: #ffffff;
+}
+.sport-platform-container .sport-platform-right .sport-desc-content {
+    width: 460px;
+    position: relative;
+}
+.sport-platform-container .sport-platform-right .sport-desc-content .sport-detail-box {
+    position: absolute;
+    left: 40px;
+    display: none;
+}
+.sport-platform-container .sport-platform-right .sport-desc-content .sport-detail-box.active {
+    display: block;
+}
+.sport-platform-container .sport-platform-right .sport-desc-content .sport-detail-box.sport-right-fadeout {
+    -webkit-animation: sport-right-fadeout-ani .8s forwards;
+    animation: sport-right-fadeout-ani .8s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.sport-platform-container .sport-platform-right .sport-desc-content .sport-detail-box.sport-right-fadein {
+    -webkit-animation: sport-right-fadein-ani .8s forwards;
+    animation: sport-right-fadein-ani .8s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.sport-platform-container .sport-platform-right .sport-desc-content .sport-detail-box .sport-desc {
+    line-height: 25px;
+    margin: 80px 0 77px;
+    text-align: center;
+}
+.sport-platform-container .sport-platform-right .sport-bet-btn {
+    display: block;
+    width: 198px;
+    height: 52px;
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient(#000000, #000000);
+    background-blend-mode: normal, normal;
+    border-radius: 26px;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 52px;
+    border: none;
+}
+
+@-webkit-keyframes sport-left-fadeout-ani {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(-30px, 0, 0);
+        transform: translate3d(-30px, 0, 0);
+    }
+}
+@keyframes sport-left-fadeout-ani {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(-30px, 0, 0);
+        transform: translate3d(-30px, 0, 0);
+    }
+}
+
+@-webkit-keyframes sport-left-fadein-ani {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-30px, 0, 0);
+        transform: translate3d(-30px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+@keyframes sport-left-fadein-ani {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-30px, 0, 0);
+        transform: translate3d(-30px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@-webkit-keyframes sport-right-fadeout-ani {
+    0% {
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+}
+@keyframes sport-right-fadeout-ani {
+    0% {
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes sport-right-fadein-ani {
+    0% {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes sport-right-fadein-ani {
+    0% {
+        -webkit-transform: translate3d(30px, 0, 0);
+        transform: translate3d(30px, 0, 0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}

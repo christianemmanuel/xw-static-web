@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="/style/css/footer.css">
+<div class="footer">
+    <div class="footerTop">
+        <!--<p>合作伙伴</p>-->
+        <div>
+            <i></i>
+        </div>
+    </div>
+    <div class="footerMin">
+        <div class="leftBox">
+            <span class="s1">支付方式：</span>
+            <span class="footPayIcon visa" title="VISA"></span>
+            <span class="footPayIcon masterCard" title="MasterCard"></span>
+            <span class="footPayIcon chineseBank" title="中国银联"></span>
+            <span class="footPayIcon fastBank" title="本地银行转账"></span>
+            <span class="footPayIcon alipayf" title="支付宝"></span>
+        </div>
+        <div class="rightBox">
+            <span class="s1">博彩责任：</span>
+            <span class="footPayIcon gameCore" title="GameCore"></span>
+            <span class="footPayIcon eighteenadd" title="18+"></span>
+            <span class="s1">推荐浏览器：</span>
+            <span class="recBrowser bchrome" title="Chrome"></span>
+            <span class="recBrowser bfirefox" title="Firefox"></span>
+            <span class="recBrowser bIE" title="IE"></span>
+        </div>
+    </div>
+    <div class="footerMin">
+        <div class="leftBox">
+            <span class="s1">合作伙伴：</span>
+            <span class="hzhb-icon ag" title="ag"></span>
+            <span class="hzhb-icon sw" title="sw"></span>
+            <span class="hzhb-icon pt" title="pt"></span>
+            <span class="hzhb-icon cq" title="cq"></span>
+            <span class="hzhb-icon mg" title="mg"></span>
+            <span class="hzhb-icon bbin" title="bbin"></span>
+            <span class="hzhb-icon xj" title="xj"></span>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <div class="messageBox">
+            <div class="boxContainer" style="margin-left: 428px;">
+                <div style="width: 90px;margin: 0 auto;">
+                    <ul class="index_bottom_des">
+                        <li>关于东赢</li>
+                        <li onclick="window.open('/help.html')">关于我们</li>
+                        <li onclick="location.href='/promotion.html'">优惠活动</li>
+                        <li data-toggle="modal" data-target="#registeredModal">免费开户</li>
+                        <li onclick="location.href='https://partner.dyvip90.com'">代理加盟</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <div style="width: 90px;margin: 0 auto;">
+                    <ul class="index_bottom_des">
+                        <li>产品服务</li>
+                        <li onclick="location.href='/games/sport.html'">体育</li>
+                        <li onclick="location.href='/games/fish.html'">捕鱼</li>
+                        <li onclick="location.href='/games/slots.html'">电子游戏</li>
+                        <li onclick="location.href='/games/live.html'">真人娱乐</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <div style="width: 90px;margin: 0 auto;">
+                    <ul class="index_bottom_des">
+                        <li onclick="location.href='/help.html'">帮助中心</li>
+                        <li onclick="location.href='/help.html?id=2'">存款指南</li>
+                        <li onclick="location.href='/help.html?id=3'">新手学堂</li>
+                        <li onclick="location.href='/help.html?id=3'">常见问题</li>
+                        <li onclick="location.href='/help.html?id=4'">游戏规则</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <div style="width: 90px;margin: 0 auto;">
+                    <ul class="index_bottom_des">
+                        <li onclick="setHome(this, window.location)">设为首页</li>
+                        <li id="footBookmarkme">加入收藏</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <div style="width: 90px;margin: 0 auto;">
+                    <ul class="index_bottom_des">
+                        <li>浏览器下载</li>
+                        <li onclick="window.location.href='https://s3-ap-northeast-1.amazonaws.com/brows/googlechromestandaloneenterprise64.msi'">谷歌浏览器</li>
+                        <li onclick="window.location.href='http://download.microsoft.com/download/A/C/9/AC924EA1-9F39-4DFD-99DF-2C1DEB922174/EIE11/WOL/EIE11_EN-US_WOL_WIN764.EXE'">IE9浏览器</li>
+                        <li onclick="window.location.href='http://download.firefox.com.cn/releases-sha2/stub/official/zh-CN/Firefox-latest.exe'">火狐浏览器</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="div2">
+            <a href="/help.html?id=1" target="_blank">联系我们</a>
+            <a href="/help.html?id=4" target="_blank" style="margin-left: 50px;">隐私政策</a>
+            <a href="/help.html?id=5" target="_blank" style="margin-left: 50px;">责任博彩</a>
+            <a href="/help.html?id=5" target="_blank" style="margin-left: 50px;">规则条款</a>
+            <a href="/help.html?id=3" target="_blank" style="margin-left: 50px;">新手帮助</a>
+            <a href="https://partner.dyvip90.com" target="_blank" style="margin-left: 50px;">代理加盟</a>
+        </div>
+        <p class="p1">东赢是全球领先的合法博彩公司，拥有菲律宾政府PAGCOR 所颁发的离岸博彩许可证，并受其监管<img src="/style/img//pagcorlogo.png" width="30" style="margin-left: 10px"></p>
+    </div>
+</div>
+<script>
+    $(document).on('mouseenter', '.footPayIcon', function(){
+        this.style.backgroundPositionY=-48+"px";
+    }).on('mouseleave', '.footPayIcon', function(){
+        this.style.backgroundPositionY=-2+"px";
+    });
+    $(document).on('mouseenter', '.recBrowser', function(){
+        this.style.backgroundPositionX=-137+"px";
+    }).on('mouseleave', '.recBrowser', function(){
+        this.style.backgroundPositionX=-40+"px";
+    });
+    $(document).on('click', '.bchrome', function(){
+        window.open('http://www.baidu.com/s?wd=Chrome%20%E6%B5%8F%E8%A7%88%E5%99%A8','_blank');
+    });
+    $(document).on('click', '.bfirefox', function(){
+        window.open('http://www.baidu.com/s?wd=%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8','_blank');
+    });
+    $(document).on('click', '.bIE', function(){
+        window.open('http://www.baidu.com/s?wd=IE%E6%B5%8F%E8%A7%88%E5%99%A8','_blank');
+    });
+</script>

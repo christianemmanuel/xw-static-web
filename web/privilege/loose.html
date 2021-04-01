@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>东赢零钱宝</title>
+    <link rel="stylesheet" href="/style/css/loose.css">
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+    <script type="text/javascript" src="/style/plugins/tweenMax/TweenMax.min.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div class="content">
+    <div class="banner">
+        <img src="/style/img/promotion/loose/active-banner.jpg" alt="">
+    </div>
+    <div class="lucky">
+        <div class="bag">
+            <img src="/style/img/promotion/loose/active-bag.png" alt="" srcset="">
+            <p></p>
+            <button id="money_box_lottery_btn">抽奖</button>
+        </div>
+        <div class="sack">
+            <img src="/style/img/promotion/loose/active-sack.png" alt="" srcset="">
+            <p>当前金额：<span id="money_box_amount">0</span>元</p>
+            <button id="money_box_get_btn">领取</button>
+        </div>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <th>抽奖时间</th>
+                <th>获奖金额</th>
+                <th>领取状态</th>
+            </thead>
+            <tbody id="recordBody"><tr><td colspan='3'>暂无数据</td></tr></tbody>
+        </table>
+        <div class="page-list" id="record_page">
+            <span class="page-item"><</span>
+            <span class="page-item active">1</span>
+            <!--<span>2</span>-->
+            <span class="page-item">></span>
+        </div>
+    </div>
+    <div class="activity">
+        <img class="title" src="/style/img/promotion/loose/active-title.png" alt="">
+        <p>活动日期：2020年12月1日起</p>
+        <p style="line-height: 20px;">活动内容：</p>
+        <p>1.每日单笔存款500元以上可进行一次抽红包，奖金为18元至2888元不等</p>
+        <p>2.每日领奖金额自动放入东赢零钱宝中，满500元即可领取。</p>
+        <p>3.每个月最后一日23:59:59前没领取则视为放弃；</p>
+        <p>4.当月不限制零钱宝领取次数，符合领取后点击领取则领取零钱宝中全部金额；</p>
+        <p>5.奖金可在体育电竞游戏场馆完成3倍流水，其他场馆完成6倍流水后即可提款（彩票不共享）；</p>
+        <p>6.所有电竞/体育赔率均为欧洲盘，且投注赔率低于1.70和无效的、取消的、同局中对冲投注将不计算在有效投注内。</p>
+        <p>7.此优惠不与任意存送优惠共享；</p>
+        <p>8.此优惠促销只适用于拥有一个独立账户的玩家。住址、电子邮箱地址、电话号码、支付方式（相同借记卡/信用卡/银行账户号码）IP地址、同一网络环境等将可以作为判定是否独立玩家的条件。</p>
+        <p>9.对于发现任何有违背、欺骗、或利用规则和条款进行非法获利的会员，东赢电竞保留在任何时候都可以停止、取消优惠或索回已支付的全部优惠的权利。</p>
+        <p>10.东赢电竞有权延长、缩短、终止，或者修改此活动！此活动最终解释权归东赢电竞所有。</p>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+    var userExist = wap_is_user_notexist();
+    var moneyBoxRecord=null;
+    $(function() {
+        if(!userExist){
+            moneyBoxInit();
+        }else{
+            error("请登入后重试");
+        }
+        $('#money_box_lottery_btn').click(function() {
+            moneyBoxLottery();
+        });
+        $('#money_box_get_btn').click(function() {
+            getMemeberBoxBonus();
+        });
+    });
+    function moneyBoxInit() {
+        if(userExist) {
+            info('请登录后操作');
+            return;
+        }
+        $('#recordBody').empty();
+        $('#recordBody').html("<tr><td colspan='3'>loading...</td></tr>");
+        post('/ptweb/moneyBox/init', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+                $('#recordBody').empty();
+                if(d.data.records && d.data.records.length) {
+                    moneyBoxRecord=d.data.records;
+                    showRecordPageItem();
+                    showRecordTableBody(1);
+                } else {
+                    $('#recordBody').html("<tr><td colspan='3'>暂无数据</td></tr>");
+                }
+                $('#money_box_amount').html(d.data.amount.toFixed(2));
+            } else {
+                error(d.message);
+            }
+        });
+    }
+
+    function showRecordPageItem() {//加载lottery分页div
+        if(moneyBoxRecord.length>5){
+            var size=Math.ceil(moneyBoxRecord.length/5);
+            $('#record_page').html('');
+            var  appendHtml='<div class="page-item lottery_prev"><</div>'
+                +'<div class="page-item lottery_item active">'+1+'</div>';
+            for(var i=1;i<size;i++){
+                appendHtml+='<div class="page-item lottery_item">'+(i+1)+'</div>';
+            }
+            appendHtml+='<div class="page-item lottery_next">></div>';
+            $('#record_page').html(appendHtml);
+            $('.lottery_item').click(function(){
+                showRecordTableBody($(this).html());
+                $('.lottery_item').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('.lottery_prev').click(function(){
+                var index=parseInt(''+$('.lottery_item.active').html());
+                if(index!=1){
+                    showRecordTableBody(index-1);
+                    $('.lottery_item').removeClass('active');
+                    $('.lottery_item:nth-child('+index+')').addClass('active');
+                }
+            });
+            $('.lottery_next').click(function(){
+                var index= parseInt(''+$('.lottery_item.active').html());
+                var maxIndex=Math.ceil(moneyBoxRecord.length/5);
+                if(index!=maxIndex){
+                    showRecordTableBody(index+1);
+                    $('.lottery_item').removeClass('active');
+                    $('.lottery_item:nth-child('+(index+2)+')').addClass('active');
+                }
+            });
+        }
+    }
+    function showRecordTableBody(index) {
+        $('#recordBody').html('');
+        $.each(moneyBoxRecord, function(i,v){
+            if(i>=(index-1)*5 && i<5*index){
+                var statusStr='<td class="green">已领取</td>';
+                $('#recordBody').append('<tr><td>' + v.date +'</td><td>' + v.bouns + '</td>' + statusStr );
+            }
+        });
+    }
+
+    function moneyBoxLottery() {
+        post('/ptweb/memberBoxLottery', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+            confirm_success("恭喜获得"+d.data.bonus.toFixed(2)+"元奖金，已存入零钱宝，感谢您的支持！","系统提示",function () {
+                moneyBoxInit();
+            });
+        } else {
+            error(d.message);
+        }
+    });
+    }
+    function getMemeberBoxBonus() {
+        post('/ptweb/getMemeberBoxBonus', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+            confirm_success("恭喜获得"+d.data.bonus.toFixed(2)+"元奖金，感谢您的支持！","系统提示",function () {
+                moneyBoxInit();
+            });
+        } else {
+            error(d.message);
+        }
+    });
+    }
+</script>
+</html>

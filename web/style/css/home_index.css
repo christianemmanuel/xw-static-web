@@ -1,0 +1,299 @@
+.index-container {
+    width: 1370px;
+    margin: 120px auto 0 auto;
+    /* padding-top: 120px; */
+    min-height: 600px;
+    background-color: #fff;
+}
+.public{
+    width: 1320px;
+    min-height: 620px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.download-left{
+    justify-self: start;
+}
+.download-right{
+    width: 569px;
+    margin-left: 194px;
+}
+.introduce{
+    margin-top:20px;
+	font-size: 14px;
+	line-height: 30px;
+	letter-spacing: 1px;
+	color: #686c6f;
+}
+.download-icon{
+    display: flex;
+    margin-top: 30px;
+}
+.download-code,
+.download-h5{
+    margin-left: 60px;
+}
+.download-code>p,
+.download-h5>p{
+    width: 120px;
+    line-height: 30px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #686c6f;
+    text-align: center;
+}
+.download-code>a,
+.download-h5>a{
+    font-size: 14px;
+    color: #3d69f3;
+}
+.app-select{
+    width: 396px;
+    height: 46px;
+    margin-top: 30px;
+	background-color: #ebebeb;
+    border-radius: 23px;
+    display: flex;
+    justify-content: space-between;
+}
+.app-select>p{
+    margin: 4px 4px;
+    width: 131px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: #518bf7;
+    cursor: pointer;
+}
+.app-active{
+    background-image: linear-gradient(0deg, 
+		#518bf7 0%, 
+		#65adff 100%), 
+	linear-gradient(
+		#d0d0d0, 
+		#d0d0d0);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: 19px;
+    color: #fff !important;
+}
+/* 热门赛事 */
+.hot{
+    width: 1320px;
+    min-height: 620px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.hot-left{
+    justify-self: start;
+}
+.hot-title{
+    /* width: 272px;
+    height: 52px; */
+}
+/* .hot-right{
+    width: 598px;
+} */
+.hot-select{
+    width: 396px;
+    height: 46px;
+    margin: 75px 0 0 280px;
+	background-color: #ebebeb;
+    border-radius: 23px;
+    display: flex;
+    justify-content: space-between;
+}
+.hot-select>p{
+    margin: 4px 4px;
+    width: 131px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: #518bf7;
+    cursor: pointer;
+}
+.hot-active{
+    background-image: linear-gradient(0deg, 
+		#518bf7 0%, 
+		#65adff 100%), 
+	linear-gradient(
+		#d0d0d0, 
+		#d0d0d0);
+	background-blend-mode: normal, 
+		normal;
+    border-radius: 19px;
+    color: #fff !important;
+}
+.hot-lol{
+    width: 676px;
+    height: 208px;
+    margin-top: 30px;
+    background-image: url('../img/home/hot-lol.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.hot-date{
+    margin-left: 80px;
+}
+.hot-vs,
+.game-vs{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+.lol-game-icon{
+    vertical-align: middle;
+    padding: 10px 10px 0 20px;
+}
+.hot-vs img,
+.game-vs img{
+    width: 78px;
+	height: 70px;
+}
+.game-icon p,
+.game-icon span,
+.lol-game-icon p,
+.lol-game-icon span{
+    color: #686c6f;
+}
+.blue{
+    color: #518bf7;
+}
+.yellow{
+    color: #f6ab2a;
+}
+.hot-vs p,
+.game-vs p{
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+.vs-icon{
+    width: 42px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 30px;
+    border-radius: 12px;
+    background: #000;
+    background-color:#518bf7;
+    text-align: center;
+    color: #fff;
+}
+.betting{
+    position: relative;
+    left: 500px;
+    display: block;
+    width: 149px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(-90deg, 
+        #518bf7 0%, 
+        #65adff 100%), 
+    linear-gradient(
+        #d0d0d0, 
+        #d0d0d0);
+    background-blend-mode: normal, 
+        normal;
+    box-shadow: 0px 2px 3px 0px 
+        rgba(12, 3, 7, 0.15);
+    border-radius: 19px;  
+}
+.hot-content{
+    display: flex;
+    width: 676px;
+    height: 208px;
+}
+.hot-content>div{
+	width: 332px;
+	height: 200px;
+	background-color: #fcfcfc;
+	box-shadow: 0px 5px 4px 0px 
+		rgba(12, 3, 7, 0.1);
+	border-radius: 8px;
+}
+.hot-content>div:nth-child(1){
+    margin-right: 20px;
+}
+.game-icon{
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 20px;
+}
+.game-icon>p{
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+.game-betting{
+    display:inline-block;
+    width: 121px;
+	height: 34px;
+    line-height: 34px;
+    margin-left: 100px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(-90deg, 
+        #518bf7 0%, 
+        #65adff 100%), 
+    linear-gradient(
+        #d0d0d0, 
+        #d0d0d0);
+    background-blend-mode: normal, 
+        normal;
+    box-shadow: 0px 2px 3px 0px 
+        rgba(12, 3, 7, 0.15);
+    border-radius: 19px;   
+}
+/* 场馆投注 */
+.factory{
+    width: 1250px;
+    margin: 0 auto;
+}
+.factory-select{
+    width: 914px;
+    height: 47px;
+    margin: 40px auto;
+	background-color: #ebebeb;
+    border-radius: 23px;
+    display: flex;
+}   
+.factory-select p{
+    width: 131px;
+    height: 38px;
+    margin: 6px 0 0 6px;
+    line-height: 38px;
+    font-size: 16px;
+    text-align: center;
+    color: #518bf7;   
+    cursor: pointer;
+}
+.factory-active{
+    background-image: linear-gradient(0deg, 
+    #518bf7 0%, 
+    #65adff 100%), 
+    linear-gradient(
+        #d0d0d0, 
+        #d0d0d0);
+    background-blend-mode: normal, 
+        normal;
+    border-radius: 19px;
+    color: #fff !important;
+}
+.factory-bg{
+    width: 1320px;
+	height: 126px;
+    background-image: url('../img/home/factory-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

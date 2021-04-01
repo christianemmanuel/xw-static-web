@@ -1,0 +1,8 @@
+.deposit-container {
+    width: 960px;
+    padding: 22px 34px
+}
+.deposit-container .title{
+    font-size: 14px;
+    color: #2d3944;
+}

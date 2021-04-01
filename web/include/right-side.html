@@ -1,0 +1,103 @@
+<div class="customer-right" style="right: -170px;">
+    <div class="customer-right-logo">
+        <div class="hot-activity customer-div">
+            <a data-toggle="modal" data-target="#hotPromoModal" onclick="urlOpen('/personal/main.html?page=privilege')">
+                <div class="remixicon-palette-line"></div>
+                <div style="margin-top: 15px;">热门活动</div>
+            </a>
+        </div>
+        <div class="customer-center customer-div">
+            <div class="remixicon-customer-service-line"></div>
+            <div style="margin-top: 15px;">客服中心</div>
+            <div class="customer-right-content">
+                <div class="customer-content">
+                    <div class="remixicon-customer-service-fill"></div>
+                    <span>24小时在线客服</span>
+                </div>
+                <!--<div class="content-line"></div>
+                <div class="customer-qq">
+                    <div class="remixicon-qq-fill"></div>
+                    <span style="margin-left: 2px;">QQ号：<span class="customer_qq_number">2853531804</span></span>
+                </div>-->
+                <div class="content-line"></div>
+                <div class="customer-email">
+                    <div class="remixicon-mail-fill"></div>
+                    <span style="margin-left: 5px;">cs@dyvip99.com</span>
+                </div>
+                <div class="content-line"></div>
+                <div class="customer-num">
+                    <div class="remixicon-phone-fill"></div>
+                    <span style="margin-left: 5px;">+85281928676</span>
+                </div>
+            </div>
+        </div>
+        <div class="app-download customer-div">
+            <a href="/download.html">
+                <div class="remixicon-download-cloud-line"></div>
+                <div style="margin-top: 15px;">APP下载</div>
+            </a>
+        </div>
+        <div class="back-top customer-div">
+            <div class="remixicon-rocket-line"></div>
+            <div style="margin-top: 15px;">返回顶部</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#side_tab_3').on('mouseover',function(){
+            $('#slide_right').addClass("show");
+        });
+        $('#slide_right').on('mouseout',function(){
+            $(this).removeClass("show");
+        });
+        $('#slide_right_payment').on('mouseover',function(){
+            $('#slide_right_payment').addClass("show");
+            $('.payment-arrow').addClass("rotate");
+        });
+        $('#slide_right_payment').on('mouseout',function(){
+            $(this).removeClass("show");
+            $( ".payment-arrow" ).removeClass( "rotate" )
+        });
+        //
+        loadCustomerInfo();
+    });
+
+    function showFastDeposit(type, t) {
+        if(wap_is_user_notexist()){
+            fun_alertMsg("请登入后再操作", function() {
+                window.location.href="/";
+            });
+            return;
+        }else{
+            var url=cashier_host() + "/app/deposit/fastIndex?osname=WEB&way=WEB&token="+wap_get_user().token+"&payType="+type;
+            var height='600px';
+            layer.open({
+                type : 2,
+                title : t,
+                scrollbar: false,
+                area : [ '650px', height ],
+                content : [url , 'no']
+            });
+        }
+    }
+
+</script>
+<script type="text/javascript">
+    var tip_index = 0;
+    $("#side_tab_1").mouseover(function (){
+        tip_index = layer.tips('下载页面', '#side_tab_1', {time: 0});
+    }).mouseout(function (){
+        layer.close(tip_index);
+    });
+    $("#side_tab_2").mouseover(function (){
+        tip_index = layer.tips('帮助页面', '#side_tab_2', {time: 0});
+    }).mouseout(function (){
+        layer.close(tip_index);
+    });
+    $("#side_tab_4").mouseover(function (){
+        tip_index = layer.tips('公告列表', '#side_tab_4', {time: 0});
+    }).mouseout(function (){
+        layer.close(tip_index);
+    });
+</script>

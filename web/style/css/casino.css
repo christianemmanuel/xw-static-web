@@ -1,0 +1,210 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.game-container {
+    margin-top: 50px;
+    margin-bottom: 160px;
+    background-image: url("../img/esports/bg.png");
+    width: 1367px;
+    height: 559px;
+    background-repeat: no-repeat;
+    padding: 24px 112px 39px;
+}
+
+.game-content {
+    width: 1173px;
+}
+
+.game-tab-content {
+
+    height: 355px;
+}
+
+
+.game-info-1 {
+    padding: 9px 49px;
+}
+
+.game-info-bg-1 {
+    position: relative;
+}
+
+.game-info-bg-1 .bg-left{
+    position: absolute;
+    top: 118px;
+    left: 621px;
+    background-image: url("../img/casion/desc.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 91px;
+    height: 112px;
+}
+
+.game-info-bg-1 .bg-right{
+    position: absolute;
+    top: -178px;
+    right: -88px;
+    background-image: url("../img/casion/coin.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 172px;
+    height: 213px;
+}
+
+.game-info-bg-1 .bg-center{
+    position: absolute;
+    top: 182px;
+    right: -155px;
+    background-image: url("../img/casion/casion.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 556px ;
+    height: 319px;
+    z-index: 10;
+}
+
+.game-info-bg-1 .bg-girl-1{
+    position: absolute;
+    top: -218px;
+    right: -54px;
+    background-image: url("../img/casion/g1.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 534px;
+    height: 834px;
+}
+
+.game-info-title-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+}
+
+.game-info-title-text-1 {
+    background-image: url("../img/casion/p1.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 233px;
+    height: 81px;
+
+}
+
+.game-info-logo-1{
+    background-image: url("../img/casion/ag.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 115px;
+    height: 67px;
+}
+
+
+.game-info-text-1 {
+    margin-top: 30px;
+    width: 400px;
+    height: 63px;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #65686b;
+}
+
+.game-info-1 button {
+    margin-top: 55px;
+    margin-left: 50px;
+}
+
+.game-info-title-text-2{
+    background-image: url("../img/casion/p2.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 299px;
+    height: 81px;
+}
+
+.game-info-bg-1 .bg-left-2 {
+    position: absolute;
+    top: -55px;
+    left: 385px;
+    background-image: url("../img/esports/t2.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 463px;
+    height: 499px;
+}
+
+.game-info-bg-1 .bg-center-2 {
+    position: absolute;
+    top: -123px;
+    left: 574px;
+    background-image: url("../img/esports/t3.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 674px;
+    height: 620px;
+    z-index: 10;
+}
+
+.game-info-bg-1 .bg-right-2 {
+    position: absolute;
+    top: -204px;
+    right: -163px;
+    background-image: url("../img/esports/t1.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 396px;
+    height: 518px;
+}
+
+.game-info-logo-2{
+    background-image: url("../img/casion/bbin.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 104px;
+    height: 40px;
+}
+
+.game-info-title-text-3{
+    background-image: url("../img/casion/p3.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 262px;
+    height: 81px;
+}
+
+.game-info-logo-3{
+    background-image: url("../img/casion/obet.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 74px;
+}
+
+
+.game-info-bg-1 .bg-girl-2{
+     position: absolute;
+     top: -218px;
+     right: -54px;
+     background-image: url("../img/casion/g2.png");
+     background-position: 100% 100%;
+     background-repeat: no-repeat;
+     width: 534px;
+     height: 834px;
+ }
+
+.game-info-bg-1 .bg-girl-3{
+    position: absolute;
+    top: -218px;
+    right: -54px;
+    background-image: url("../img/casion/g3.png");
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    width: 534px;
+    height: 834px;
+}

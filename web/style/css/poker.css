@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+fieldset, img {
+    border: none;
+}
+body {
+}
+
+.poker-container {
+    height: 902px;
+    position: relative;
+    padding-top: 120px;
+}
+.poker-container .poker-type-btn-box {
+    top: 150px;
+    width: 390px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+.poker-container .poker-type-btn-box .poker-type-btn {
+    width: 181px;
+    height: 50px;
+    background-image: linear-gradient(0deg, #f2f2f2 0%, #fefefe 100%), linear-gradient(#000000, #000000);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 6px 20px 2px rgba(103, 204, 255, 0.75);
+    border-radius: 6px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #222222;
+}
+.poker-container .poker-type-btn-box .poker-type-btn.active {
+    color: #ffffff;
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient(#000000, #000000);
+}
+.poker-container .poker-platform-box {
+    position: relative;
+}
+.poker-container .poker-platform-box .poker-platform {
+    height: 782px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    display: none;
+}
+.poker-container .poker-platform.active {
+    display: block;
+}
+.poker-container .poker-platform-tx {
+    background-image: url("../img/poker/bg_tx.webp");
+}
+.poker-container .poker-platform-ky {
+    background-image: url("../img/poker/bg_ky.webp");
+}
+.poker-container .poker-platform-box .poker-platform-tx .platform-left-box {
+    position: absolute;
+    left: 0px;
+    top: 32px;
+    width: 675px;
+    height: 720px;
+}
+.poker-container .poker-platform-box .poker-platform-tx .platform-center-box {
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750px;
+    height: 554px;
+    text-align: center;
+}
+.poker-container .poker-platform-box .poker-platform-tx .platform-center-box .platform-desc-box {
+    width: 751px;
+    height: 390px;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #ffffff;
+    background-image: url("../img/poker/center_btn_bg_tx.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    letter-spacing: 0;
+    padding: 155px 129px 0px 126px;
+}
+.poker-container .poker-platform-box .poker-platform .platform-center-box .platform-desc-box .poker-play-btn {
+    width: 198px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 52px;
+    background-image: linear-gradient(90deg, #2d74f6 0%, #7abdfc 100%), linear-gradient(#000000, #000000);
+    background-blend-mode: normal, normal;
+    border-radius: 26px;
+    margin: 30px auto 0;
+    cursor: pointer;
+}
+.poker-container .poker-platform-box .poker-platform-tx .platform-right-box {
+    position: absolute;
+    top: 67px;
+    right: 44px;
+    width: 623px;
+    height: 678px;
+    padding-top: 255px;
+    padding-left: 74px;
+}
+.tx-left-girl {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/poker/girl_tx_left.webp");
+    background-size: 316px 511px;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: 240px 33px;
+    animation: 2s ease 0s 1 normal none running poker-circle-ani;
+}
+.tx-right-girl {
+    position: absolute;
+    top: 12px;
+    left: 158px;
+    width: 269px;
+    height: 506px;
+    background-image: url("../img/poker/girl_tx_right.webp");
+    background-size: contain;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 2s ease 0s 1 normal none running poker-circle-ani;
+}
+.poker-container .poker-platform-box .poker-platform-tx .platform-right-box .tx-right-poker-circle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/poker/img_float_tx.webp");
+    background-size: 534px 551px;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: 0px 100%;
+    animation: 4s ease 2s infinite normal both running poker-circle-ani;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-left-box {
+    position: absolute;
+    top: 86px;
+    left: 126px;
+    width: 486px;
+    height: 670px;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-left-box .img-ky-left-bg {
+    position: absolute;
+    top: 29px;
+    left: 0px;
+    width: 442px;
+    height: 562px;
+    background-image: url("../img/poker/img_bg_ky_left.webp");
+    background-size: contain;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-left-box .img-ky-float-top {
+    position: absolute;
+    top: 0px;
+    left: 149px;
+    width: 68px;
+    height: 75px;
+    background-image: url("../img/poker/img_ky_left_top.webp");
+    background-size: contain;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-left-box .img-ky-left-girl {
+    position: absolute;
+    top: 130px;
+    right: 0px;
+    width: 298px;
+    height: 484px;
+    background-image: url("../img/poker/girl_ky_left.webp");
+    background-size: contain;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 2s ease 0s 1 normal none running poker-circle-ani;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-left-box .ky-left-float-1 {
+    position: absolute;
+    bottom: 0px;
+    right: 144px;
+    width: 104px;
+    height: 150px;
+    background-image: url("../img/poker/img_float_ky_1.webp");
+    background-size: contain;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 4s ease 2s infinite normal both running up-down-ani;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-left-box .ky-left-float-2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 73px;
+    height: 68px;
+    background-image: url("../img/poker/img_float_ky_2.webp");
+    background-size: contain;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 4s ease 2s infinite normal both running down-up-ani;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-center-box {
+    position: absolute;
+    top: 161px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750px;
+    text-align: center;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-center-box .platform-desc-box {
+    width: 751px;
+    height: 390px;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #ffffff;
+    background-image: url("../img/poker/center_btn_bg_ky.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    letter-spacing: 0;
+    padding: 115px 120px 0px 120px;
+    margin-top: 72px;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-right-box {
+    position: absolute;
+    top: 96px;
+    right: 153px;
+    width: 578px;
+    height: 640px;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-right-box .img-ky-right-bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 578px;
+    height: 529px;
+    background-image: url("../img/poker/img_bg_ky_right.webp");
+    background-size: contain;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-right-box .img-ky-right-girl {
+    position: absolute;
+    top: 127px;
+    left: 144px;
+    width: 293px;
+    height: 444px;
+    background-image: url("../img/poker/girl_ky_right.webp");
+    background-size: contain;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 2s ease 0s 1 normal none running poker-circle-ani;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-right-box .ky-right-float-1 {
+    position: absolute;
+    bottom: 5px;
+    left: 205px;
+    width: 92px;
+    height: 83px;
+    background-image: url("../img/poker/img_float_ky_3.webp");
+    background-size: contain;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 4s ease 2s infinite normal both running up-down-ani;
+}
+.poker-container .poker-platform-box .poker-platform-ky .platform-right-box .ky-right-float-2 {
+    position: absolute;
+    bottom: 0px;
+    right: 90px;
+    width: 142px;
+    height: 157px;
+    background-image: url("../img/poker/img_float_ky_4.webp");
+    background-size: contain;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: 50% center;
+    animation: 4s ease 2s infinite normal both running down-up-ani;
+}
+@keyframes poker-circle-ani {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+@keyframes up-down-ani {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+@keyframes down-up-ani {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>存款</title>
+    <link rel="stylesheet" href="/style/css/deposit.css">
+</head>
+<body>
+<div class="deposit-container">
+    <span class="title">充值中心</span>
+    <hr style="width: 100%"/>
+    <iframe id="depositUrl" frameborder="0" scrolling="no"
+            style="width: 914px;height: 1000px;padding: 1rem;background-color: rgba(0,0,0,0)"></iframe>
+</div>
+
+<div class="hideAll"></div>
+</body>
+<script>
+    $(function () {
+        if (wap_is_user_notexist()) {
+            window.location.href = '/';
+            return;
+        }
+        $('.li1').addClass('on');
+        $('#depositUrl').attr("src", cashier_host() + "/app/deposit/webIndexNew?osname=WEB&way=WEB&token=" + wap_get_user().token);
+    });
+</script>
+</html>

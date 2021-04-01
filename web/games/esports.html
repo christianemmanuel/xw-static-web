@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>电子竞技</title>
+    <link rel="stylesheet" href="/style/css/esports.css">
+    <script type="text/javascript">
+        var host = document.domain;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location = "https://m." + host.split('.')[1] + ".com" + window.location.pathname;
+        }
+    </script>
+</head>
+<body>
+@@include('header.html')
+<div class="game-container">
+    <div class="nav-group">
+        <button id="dyBtn" class="btn nav-btn active" onclick="showDy()">东赢电竞</button>
+        <button id='rayBtn' class="btn nav-btn" onclick="showRay()">RG电竞</button>
+        <button id='imBtn' class="btn nav-btn" onclick="showIM()">IM电竞</button>
+    </div>
+    <div class="nav-pane">
+        <div class="teams dy">
+            <img src="/style/img/esports/img_1.png">
+            <img src="/style/img/esports/img_2.png">
+            <img src="/style/img/esports/img_3.png">
+            <img src="/style/img/esports/img_4.png">
+            <img src="/style/img/esports/img_5.png">
+            <div class="game-name"></div>
+            <div class="game-info">
+                <div class="left-icon"></div>
+                <p class="left">最全赛事</p>
+                <button class="btn linear-blue" onclick="window.location.href='esport.html'">进入游戏</button>
+                <p class="right">一应俱全</p>
+                <div class="right-icon"></div>
+            </div>
+        </div>
+        <div class="teams ray" style="display: none">
+            <img src="/style/img/esports/img_6.webp">
+            <img src="/style/img/esports/img_7.webp">
+            <img src="/style/img/esports/img_8.webp">
+            <img src="/style/img/esports/img_9.webp">
+            <img src="/style/img/esports/img_10.webp">
+            <div class="game-name"></div>
+            <div class="game-info">
+                <div class="left-icon"></div>
+                <p class="left">赛事最多</p>
+                <button class="btn linear-blue" onclick="window.location.href='rg-esport.html'">进入游戏</button>
+                <p class="right">玩法多样</p>
+                <div class="right-icon"></div>
+            </div>
+        </div>
+        <div class="teams im" style="display: none">
+            <img src="/style/img/esports/img_11.png">
+            <img src="/style/img/esports/img_12.png">
+            <img src="/style/img/esports/img_13.png">
+            <img src="/style/img/esports/img_14.png">
+            <img src="/style/img/esports/img_15.png">
+            <div class="game-name"></div>
+            <div class="game-info">
+                <div class="left-icon"></div>
+                <p class="left">赛事齐全</p>
+                <button class="btn linear-blue" onclick="urlOpen('/games/im-esport.html')">进入游戏</button>
+                <p class="right">玩法新颖</p>
+                <div class="right-icon"></div>
+            </div>
+        </div>
+
+        <div class="pane-bg-bottom">
+            <div class="dy-point-group">
+                <div class="point-left">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                </div>
+                <div class="point-right">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                </div>
+            </div>
+            <div class="ray-point-group" style="display: none">
+                <div class="point-left">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                </div>
+                <div class="point-right">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                </div>
+            </div>
+            <div class="im-point-group" style="display: none">
+                <div class="point-left">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                    <img src="/style/img/esports/red_point.webp">
+                </div>
+                <div class="point-right">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                    <img src="/style/img/esports/blue_point.webp">
+                </div>
+            </div>
+            <img class="game-icon" src="/style/img/esports/game-icon.webp">
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+
+    function showRay() {
+        $('.nav-btn').removeClass('active');
+        $('#rayBtn').addClass('active')
+        $('.dy,.im').hide();
+        $('.ray').show();
+        $('.dy-point-group').hide();
+        $('.ray-point-group').show();
+        let t1 = TweenMax.staggerFromTo($('.ray img'), 2, {
+            y: -100,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1
+        }, .3)
+        let t2 = TweenLite.fromTo($('.ray .game-name'), 1, {x: -500, opacity: 0}, {
+            x: 0,
+            opacity: 1
+        })
+
+        let t3 = TweenLite.fromTo($('.ray .game-info'), 1, {x: 500, opacity: 0}, {
+            x: 0,
+            opacity: 1
+        })
+
+        let t4 = TweenMax.staggerFromTo($('.ray-point-group .point-left img'), 1, {
+            scale: .5,
+            opacity: 0
+        }, {scale: 1, opacity: 1}, 0.3);
+        let t5 = TweenMax.staggerFromTo($('.ray-point-group .point-right img'), 1, {
+            scale: .5,
+            opacity: 0
+        }, {scale: 1, opacity: 1}, 0.3)
+
+        var tl = new TimelineMax();
+        tl.add([t1, t2, t3, t4, t5], 0, "normal");
+
+
+    }
+
+
+    function showDy() {
+        $('.nav-btn').removeClass('active')
+        $('#dyBtn').addClass('active');
+        $('.ray, .im').hide();
+        $('.dy').show();
+        $('.ray-point-group').hide();
+        $('.dy-point-group').show();
+        let t1 = TweenLite.fromTo($('.dy img'), 2, {
+            scale: .8,
+            opacity: 0
+        }, {
+            scale: 1,
+            opacity: 1
+        })
+        let t2 = TweenLite.fromTo($('.dy .game-name'), 1, {x: -500, opacity: 0}, {
+            x: 0,
+            opacity: 1
+        })
+
+        let t3 = TweenLite.fromTo($('.dy .game-info'), 1, {x: 500, opacity: 0}, {
+            x: 0,
+            opacity: 1
+        })
+
+        let t4 = TweenMax.staggerFromTo($('.dy-point-group .point-left img'), 1, {
+            scale: .5,
+            opacity: 0
+        }, {scale: 1, opacity: 1}, 0.3);
+        let t5 = TweenMax.staggerFromTo($('.dy-point-group .point-right img'), 1, {
+            scale: .5,
+            opacity: 0
+        }, {scale: 1, opacity: 1}, 0.3)
+
+        var tl = new TimelineMax();
+        tl.add([t1, t2, t3, t4, t5], 0, "normal");
+
+    }
+
+    function showIM() {
+        $('.nav-btn').removeClass('active')
+        $('#imBtn').addClass('active');
+        $('.ray,.dy').hide();
+        $('.im').show();
+        $('.ray-point-group').hide();
+        $('.dy-point-group').show();
+        let t1 = TweenLite.fromTo($('.im img'), 2, {
+            scale: .8,
+            opacity: 0
+        }, {
+            scale: 1,
+            opacity: 1
+        })
+        let t2 = TweenLite.fromTo($('.im .game-name'), 1, {x: -500, opacity: 0}, {
+            x: 0,
+            opacity: 1
+        })
+
+        let t3 = TweenLite.fromTo($('.im .game-info'), 1, {x: 500, opacity: 0}, {
+            x: 0,
+            opacity: 1
+        })
+
+        let t4 = TweenMax.staggerFromTo($('.im-point-group .point-left img'), 1, {
+            scale: .5,
+            opacity: 0
+        }, {scale: 1, opacity: 1}, 0.3);
+        let t5 = TweenMax.staggerFromTo($('.im-point-group .point-right img'), 1, {
+            scale: .5,
+            opacity: 0
+        }, {scale: 1, opacity: 1}, 0.3)
+
+        var tl = new TimelineMax();
+        tl.add([t1, t2, t3, t4, t5], 0, "normal");
+    }
+</script>
+</html>

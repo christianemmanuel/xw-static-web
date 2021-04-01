@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="/style/css/records.css">
+    <link rel="stylesheet" href="/style/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/style/css/customer-datepicker.css">
+    <link rel="stylesheet" href="/style/plugins/datatables/dataTables.bootstrap4.css">
+    <script src="/style/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="/style/plugins/bootstrap-datepicker/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="/style/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/style/plugins/datatables/dataTables.bootstrap4.js"></script>
+</head>
+<body>
+<div class="records-container">
+    <span class="title">交易记录</span>
+    <hr style="width: 100%">
+    <div class="search-type search-payment-type">
+        <span>交易类型:</span>
+        <ul>
+            <li id="depositMenu" onclick="changeType('deposit')">存款</li>
+            <li id="withdrawMenu" onclick="changeType('withdraw')">提款</li>
+            <li id="accountMenu" onclick="changeType('account')">账变</li>
+            <li id="transferMenu" onclick="changeType('transfer')">转账</li>
+            <li id="promMenu" onclick="changeType('prom')">优惠</li>
+            <!--<li id="gameBetMenu" onclick="changeType('gameBet')">投注</li>-->
+        </ul>
+    </div>
+    <div class="search-type search-data-type">
+        <span>交易时间:</span>
+        <ul>
+            <li id="todayMenu" onclick="changeDateRange('today')">今天</li>
+            <li id="threeMenu" onclick="changeDateRange('three')">三天内</li>
+            <li id="weekMenu" onclick="changeDateRange('week')">一周内</li>
+            <li id="monthMenu" onclick="changeDateRange('month')">一月内</li>
+        </ul>
+    </div>
+    <div class="record-search" style="margin-bottom: 20px">
+        <div id="platformIdBox" style="display: none;">
+            <span>平台:</span>
+            <select id="betPlatformSel" class="form-control"></select>
+        </div>
+        <span>开始:</span>
+        <input name="beginDate" readonly type="text" class="form-control">
+        <span>结束:</span>
+        <input name="endDate" readonly type="text" class="form-control">
+        <button id="search" class="btn btn-primary">搜索</button>
+    </div>
+    <div id="depositPane" class="record-pane">
+        <table id="depositRecord" class="table record-table">
+            <thead>
+            <tr>
+                <th>存款编码</th>
+                <th>存款类型</th>
+                <th>金额</th>
+                <th>状态</th>
+                <th>提交时间</th>
+                <th>到账时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="withdrawPane" class="record-pane" style="display: none">
+        <table id="withdrawRecord" class="table record-table">
+            <thead>
+            <tr>
+                <th>提款银行</th>
+                <th>提款编码</th>
+                <th>金额</th>
+                <th>状态</th>
+                <th>提交时间</th>
+                <th>到账时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="accountPane" class="record-pane" style="display: none">
+        <table id="accountRecord" class="table record-table">
+            <thead>
+            <tr>
+                <th>编码</th>
+                <th>账变类型</th>
+                <th>平台</th>
+                <th>金额</th>
+                <th>时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="transferPane" class="record-pane" style="display: none">
+        <table id="transferRecord" class="table record-table">
+            <thead>
+            <tr>
+                <th>转账编码</th>
+                <th>转账类型</th>
+                <th>游戏平台</th>
+                <th>金额</th>
+                <th>状态</th>
+                <th>时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="promPane" class="record-pane" style="display: none">
+        <table id="promRecord" class="table record-table">
+            <thead>
+            <tr>
+                <th>优惠编码</th>
+                <th>金额</th>
+                <th>优惠名称</th>
+                <th>状态</th>
+                <th>申请时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="gameBetPane" class="record-pane" style="display: none">
+        <table id="gameBetRecord" class="table record-table">
+            <thead>
+            <tr>
+                <th>优惠编码</th>
+                <th>金额</th>
+                <th>优惠名称</th>
+                <th>状态</th>
+                <th>申请时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script src="/style/js/records.js"></script>
+</html>

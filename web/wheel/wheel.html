@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>春节七天乐翻天</title>
+    <link rel="stylesheet" href="/style/plugins/bootstrap/css/bootstrap-v4.2.1.css">
+    <link rel="stylesheet" href="/style/css/pagination.css">
+    <link rel="stylesheet" href="/style/css/wheel.css">
+    <script src="/style/js/jquery-3.3.1.min.js"></script>
+    <script src="/style/js/tweenmax.min.js"></script>
+    <script src="/style/js/pagination.js"></script>
+    <script src="/style/layui/layui.all.js"></script>
+    <script type="text/javascript" src="/style/js/swiper.min.js"></script>
+    <script src="/style/js/common.js"></script>
+    <script src="/style/plugins/jqueryrotate/jQueryRotate.js"></script>
+</head>
+<body>
+<div class="popup">
+    <div class="congratulation"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wheel/congratulation.png"/></div>
+    <div class="popup-text">获得<span id="popup-prize"></span><span class="popup-address">！请联系在线客服留下详细地址收货~么么哒~</span></div>
+    <div id="btn-close"></div>
+    <div id="btn-confirm"></div>
+</div>
+<div class="container">
+    <div class="wheel-wrap">
+        <div width="709" height="708" class="the-wheel">
+            <img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wheel/wheel.png">
+        </div>
+        <div class="point-wrap">可用积分：<span id="point">0</span></div>
+        <div class="wheel-spin"><img src="https://ezeu.ytyq8866.com/resources/web_h5/images/wheel/wheel-spin.png"/></div>
+        <div class="wheel-btn clearfix">
+            <div id="spin-button01" class="wheel-btn-bg">抽一次</div>
+            <div id="spin-button10" class="wheel-btn-bg">抽十次</div>
+        </div>
+        <div class="wheel-period">活动时间：2019年2月4日-10日</div>
+    </div>
+</div>
+<div id="spin-record" class="clearfix">
+    <div class="spin-record-left">
+        <div class="data-container"></div>
+        <div id="pagination-spin"></div>
+    </div>
+    <div class="spin-record-right">
+        <div class="outer">
+            <div id="win-record" class="inner">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="wheel-tnc" class="container">
+    <ul>
+        <li>1. 活动期间，会员每存款一笔（以实际到账金额为准），即可获得相对应的积分，单笔存款100元，即可获得100积分，单笔存款200元，即可获得200积分，以此类推；</li>
+        <li>2. 每日会员最高可获得50000积分；</li>
+        <!--<li>3.	积分消耗</li>
+        <li>
+            <table class="layui-table layui-table1" lay-even="" lay-skin="nob" style="vertical-align: middle; text-align: center;">
+                <thead>
+                    <tr>
+                        <td>抽奖次数</td>
+                        <td>积分消耗</td>
+                    </tr>
+                    <tr>
+                        <td>1-10次</td>
+                        <td>180积分/次</td>
+                    </tr>
+                    <tr>
+                        <td>11-20次</td>
+                        <td>250积分/次</td>
+                    </tr>
+                    <tr>
+                        <td>21-30次</td>
+                        <td>300积分/次</td>
+                    </tr>
+                    <tr>
+                        <td>31-50次</td>
+                        <td>485积分/次</td>
+                    </tr>
+                    <tr>
+                        <td>50次以后</td>
+                        <td>660积分/次</td>
+                    </tr>
+                </thead>
+            </table>
+        </li>-->
+        <li>3. 会员当天所获得的积分，需要当天使用完，次日将清零；此活动不与首存共享；</li>
+        <li>4. 现金奖（10元-12000元不等），投注于老虎机游戏，仅需5倍有效投注额，真人/体育，仅需8倍有效投注额即可申请提款；</li>
+        <li>5. 奖品可按8折折现，无需流水，即可提款；</li>
+        <li>6. 抽到奖品的会员，需在第一时间联系客服提供具体姓名、地址、联系方式；相关部门会在3-5天内安排，获得订单号后会第一时间以站内信的方式通知到会员，以便会员查询跟踪。</li>
+    </ul>
+</div>
+<div id="prize-info" class="container">
+    <ul>
+        <li>Zippo限量打火机</li>
+        <li>新款瑞士CK手表K3M514B1 男/女款可选</li>
+        <li>Apple Watch Series4 苹果手表4代 男/女款可选</li>
+        <li>Huawei/华为 Mate 20 Pro 8G+128G</li>
+        <li>Apple MacBook Pro 13.3英寸笔记本电脑 8G+512G固态硬盘</li>
+        <li>随机现金红包大奖</li>
+    </ul>
+</div>
+<div id="overlay"></div>
+</body>
+<script>
+    // 奖品池，仙丹是阳光普照奖
+    var awards = [
+        {name: "现金红包", angle: [18, 90, 162, 234, 306]},
+        {name: "zippo限量打火机", angle: 342},
+        {name: "2018新款瑞士ck手表K3M514B1 男/女款可选", angle: 198},
+        {name: "Apple Watch Series4 苹果手表4代 男/女款可选", angle: 126},
+        {name: "Huawei/华为 Mate 20 Pro  8G+128G", angle: 54},
+        {name: "Apple MacBook Pro 13.3英寸笔记本电脑  8G 512G固态硬盘", angle: 270}
+    ];
+    var awardIds = ['0', '1', '2', '3', '4', '5'];
+    let onSpin=false;
+    let lottery_num = 1;// 抽奖次数
+    let login_userToken = fun_getQueryString('token');
+    var userCredit = 0;
+    let _isNotStart = true;
+    let _isEnd = true;
+    function showUserCredit(){
+        $.ajax({
+            url:wap_site_host() + "/session/chunjie/creditNum",
+            type:"GET",
+            data:{"token":login_userToken},
+            success:function(d){
+                if (d.code == 0) {
+                    userCredit = d.data.userCredit;
+                    _isNotStart = d.data.isNotStart;
+                    _isEnd = d.data.isEnd;
+                    $('#point').html(userCredit);
+                    var appendHtml = '';
+                    $.each(d.data.winnerList,function(n, v){
+                        appendHtml +='<li><span class="date">'+v.winnerTimeStr+'</span>用户<span class="user">'+fun_filterTxt(v.encryptName)
+                            +'</span>获得<span class="prize">'+fun_filterTxt(v.prizeTxt)+'</span></li>';
+                    });
+                    $('#win-record ul').html(appendHtml);
+                    // fix height of outer:
+                    $('.outer').css({maxHeight: $('.inner').height()});
+                    // duplicate content of inner:
+                    $('.inner').html($('.inner').html() + $('.inner').html());
+                    autoScrollUp();
+                } else {
+                    fun_alertMsg(d.msg, function() {});
+                    wap_if_session_out(d.code);
+                }
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                wap_check_ajaxerror(jqXHR);
+            }
+        });
+    }
+
+    // 在异步请求期间旋转转盘，持续10s，转5圈
+    // 如果这段时间内请求成功返回，会取消旋转，如果超时，回调会执行，提示网络超时
+    var fRotateDuringReq = function () {
+        $(".the-wheel").rotate({
+            angle: 0,
+            duration: 10000,
+            animateTo: -1800,
+            callback: function () {
+                fun_alertMsg('网络似乎不给力哦', function() {});
+            }
+        });
+    };
+
+    /**
+     * 开始抽奖
+     * @param angle 抽奖结果图片所对应的角度
+     * @param isSuccess 是否成功抽奖
+     * @param prizeType 中奖类型：1奖金，2奖品
+     * @param text 抽奖结果提示文案
+     */
+    var fStartLottery = function (angle, isSuccess,prizeType, text) {
+        $('.the-wheel').stopRotate();  // 停止之前的旋转
+        $(".the-wheel").rotate({
+            angle: 0,
+            duration: 5000,
+            animateTo: angle - 1440, // 1440表示4圈，转4圈之后转到抽奖结果的角度
+            callback: function () {
+                if(isSuccess){
+                    $('#popup-prize').html(text);
+                    $(".popup").show();
+                    if(prizeType===2){$('.popup-address').show();}
+                    else{$('.popup-address').hide();}
+                }else{
+                    lottery_num = 0;
+                    fun_alertMsg(text, function() {});
+                }
+                onSpin = false;
+            }
+        });
+    };
+
+
+    function applyLottery(){
+        lottery_num--;
+        onSpin = true;
+        fRotateDuringReq(); // 请求期间的旋转
+        $.ajax({
+            url:wap_site_host() + "/session/chunjie/apply",
+            type:"GET",
+            data:{"token":login_userToken},
+            success:function(d){
+                if (d.code == 0) {
+                    userCredit = d.data.userCredit;
+                    $('#point').html(userCredit);
+                    var awardKey = awardIds[d.data.lotteryNum];
+                    var award = awards[awardKey];
+                    console.log("Server return award: " + award.name);
+                    var angle = award.angle;
+                    if (typeof angle != "number") {
+                        // 角度是数组，说明转盘上有多个该奖品，随机取一个
+                        angle = angle[Math.floor(Math.random() * (angle.length))];
+                    }
+                    fStartLottery(angle,true,d.data.prizeType, d.data.prizeTxt);
+                } else {
+                    fStartLottery(0,false,null, d.msg);
+                    wap_if_session_out(d.code);
+                }
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                fStartLottery(0,false,null, '');
+                wap_check_ajaxerror(jqXHR);
+            }
+        });
+    }
+    $(document).ready(function() {
+        showUserCredit();
+        pageUserWinnerList();
+        $("#spin-button01").click(function() {
+            if(!onSpin){
+                if(_isNotStart){fun_alertMsg('活动2月4日开始，敬请期待', function() {});return;}
+                if(_isEnd){fun_alertMsg('活动已结束，请关注兴旺其他给力优惠活动，感谢您的支持！', function() {});return;}
+                if(userCredit===0){ fun_alertMsg('您的积分不足，无法抽奖', function() {});return; }
+                lottery_num = 1;
+                applyLottery();
+            }
+        });
+        $("#spin-button10").click(function() {
+            if(!onSpin){
+                if(_isNotStart){fun_alertMsg('活动2月4日开始，敬请期待', function() {});return;}
+                if(_isEnd){fun_alertMsg('活动已结束，请关注兴旺其他给力优惠活动，感谢您的支持！', function() {});return;}
+                if(userCredit===0){ fun_alertMsg('您的积分不足，无法抽奖', function() {});return; }
+                lottery_num = 10;
+                applyLottery();
+            }
+        });
+        $("#btn-close, #btn-confirm").click(function() {
+            $(".popup").hide();
+            pageUserWinnerList();
+            if(lottery_num>0){// 如果还有剩余抽奖次数，继续抽奖
+                applyLottery();
+            }
+        });
+    });
+
+    function pageUserWinnerList(){
+        $.ajax({
+            url:wap_site_host() + "/session/chunjie/pageUserWinnerList",
+            type:"GET",
+            data:{"token":login_userToken},
+            success:function(d){
+                if (d.code == 0) {
+                    var winnerList = new Array();
+                    $.each(d.data.list,function(n, v){
+                        if(v.prizeType===1){
+                            winnerList.push('<span class="date">'+v.winnerTimeStr+'</span>' +
+                                '<span class="prize">现金红包</span><span class="angpao-amount">'+fun_filterTxt(v.prizeTxt)+'</span>');
+                        }else{
+                            winnerList.push('<span class="date">'+v.winnerTimeStr+'</span>' +
+                                '<span class="prize">'+fun_filterTxt(v.prizeTxt)+'</span>');
+                        }
+                    });
+                    showPage(winnerList);
+                } else {
+                    fun_alertMsg(d.msg, function() {});
+                    wap_if_session_out(d.code);
+                }
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                wap_check_ajaxerror(jqXHR);
+            }
+        });
+    }
+    function showPage(sources){
+        var container = $('#pagination-spin');
+        if(sources.length>0){ $('#pagination-spin').show(); }
+        else{ $('#pagination-spin').hide(); }
+        var options = {
+            dataSource: sources,
+            pageSize: 5,
+            pageRange: 1,
+            callback: function (response, pagination) {
+                var dataHtml = '<ul>';
+                $.each(response, function (index, item) {
+                    dataHtml += '<li>' + item + '</li>';
+                });
+                dataHtml += '</ul>';
+                $('#spin-record .data-container').html(dataHtml);
+            }
+        };
+        //$.pagination(container, options);
+        container.addHook('beforeInit', function () {
+            window.console && console.log('beforeInit...');
+        });
+        container.pagination(options);
+        container.addHook('beforePageOnClick', function () {
+            window.console && console.log('beforePageOnClick...');
+            //return false
+        });
+    }
+
+    function autoScrollDown(){
+        $(".inner").css({top:-$(".outer").outerHeight()}) // jump back
+            .animate({top:0},15000,"linear", autoScrollDown); // and animate
+    }
+    function autoScrollUp(){
+        $(".inner").css({top:0}) // jump back
+            .animate({top:-$(".outer").outerHeight()},15000,"linear", autoScrollUp); // and animate
+    }
+
+</script>
+</html>

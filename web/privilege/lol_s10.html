@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>英雄联盟S10世界赛，东赢助力中国队夺冠100万奖金</title>
+    <link rel="stylesheet" href="/style/css/lols10.css">
+    <script type="text/javascript" src="/style/js/lodash.js"></script>
+</head>
+<body>
+@@include('header.html')
+<div class="piggy-bank-container">
+    <div class="piggy-bank-top-div"></div>
+    <div class="piggy-bank-redpacket-container">
+        <div class="piggy-bank-redpacket-box redpacket">
+            <img src="/style/img/promotion/lols10/s10_jc.png"/>
+            <div class="" style="display: flex;justify-content: space-between;">
+                <div class="btn bonu"></div>
+                <div class="btn record"></div>
+            </div>
+        </div>
+    </div>
+    <table class="record-table">
+        <thead>
+        <tr>
+            <td width="30%">领取用户</td>
+            <td width="40%">领取时间</td>
+            <td width="30%">领取金额</td>
+        </tr>
+        </thead>
+        <tbody id="recordBody"><tr><td colspan='3'>暂无数据</td></tr></tbody>
+        <!--<tbody id="recordBody">
+            <tr>
+                <td>XXXXXXX</td>
+                <td>2020-07-21 23:52:11</td>
+                <td>10000</td>
+            </tr>
+        </tbody>-->
+    </table>
+    <div class="page-list" id="record_page">
+        <div class="page-item">&lt;</div>
+        <div class="page-item active">1</div>
+        <!--<div class="page-item">2</div>
+        <div class="page-item">3</div>-->
+        <div class="page-item">&gt;</div>
+    </div>
+    <div class="rule-container">
+        <div class="piggy-content-title"></div>
+        <p style="margin-bottom: 28px;">活动时间：9月25日至11月1日</p>
+        <ul class="rule-list">
+            <li>凡是在9月25日-10月31日累计存款达到20000并且电竞有效投注达到50000即可参与瓜分奖池。</li>
+            <li>如果中国队夺冠可瓜分奖池100万奖金，其他国家队夺冠，可瓜分奖池50万奖金。</li>
+            <li>电竞有效投注只统计东赢电竞,IM电竞,RG电竞的总投注额，电竞赔率均为欧洲盘，且投注赔率低于1.5和无效的、取消的、同局中对冲投注将不计算在有效投注内。</li>
+            <li>满足条件者即可在11月1日12:00后进入活动页面瓜分奖池，符合要求的玩家可以平分奖池奖金。</li>
+            <li>奖金只需1倍流水即可出款，只限电竞/体育游戏。</li>
+        </ul>
+        <div class="piggy-rule-content"></div>
+        <ul class="rule-list">
+            <li>此优惠促销只适用于拥有一个独立账户的玩家。住址、电子邮箱地址、电话号码、支付方式（相同借记卡/信用卡/银行账户号码）IP地址、同一网络环境等将可以作为判定是否独立玩家的条件。</li>
+            <li>对于发现任何有违背、欺骗、或利用规则和条款进行非法获利的会员，东赢保留在任何时候都可以停止、取消优惠或索回已支付的全部优惠的权利。</li>
+            <li>在某些未知因素超出可控范围的情况下，东赢娱乐保留可单方面执行的决定权，并承诺会在这类紧急问题发生时解释给客户原因并听取客户反馈与客户沟通协商解决。</li>
+            <li>东赢保留对本次活动的修订、终止和最终解释权，超出本网站控制外的技术错误，东赢将不承担任何责任。</li>
+            <li>东赢娱乐有权延长，缩短，终止，或者修改此活动！此活动最终解释权归东赢所有。</li>
+        </ul>
+    </div>
+</div>
+<div class="modal fade" id="recordModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+            <div class="modal-header custom-modal-header">
+                <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="font-size: 40px;color: #2b2929;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body customer-modal-body">
+                <div class="form-group">
+                    <h2 style="color: #11b5ff;">领取记录</h2>
+                    <table class="record-table">
+                        <thead>
+                        <tr>
+                            <td width="30%">领取用户</td>
+                            <td width="40%">领取时间</td>
+                            <td width="30%">领取金额</td>
+                        </tr>
+                        </thead>
+                        <tbody id="recordBody_m">
+                        <tr><td colspan='3'>暂无数据</td></tr>
+                        <!--<tr>
+                            <td id="login_m"></td>
+                            <td id="date_m"></td>
+                            <td id="bouns_m"></td>
+                        </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script type="text/javascript">
+    var userExist = wap_is_user_notexist();
+    var lotteryRecord=null;
+    $(function() {
+        $('.bonu').click(function() {
+            /*$('#recordModal').modal('show');*/
+           /* info('奖池11月1日开启,敬请期待！');*/
+            getS10Bouns();
+        });
+        $('.record').click(function() {
+            $('#recordModal').modal('show');
+            /* info('奖池11月1日开启,敬请期待！');*/
+        });
+        s10Init();
+    });
+    function s10Init() {
+        if(userExist) {
+            info('请登录后操作');
+            return;
+        }
+        $('#recordBody').empty();
+        $('#recordBody').html("<tr><td colspan='3'>loading...</td></tr>");
+        post('/ptweb/s10RecordList', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+                $('#recordBody').empty();
+                $('#recordBody_m').empty();
+                if(d.data.records && d.data.records.length) {
+                    lotteryRecord=d.data.records;
+                    showRecordPageItem();
+                    showRecordTableBody(1);
+                } else {
+                    $('#recordBody').html("<tr><td colspan='3'>暂无数据</td></tr>");
+                }
+                if(d.data.records_m.loginName_m){
+                    $('#recordBody_m').html('<tr><td>' + d.data.records_m.loginName_m +'</td><td>' + d.data.records_m.date_m + '</td><td>' + d.data.records_m.bouns_m.toFixed(2) + '</td></tr>' );
+                }else{
+                    $('#recordBody_m').html("<tr><td colspan='3'>暂无数据</td></tr>");
+                }
+            } else {
+                error(d.message);
+            }
+        });
+    }
+    function showRecordPageItem() {//加载lottery分页div
+        if(lotteryRecord.length>5){
+            var size=Math.ceil(lotteryRecord.length/5);
+            $('#record_page').html('');
+            var  appendHtml='<div class="page-item lottery_prev"><</div>'
+                +'<div class="page-item lottery_item active">'+1+'</div>';
+            for(var i=1;i<size;i++){
+                appendHtml+='<div class="page-item lottery_item">'+(i+1)+'</div>';
+            }
+            appendHtml+='<div class="page-item lottery_next">></div>';
+            $('#record_page').html(appendHtml);
+            $('.lottery_item').click(function(){
+                showRecordTableBody($(this).html());
+                $('.lottery_item').removeClass('active');
+                $(this).addClass('active');
+            });
+            $('.lottery_prev').click(function(){
+                var index=parseInt(''+$('.lottery_item.active').html());
+                if(index!=1){
+                    showRecordTableBody(index-1);
+                    $('.lottery_item').removeClass('active');
+                    $('.lottery_item:nth-child('+index+')').addClass('active');
+                }
+            });
+            $('.lottery_next').click(function(){
+                var index= parseInt(''+$('.lottery_item.active').html());
+                var maxIndex=Math.ceil(lotteryRecord.length/5);
+                if(index!=maxIndex){
+                    showRecordTableBody(index+1);
+                    $('.lottery_item').removeClass('active');
+                    $('.lottery_item:nth-child('+(index+2)+')').addClass('active');
+                }
+            });
+        }
+    }
+    function showRecordTableBody(index) {
+        $('#recordBody').html('');
+        $.each(lotteryRecord, function(i,v){
+            if(i>=(index-1)*5 && i<5*index){
+                $('#recordBody').append('<tr><td>' + v.loginName +'</td><td>' + v.date + '</td><td>' + v.bouns.toFixed(2) + '</td></tr>' );
+            }
+        });
+    }
+
+    function getS10Bouns() {
+        post('/ptweb/submitS10Lottery', {}, event_site_host()).done(d => {
+            if (d.code == 0) {
+                confirm_success("恭喜获得"+d.data.amount.toFixed(2)+"元奖金，感谢您的支持","系统提示",function () {
+                    s10Init();
+                });
+            } else {
+                error(d.message);
+            }
+    });
+    }
+</script>
+</html>

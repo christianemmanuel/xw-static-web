@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    @@include('html-head.html')
+    <title>真人</title>
+    <link rel="stylesheet" href="/style/css/fish.css">
+</head>
+<body>
+@@include('header.html')
+<div class="game-container">
+    <canvas id="bubbleCanvas" class="bubble-wrapper"></canvas>
+    <div class="fish-box fish-box-1">
+        <div class="swim-fish swim-fish-1"></div>
+    </div>
+    <div class="fish-box fish-box-2">
+        <div class="swim-fish swim-fish-2"></div>
+    </div>
+    <div class="fish-box fish-box-3">
+        <div class="swim-fish swim-fish-3"></div>
+    </div>
+    <div class="fish-box fish-box-4">
+        <div class="swim-fish swim-fish-4"></div>
+    </div>
+    <div class="play-box">
+        <div class="game-content">
+            <div class="fish1"></div>
+            <div class="icg-fish-lz"></div>
+            <!--<div class="icg-fish-ms"></div>-->
+            <div class="fish5"></div>
+        </div>
+        <div class="game-btn">
+            <button class="btn fish-begin" onclick="fun_openGame('6',5)"></button>
+            <button class="btn fish-begin" onclick="fun_openGame('cmf0001', 53)"></button>
+            <!--<button class="btn fish-begin" onclick="fun_openGame('cmt0001', 53)"></button>-->
+            <button class="btn fish-begin" onclick="openELottery('/ptweb/gpsGame?t=1')"></button>
+        </div>
+    </div>
+</div>
+@@include('right-side.html')
+@@include('footer.html')
+</body>
+@@include('html-foot.html')
+<script>
+    TweenMax.to('.fish-box-1', 30, {
+        x: -(window.innerWidth + 2000),
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo:true,
+        onRepeat: function() {
+            $('.swim-fish-1').toggleClass('mirror-rotate');
+        }
+    });
+    TweenMax.to('.fish-box-2', 20, {
+        x: window.innerWidth + 500,
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo:true,
+        onRepeat: function() {
+            $('.swim-fish-2').toggleClass('mirror-rotate');
+        }
+    });
+    TweenMax.to('.fish-box-3', 35, {
+        x: window.innerWidth + 1700,
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo:true,
+        onRepeat: function() {
+            $('.swim-fish-3').toggleClass('mirror-rotate');
+        }
+    });
+    TweenMax.to('.fish-box-4', 25, {
+        x: -(window.innerWidth + 600),
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo:true,
+        onRepeat: function() {
+            $('.swim-fish-4').toggleClass('mirror-rotate');
+        }
+    });
+    $(function () {
+        var n = 30,
+            duration = 8;
+        var c = document.getElementById("bubbleCanvas"),
+            ctx = c.getContext("2d"),
+            cw = (c.width = window.innerWidth),
+            ch = (c.height = window.innerHeight),
+            img = new Image(),
+            particles = [],
+            particleNumber = 0,
+            Particle = function (_i) {
+                this.index = _i;
+                this.draw = function () {
+                    ctx.globalAlpha = this.alpha;
+                    ctx.globalCompositeOperation = 'lighter';
+                    // if (particleNumber%5==0) ctx.drawImage(img, this.x, this.y, this.size, this.size*1.1);
+                    //if (particleNumber%this.index==0) ctx.drawImage(img, this.x, this.y-2, this.size, this.size*1.3);
+                    ctx.drawImage(img, this.x, this.y, this.size, this.size);
+                }
+            };
+
+        function setParticle(p) {
+            particleNumber++;
+            var _size = 46, // px width + height
+                _dur = rand(duration, duration + (_size / 10)),
+                _tl = new TimelineMax()
+                    .fromTo(p, _dur, {
+                        x: rand(-_size, cw),
+                        y: ch,
+                        size: _size
+                    }, {
+                        x: '+=' + rand(_size * -10, _size * 45),
+                        y: -_size,
+                        size: 35,
+                        ease: Sine.easeIn,
+                        onComplete: function () {
+                            setParticle(p);
+                        }
+                    }, 0)
+                    //.fromTo(p,  _dur/3, {alpha:0.3}, {alpha:1, ease:Power1.easeInOut}, 0)
+                    .to(p, _dur / 4, {size: 30}, _dur - _dur / 4)
+            if (particleNumber < n) _tl.seek(_dur * rand()); //fast forward on first run
+        }
+
+        for (var i = 0; i < n; i++) {
+            particles.push(new Particle(i));
+            setParticle(particles[i]);
+        }
+
+        TweenMax.ticker.addEventListener("tick", function () {
+            ctx.clearRect(0, 0, cw, ch);
+            for (var i = 0; i < n; i++) particles[i].draw();
+        });
+
+        window.addEventListener('resize', function () {
+            particleNumber = 0;
+            cw = (c.width = window.innerWidth);
+            ch = (c.height = window.innerHeight);
+            for (var i = 0; i < n; i++) {
+                TweenMax.killTweensOf(particles[i]);
+                setParticle(particles[i]);
+            }
+        });
+
+        function rand(min = 0, max = 1) {
+            return min + (max - min) * Math.random();
+        }
+
+        img.src = 'https://xvsr111.b2byg.com/static//image/a951b694-292a-4105-860d-ce3be25654df.png';
+    });
+</script>
+</html>
